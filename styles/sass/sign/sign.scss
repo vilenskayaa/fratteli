@@ -1,0 +1,103 @@
+@import '../variables.scss';
+
+.sign {
+  width: 100%;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-position: right;
+
+  &-in {
+    background-color: $back;
+    background-image: url(/assets/img/sign/charachter-in.png);
+  }
+  &-up {
+    background-color: $green;
+    background-image: url(/assets/img/sign/charachter-up.png);
+  }
+  &-teacher {
+    background-color: $blue;
+    background-image: url(/assets/img/sign/charachter-teacher.png);
+  }
+  &-student {
+    background-color: $black;
+    background-image: url(/assets/img/sign/charachter-student.png);
+  }
+
+  &__container {
+    width: 740px;
+    min-height: 100vh;
+    background-color: $ff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease-in;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 44px;
+    margin-top: 140px;
+  }
+
+  &__logo {
+    &-img {
+    }
+  }
+
+  &__header-title {
+    font-style: normal;
+    font-weight: 600;
+    font-size: $fz36;
+    line-height: 36px;
+
+    padding-bottom: 16px;
+    padding-top: 60px;
+  }
+
+  &__subtitle {
+    font-style: normal;
+    font-weight: 400;
+    font-size: $fz16;
+    line-height: 26px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__link {
+    font-weight: 700;
+    color: $blue;
+  }
+}
+
+[data-signUp] {
+  position: relative;
+  z-index: 4;
+}
+
+[data-signRole] {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  transform: translateX(0);
+}
+
+[data-signLevel] {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  transform: translateX(0);
+}
+
+[data-signEnd] {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  transform: translateX(0);
+}
