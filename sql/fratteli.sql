@@ -48,18 +48,6 @@ CREATE TABLE `class` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `creator`
---
-
-CREATE TABLE `creator` (
-  `creator_id` int NOT NULL,
-  `test_id` int NOT NULL,
-  `user_id` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `exam`
 --
 
@@ -120,7 +108,8 @@ CREATE TABLE `test` (
   `test_title` text NOT NULL,
   `test_level` varchar(500) NOT NULL,
   `test_time` text NOT NULL,
-  `text_complexity` text NOT NULL
+  `text_complexity` text NOT NULL,
+  `created_by` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -190,14 +179,6 @@ ALTER TABLE `class`
   ADD KEY `user_id` (`user_id`);
 
 --
--- Indexes for table `creator`
---
-ALTER TABLE `creator`
-  ADD PRIMARY KEY (`creator_id`),
-  ADD KEY `test_id` (`test_id`),
-  ADD KEY `user_id` (`user_id`);
-
---
 -- Indexes for table `exam`
 --
 ALTER TABLE `exam`
@@ -229,7 +210,8 @@ ALTER TABLE `student`
 -- Indexes for table `test`
 --
 ALTER TABLE `test`
-  ADD PRIMARY KEY (`test_id`);
+  ADD PRIMARY KEY (`test_id`),
+  ADD KEY `created_by` (`created_by`);
 
 --
 -- Indexes for table `user`
@@ -266,12 +248,6 @@ ALTER TABLE `answer`
 --
 ALTER TABLE `class`
   MODIFY `class_id` int NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `creator`
---
-ALTER TABLE `creator`
-  MODIFY `creator_id` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `lesson`
@@ -332,13 +308,6 @@ ALTER TABLE `class`
   ADD CONSTRAINT `class_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
--- Constraints for table `creator`
---
-ALTER TABLE `creator`
-  ADD CONSTRAINT `creator_ibfk_1` FOREIGN KEY (`test_id`) REFERENCES `test` (`test_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `creator_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
-
---
 -- Constraints for table `exam`
 --
 ALTER TABLE `exam`
@@ -364,6 +333,9 @@ ALTER TABLE `student`
 ALTER TABLE `vocabulary`
   ADD CONSTRAINT `vocabulary_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   ADD CONSTRAINT `vocabulary_ibfk_2` FOREIGN KEY (`word_id`) REFERENCES `word` (`word_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+ALTER TABLE `test`
+  ADD CONSTRAINT `creator_ibfk_2` FOREIGN KEY (`created_by`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
