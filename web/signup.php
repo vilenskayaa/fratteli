@@ -76,7 +76,7 @@ $page_title = "Регистрация";
             </div>
           </label>
           <div class="form__card">
-            <input name="role" type="radio" value="student" hidden id="inputTeacher" required>
+            <input name="role" type="radio" value="teacher" hidden id="inputTeacher" required>
             <label for="inputTeacher" class="form__card-picture">
               <img class="form__cart-image" src="/assets/img/sign/teacher.png" alt="Teacher">
             </label>
