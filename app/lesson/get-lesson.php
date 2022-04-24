@@ -36,6 +36,14 @@ try {
 
         $res = $lessonsData;
     }
+    if (!$lesson_id && !$lesson_date) {
+        
+        $lessonsData = $db->query($select);
+
+        while($lesson = $lessonsData->fetch_assoc()){
+            array_push($res, $lesson);
+        }
+    }
 
     
 
