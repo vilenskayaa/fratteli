@@ -11,15 +11,33 @@ try {
     $teacher_id = $_SESSION["user"]["id"];
     
     $lesson_date = $_GET["lesson_date"];
+    $lesson_id = $_GET["lesson_id"];
 
-    $selectLessonOnDay = "SELECT * FROM `lesson` WHERE `lesson_date` = '$lesson_date';";
+
+    $select = "SELECT * FROM `lesson`";
+
     $res = [];
 
-    $lessonsData = $db->query($selectLessonOnDay);
+    
+    if ($lesson_date) {
+        $select .= "WHERE `lesson_date` = '$lesson_date'";
+        
+        $lessonsData = $db->query($select);
 
-    while($lesson = $lessonsData->fetch_assoc()){
-        array_push($res, $lesson);
+        while($lesson = $lessonsData->fetch_assoc()){
+            array_push($res, $lesson);
+        }
     }
+    if ($lesson_id) {
+        $select .= "WHERE `lesson_id` = '$lesson_id';";
+
+        
+        $lessonsData = $db->query($select)->fetch_assoc();
+
+        $res = $lessonsData;
+    }
+
+    
 
     echo json_encode($res);
 
