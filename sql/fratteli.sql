@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 24, 2022 at 03:31 PM
+-- Generation Time: Apr 25, 2022 at 12:20 AM
 -- Server version: 8.0.24
 -- PHP Version: 7.4.21
 
@@ -67,18 +67,6 @@ INSERT INTO `answer` (`answer_id`, `question_id`, `answer_title`, `is_correct`) 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `class`
---
-
-CREATE TABLE `class` (
-  `class_id` int NOT NULL,
-  `class_level` text NOT NULL,
-  `user_id` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `exam`
 --
 
@@ -86,8 +74,35 @@ CREATE TABLE `exam` (
   `exam_id` int NOT NULL,
   `student_id` int NOT NULL,
   `test_id` int NOT NULL,
-  `exam_rating` int NOT NULL
+  `exam_rating` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `exam`
+--
+
+INSERT INTO `exam` (`exam_id`, `student_id`, `test_id`, `exam_rating`) VALUES
+(22, 7, 47, 66.67);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `group`
+--
+
+CREATE TABLE `group` (
+  `group_id` int NOT NULL,
+  `group_title` varchar(255) NOT NULL,
+  `group_level` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `teacher_id` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `group`
+--
+
+INSERT INTO `group` (`group_id`, `group_title`, `group_level`, `teacher_id`) VALUES
+(3, 'Группа 1', 'A2', 14);
 
 -- --------------------------------------------------------
 
@@ -136,9 +151,16 @@ INSERT INTO `question` (`question_id`, `test_id`, `question_title`, `question_de
 
 CREATE TABLE `student` (
   `student_id` int NOT NULL,
-  `class_id` int NOT NULL,
+  `group_id` int NOT NULL,
   `user_id` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `student`
+--
+
+INSERT INTO `student` (`student_id`, `group_id`, `user_id`) VALUES
+(7, 3, 13);
 
 -- --------------------------------------------------------
 
@@ -183,7 +205,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `user_email`, `user_name`, `user_password`, `user_role`, `user_level`) VALUES
-(13, 'alla@gmail.com', 'Алла Виленская', '200820e3227815ed1756a6b531e7e0d2', 'student', 'A1'),
+(13, 'alla@gmail.com', 'Алла Виленская', '17bbaa41b9eea6fb22ea26852d4994d3', 'student', 'A1'),
 (14, 'teacher@mail.ru', 'Teacher Alla', '17bbaa41b9eea6fb22ea26852d4994d3', 'teacher', 'C2');
 
 -- --------------------------------------------------------
@@ -224,18 +246,19 @@ ALTER TABLE `answer`
   ADD KEY `question_id` (`question_id`);
 
 --
--- Indexes for table `class`
---
-ALTER TABLE `class`
-  ADD PRIMARY KEY (`class_id`),
-  ADD KEY `user_id` (`user_id`);
-
---
 -- Indexes for table `exam`
 --
 ALTER TABLE `exam`
+  ADD PRIMARY KEY (`exam_id`),
   ADD KEY `student_id` (`student_id`),
   ADD KEY `test_id` (`test_id`);
+
+--
+-- Indexes for table `group`
+--
+ALTER TABLE `group`
+  ADD PRIMARY KEY (`group_id`),
+  ADD KEY `user_id` (`teacher_id`);
 
 --
 -- Indexes for table `lesson`
@@ -255,8 +278,8 @@ ALTER TABLE `question`
 --
 ALTER TABLE `student`
   ADD PRIMARY KEY (`student_id`),
-  ADD KEY `class_id` (`class_id`),
-  ADD KEY `user_id` (`user_id`);
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `group_id` (`group_id`) USING BTREE;
 
 --
 -- Indexes for table `test`
@@ -293,13 +316,19 @@ ALTER TABLE `word`
 -- AUTO_INCREMENT for table `answer`
 --
 ALTER TABLE `answer`
-  MODIFY `answer_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
+  MODIFY `answer_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
 
 --
--- AUTO_INCREMENT for table `class`
+-- AUTO_INCREMENT for table `exam`
 --
-ALTER TABLE `class`
-  MODIFY `class_id` int NOT NULL AUTO_INCREMENT;
+ALTER TABLE `exam`
+  MODIFY `exam_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT for table `group`
+--
+ALTER TABLE `group`
+  MODIFY `group_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `lesson`
@@ -311,13 +340,13 @@ ALTER TABLE `lesson`
 -- AUTO_INCREMENT for table `question`
 --
 ALTER TABLE `question`
-  MODIFY `question_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `question_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-  MODIFY `student_id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `student_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `test`
@@ -354,17 +383,17 @@ ALTER TABLE `answer`
   ADD CONSTRAINT `answer_ibfk_1` FOREIGN KEY (`question_id`) REFERENCES `question` (`question_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `class`
---
-ALTER TABLE `class`
-  ADD CONSTRAINT `class_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
 -- Constraints for table `exam`
 --
 ALTER TABLE `exam`
   ADD CONSTRAINT `exam_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `student` (`student_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `exam_ibfk_2` FOREIGN KEY (`test_id`) REFERENCES `test` (`test_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `group`
+--
+ALTER TABLE `group`
+  ADD CONSTRAINT `group_ibfk_1` FOREIGN KEY (`teacher_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `question`
@@ -376,7 +405,7 @@ ALTER TABLE `question`
 -- Constraints for table `student`
 --
 ALTER TABLE `student`
-  ADD CONSTRAINT `student_ibfk_1` FOREIGN KEY (`class_id`) REFERENCES `class` (`class_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `student_ibfk_1` FOREIGN KEY (`group_id`) REFERENCES `group` (`group_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `student_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
