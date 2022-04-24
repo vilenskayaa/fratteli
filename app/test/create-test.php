@@ -1,5 +1,46 @@
 <?php
 
+
+/* --------------------------------
+    REQUEST EXAMPLE IN JSON FORMAT:
+
+    {
+    "test_title": "Тест Аллы Виленской",
+    "test_level": "A2",
+    "test_time": 30,
+    "test_complexety": "3/5",
+    "questions": [
+        {
+            "question_title": "Вы Алла Виленская?",
+            "question_desc": "Выберите вариант ответа",
+            "answers": [
+                {
+                    "answer_title": "Да",
+                    "is_correct": true
+                },
+                {
+                    "answer_title": "Нет",
+                    "is_correct": false
+                },
+                {
+                    "answer_title": "Все варианты верны",
+                    "is_correct": false
+                },
+                {
+                    "answer_title": "Все варианты НЕверны",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}
+
+    RESPONSE EXAMPLE IN JSON:
+
+    {"test_id":43,"success":true}
+
+*/
+
 session_start();
 require_once '../db.php';
 
