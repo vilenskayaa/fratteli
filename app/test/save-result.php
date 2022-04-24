@@ -7,6 +7,8 @@ require_once '../db.php';
 header("Content-Type: application/json;");
 $user_id = $_SESSION['user']['id'];
 
+print_r($_SESSION['user']);
+
 try {
     
     $json = file_get_contents('php://input');
@@ -38,19 +40,22 @@ try {
 
     $rating = round($countOfCorrectAnswers * 100 / $countQuestions, 2);
 
-    $insertRatingQuery = "INSERT INTO `exam`
-        (`exam_id`, `student_id`, `test_id`, `exam_rating`) VALUES
-        (NULL, '$user_id', '$test_id', '$rating')";
+    $selectStudentId = "SELECT `student_id` FROM `student` WHERE `user_id` = '$user_id'";
+    $student_id = (int)$db->query($selectStudentId)->fetch_assoc()["student_id"];
 
-    $ratingInserted = $db->query($insertRatingQuery);
+    $insertTestResult = "INSERT INTO `exam`
+        (`exam_id`, `student_id`, `test_id`, `exam_rating`) VALUES
+        (NULL, '$student_id', '$test_id', '$rating')";
+
+    echo $insertTestResult;
+    $db->query($insertTestResult);    
     $rating_id = mysqli_insert_id($db);
 
-    echo json_encode(array($answersList, array(
+    echo json_encode(array(
         "count_questions" => $countQuestions,
         "count_correct" => $countOfCorrectAnswers,
         "rating" => $rating,
         "exam_id" => $rating_id
-        )
     ), JSON_UNESCAPED_UNICODE);
 
 } catch (\Exception $e) {
