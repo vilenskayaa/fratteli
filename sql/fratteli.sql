@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 24, 2022 at 12:31 PM
+-- Generation Time: Apr 24, 2022 at 03:31 PM
 -- Server version: 8.0.24
 -- PHP Version: 7.4.21
 
@@ -33,6 +33,36 @@ CREATE TABLE `answer` (
   `answer_title` text NOT NULL,
   `is_correct` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `answer`
+--
+
+INSERT INTO `answer` (`answer_id`, `question_id`, `answer_title`, `is_correct`) VALUES
+(66, 44, 'Да', 1),
+(67, 44, 'Нет', 0),
+(68, 44, 'Все варианты верны', 0),
+(69, 44, 'Все варианты НЕверны', 0),
+(70, 45, 'Да', 1),
+(71, 45, 'Нет', 0),
+(72, 45, 'Все варианты верны', 0),
+(73, 45, 'Все варианты НЕверны', 0),
+(74, 46, 'Да', 1),
+(75, 46, 'Нет', 0),
+(76, 46, 'Все варианты верны', 0),
+(77, 46, 'Все варианты НЕверны', 0),
+(78, 47, 'Да', 1),
+(79, 47, 'Нет', 0),
+(80, 47, 'Все варианты верны', 0),
+(81, 47, 'Все варианты НЕверны', 0),
+(82, 48, 'Да', 1),
+(83, 48, 'Нет', 0),
+(84, 48, 'Все варианты верны', 0),
+(85, 48, 'Все варианты НЕверны', 0),
+(86, 49, 'Да', 1),
+(87, 49, 'Нет', 0),
+(88, 49, 'Все варианты верны', 0),
+(89, 49, 'Все варианты НЕверны', 0);
 
 -- --------------------------------------------------------
 
@@ -86,6 +116,18 @@ CREATE TABLE `question` (
   `question_desc` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Dumping data for table `question`
+--
+
+INSERT INTO `question` (`question_id`, `test_id`, `question_title`, `question_desc`) VALUES
+(44, 47, 'Вы Алла Виленская?', 'Выберите вариант ответа'),
+(45, 47, 'Вы Алла Виленская??', 'Выберите вариант ответа'),
+(46, 47, 'Вы Алла Виленская???', 'Выберите вариант ответа'),
+(47, 48, 'Вы Алла Виленская?', 'Выберите вариант ответа'),
+(48, 48, 'Вы Алла Виленская??', 'Выберите вариант ответа'),
+(49, 48, 'Вы Алла Виленская???', 'Выберите вариант ответа');
+
 -- --------------------------------------------------------
 
 --
@@ -109,9 +151,17 @@ CREATE TABLE `test` (
   `test_title` text NOT NULL,
   `test_level` varchar(500) NOT NULL,
   `test_time` text NOT NULL,
-  `text_complexity` text NOT NULL,
+  `test_complexity` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `created_by` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `test`
+--
+
+INSERT INTO `test` (`test_id`, `test_title`, `test_level`, `test_time`, `test_complexity`, `created_by`) VALUES
+(47, 'Тест Аллы Виленской', 'A2', '30', '3/5', 14),
+(48, 'Тест Аллы Виленской', 'A2', '30', '', 14);
 
 -- --------------------------------------------------------
 
@@ -243,7 +293,7 @@ ALTER TABLE `word`
 -- AUTO_INCREMENT for table `answer`
 --
 ALTER TABLE `answer`
-  MODIFY `answer_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `answer_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
 
 --
 -- AUTO_INCREMENT for table `class`
@@ -261,7 +311,7 @@ ALTER TABLE `lesson`
 -- AUTO_INCREMENT for table `question`
 --
 ALTER TABLE `question`
-  MODIFY `question_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `question_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `student`
@@ -273,7 +323,7 @@ ALTER TABLE `student`
 -- AUTO_INCREMENT for table `test`
 --
 ALTER TABLE `test`
-  MODIFY `test_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `test_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT for table `user`
