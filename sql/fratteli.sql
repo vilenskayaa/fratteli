@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 23, 2022 at 07:08 PM
--- Server version: 8.0.19
--- PHP Version: 7.4.5
+-- Generation Time: Apr 25, 2022 at 12:20 AM
+-- Server version: 8.0.24
+-- PHP Version: 7.4.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,32 +30,39 @@ SET time_zone = "+00:00";
 CREATE TABLE `answer` (
   `answer_id` int NOT NULL,
   `question_id` int NOT NULL,
-  `answer_title` text NOT NULL
+  `answer_title` text NOT NULL,
+  `is_correct` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- --------------------------------------------------------
-
 --
--- Table structure for table `class`
+-- Dumping data for table `answer`
 --
 
-CREATE TABLE `class` (
-  `class_id` int NOT NULL,
-  `class_level` text NOT NULL,
-  `user_id` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `creator`
---
-
-CREATE TABLE `creator` (
-  `creator_id` int NOT NULL,
-  `test_id` int NOT NULL,
-  `user_id` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+INSERT INTO `answer` (`answer_id`, `question_id`, `answer_title`, `is_correct`) VALUES
+(66, 44, 'Да', 1),
+(67, 44, 'Нет', 0),
+(68, 44, 'Все варианты верны', 0),
+(69, 44, 'Все варианты НЕверны', 0),
+(70, 45, 'Да', 1),
+(71, 45, 'Нет', 0),
+(72, 45, 'Все варианты верны', 0),
+(73, 45, 'Все варианты НЕверны', 0),
+(74, 46, 'Да', 1),
+(75, 46, 'Нет', 0),
+(76, 46, 'Все варианты верны', 0),
+(77, 46, 'Все варианты НЕверны', 0),
+(78, 47, 'Да', 1),
+(79, 47, 'Нет', 0),
+(80, 47, 'Все варианты верны', 0),
+(81, 47, 'Все варианты НЕверны', 0),
+(82, 48, 'Да', 1),
+(83, 48, 'Нет', 0),
+(84, 48, 'Все варианты верны', 0),
+(85, 48, 'Все варианты НЕверны', 0),
+(86, 49, 'Да', 1),
+(87, 49, 'Нет', 0),
+(88, 49, 'Все варианты верны', 0),
+(89, 49, 'Все варианты НЕверны', 0);
 
 -- --------------------------------------------------------
 
@@ -67,8 +74,35 @@ CREATE TABLE `exam` (
   `exam_id` int NOT NULL,
   `student_id` int NOT NULL,
   `test_id` int NOT NULL,
-  `exam_rating` int NOT NULL
+  `exam_rating` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `exam`
+--
+
+INSERT INTO `exam` (`exam_id`, `student_id`, `test_id`, `exam_rating`) VALUES
+(22, 7, 47, 66.67);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `group`
+--
+
+CREATE TABLE `group` (
+  `group_id` int NOT NULL,
+  `group_title` varchar(255) NOT NULL,
+  `group_level` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `teacher_id` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `group`
+--
+
+INSERT INTO `group` (`group_id`, `group_title`, `group_level`, `teacher_id`) VALUES
+(3, 'Группа 1', 'A2', 14);
 
 -- --------------------------------------------------------
 
@@ -93,9 +127,21 @@ CREATE TABLE `lesson` (
 CREATE TABLE `question` (
   `question_id` int NOT NULL,
   `test_id` int NOT NULL,
-  `question_desc` text NOT NULL,
-  `question_answer` int NOT NULL
+  `question_title` text NOT NULL,
+  `question_desc` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `question`
+--
+
+INSERT INTO `question` (`question_id`, `test_id`, `question_title`, `question_desc`) VALUES
+(44, 47, 'Вы Алла Виленская?', 'Выберите вариант ответа'),
+(45, 47, 'Вы Алла Виленская??', 'Выберите вариант ответа'),
+(46, 47, 'Вы Алла Виленская???', 'Выберите вариант ответа'),
+(47, 48, 'Вы Алла Виленская?', 'Выберите вариант ответа'),
+(48, 48, 'Вы Алла Виленская??', 'Выберите вариант ответа'),
+(49, 48, 'Вы Алла Виленская???', 'Выберите вариант ответа');
 
 -- --------------------------------------------------------
 
@@ -105,9 +151,16 @@ CREATE TABLE `question` (
 
 CREATE TABLE `student` (
   `student_id` int NOT NULL,
-  `class_id` int NOT NULL,
+  `group_id` int NOT NULL,
   `user_id` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `student`
+--
+
+INSERT INTO `student` (`student_id`, `group_id`, `user_id`) VALUES
+(7, 3, 13);
 
 -- --------------------------------------------------------
 
@@ -120,8 +173,17 @@ CREATE TABLE `test` (
   `test_title` text NOT NULL,
   `test_level` varchar(500) NOT NULL,
   `test_time` text NOT NULL,
-  `text_complexity` text NOT NULL
+  `test_complexity` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `created_by` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `test`
+--
+
+INSERT INTO `test` (`test_id`, `test_title`, `test_level`, `test_time`, `test_complexity`, `created_by`) VALUES
+(47, 'Тест Аллы Виленской', 'A2', '30', '3/5', 14),
+(48, 'Тест Аллы Виленской', 'A2', '30', '', 14);
 
 -- --------------------------------------------------------
 
@@ -143,7 +205,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `user_email`, `user_name`, `user_password`, `user_role`, `user_level`) VALUES
-(13, 'alla@gmail.com', 'Алла Виленская', '200820e3227815ed1756a6b531e7e0d2', 'student', 'A1');
+(13, 'alla@gmail.com', 'Алла Виленская', '17bbaa41b9eea6fb22ea26852d4994d3', 'student', 'A1'),
+(14, 'teacher@mail.ru', 'Teacher Alla', '17bbaa41b9eea6fb22ea26852d4994d3', 'teacher', 'C2');
 
 -- --------------------------------------------------------
 
@@ -183,26 +246,19 @@ ALTER TABLE `answer`
   ADD KEY `question_id` (`question_id`);
 
 --
--- Indexes for table `class`
---
-ALTER TABLE `class`
-  ADD PRIMARY KEY (`class_id`),
-  ADD KEY `user_id` (`user_id`);
-
---
--- Indexes for table `creator`
---
-ALTER TABLE `creator`
-  ADD PRIMARY KEY (`creator_id`),
-  ADD KEY `test_id` (`test_id`),
-  ADD KEY `user_id` (`user_id`);
-
---
 -- Indexes for table `exam`
 --
 ALTER TABLE `exam`
+  ADD PRIMARY KEY (`exam_id`),
   ADD KEY `student_id` (`student_id`),
   ADD KEY `test_id` (`test_id`);
+
+--
+-- Indexes for table `group`
+--
+ALTER TABLE `group`
+  ADD PRIMARY KEY (`group_id`),
+  ADD KEY `user_id` (`teacher_id`);
 
 --
 -- Indexes for table `lesson`
@@ -222,14 +278,15 @@ ALTER TABLE `question`
 --
 ALTER TABLE `student`
   ADD PRIMARY KEY (`student_id`),
-  ADD KEY `class_id` (`class_id`),
-  ADD KEY `user_id` (`user_id`);
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `group_id` (`group_id`) USING BTREE;
 
 --
 -- Indexes for table `test`
 --
 ALTER TABLE `test`
-  ADD PRIMARY KEY (`test_id`);
+  ADD PRIMARY KEY (`test_id`),
+  ADD KEY `created_by` (`created_by`);
 
 --
 -- Indexes for table `user`
@@ -259,19 +316,19 @@ ALTER TABLE `word`
 -- AUTO_INCREMENT for table `answer`
 --
 ALTER TABLE `answer`
-  MODIFY `answer_id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `answer_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
 
 --
--- AUTO_INCREMENT for table `class`
+-- AUTO_INCREMENT for table `exam`
 --
-ALTER TABLE `class`
-  MODIFY `class_id` int NOT NULL AUTO_INCREMENT;
+ALTER TABLE `exam`
+  MODIFY `exam_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
--- AUTO_INCREMENT for table `creator`
+-- AUTO_INCREMENT for table `group`
 --
-ALTER TABLE `creator`
-  MODIFY `creator_id` int NOT NULL AUTO_INCREMENT;
+ALTER TABLE `group`
+  MODIFY `group_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `lesson`
@@ -283,25 +340,25 @@ ALTER TABLE `lesson`
 -- AUTO_INCREMENT for table `question`
 --
 ALTER TABLE `question`
-  MODIFY `question_id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `question_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-  MODIFY `student_id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `student_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `test`
 --
 ALTER TABLE `test`
-  MODIFY `test_id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `test_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `user_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `vocabulary`
@@ -323,47 +380,46 @@ ALTER TABLE `word`
 -- Constraints for table `answer`
 --
 ALTER TABLE `answer`
-  ADD CONSTRAINT `answer_ibfk_1` FOREIGN KEY (`question_id`) REFERENCES `question` (`question_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
-
---
--- Constraints for table `class`
---
-ALTER TABLE `class`
-  ADD CONSTRAINT `class_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
-
---
--- Constraints for table `creator`
---
-ALTER TABLE `creator`
-  ADD CONSTRAINT `creator_ibfk_1` FOREIGN KEY (`test_id`) REFERENCES `test` (`test_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `creator_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+  ADD CONSTRAINT `answer_ibfk_1` FOREIGN KEY (`question_id`) REFERENCES `question` (`question_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `exam`
 --
 ALTER TABLE `exam`
-  ADD CONSTRAINT `exam_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `student` (`student_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `exam_ibfk_2` FOREIGN KEY (`test_id`) REFERENCES `test` (`test_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+  ADD CONSTRAINT `exam_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `student` (`student_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `exam_ibfk_2` FOREIGN KEY (`test_id`) REFERENCES `test` (`test_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `group`
+--
+ALTER TABLE `group`
+  ADD CONSTRAINT `group_ibfk_1` FOREIGN KEY (`teacher_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `question`
 --
 ALTER TABLE `question`
-  ADD CONSTRAINT `question_ibfk_1` FOREIGN KEY (`test_id`) REFERENCES `test` (`test_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+  ADD CONSTRAINT `question_ibfk_1` FOREIGN KEY (`test_id`) REFERENCES `test` (`test_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `student`
 --
 ALTER TABLE `student`
-  ADD CONSTRAINT `student_ibfk_1` FOREIGN KEY (`class_id`) REFERENCES `class` (`class_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `student_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+  ADD CONSTRAINT `student_ibfk_1` FOREIGN KEY (`group_id`) REFERENCES `group` (`group_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `student_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `test`
+--
+ALTER TABLE `test`
+  ADD CONSTRAINT `creator_ibfk_2` FOREIGN KEY (`created_by`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `vocabulary`
 --
 ALTER TABLE `vocabulary`
-  ADD CONSTRAINT `vocabulary_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `vocabulary_ibfk_2` FOREIGN KEY (`word_id`) REFERENCES `word` (`word_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+  ADD CONSTRAINT `vocabulary_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `vocabulary_ibfk_2` FOREIGN KEY (`word_id`) REFERENCES `word` (`word_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
