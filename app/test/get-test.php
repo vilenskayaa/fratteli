@@ -19,7 +19,7 @@ $res = array(
     "test_id" => $testData["test_id"],
     "test_title" => $testData["test_title"],
     "test_time" => $testData["test_time"],
-    "test_complexity" => $testData["text_complexity"],
+    "test_complexity" => $testData["test_complexity"],
     "test_level" => $testData["test_level"],
     "questions" => []
 );
@@ -32,6 +32,7 @@ while ($question = $questionsData->fetch_assoc()) {
     $question["answers"] = array();
 
     while ($answer = $answersData->fetch_assoc()) {
+        $answer["is_correct"] = (bool)$answer["is_correct"];
         array_push($question["answers"], $answer);
     }
 

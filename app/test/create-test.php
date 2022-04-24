@@ -59,7 +59,7 @@ try {
     $created_by = $_SESSION['user']['id'];
         
     $insertTestRow = "INSERT INTO `test` 
-        (`test_id`, `test_title`, `test_level`, `test_time`, `text_complexity`, `created_by`) VALUES
+        (`test_id`, `test_title`, `test_level`, `test_time`, `test_complexity`, `created_by`) VALUES
         (NULL,'$test_title','$test_level','$test_time','$test_complexity', $created_by);
     ";
 
