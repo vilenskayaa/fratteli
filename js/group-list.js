@@ -120,3 +120,46 @@ const renderStudents = async () => {
 }
 
 body.addEventListener("load", renderStudents(), false)
+
+
+$('#addStudent').submit(function(event) {
+  event.preventDefault()
+  // console.log('qweqweqwe')
+  addStudent() 
+})
+
+const addStudent = async () => {
+  const form = document.querySelector('#addStudent')
+  const formData = new FormData(form)
+
+  let json ={ ...JSON.parse(parsFormData(formData)), group_id: getGet('id')}
+  json = JSON.stringify(json);
+
+  console.log(json)
+
+  const res = await fetch('/app/group/add-student.php', {
+    method: 'POST',
+    body: json
+  })
+  .then(response => {
+    renderStudents()
+    $('.overlay').fadeOut(300)
+    $('.popup__overlay').fadeOut(300)
+    return response.json()
+  })
+  .catch(error => {
+    console.error(error)
+  })
+
+  console.log(res);
+}
+
+
+const parsFormData = (formData) => {
+  const object = {};
+  formData.forEach(function(value, key){
+    object[key] = value;
+  });
+  const json = JSON.stringify(object);
+  return json;
+}

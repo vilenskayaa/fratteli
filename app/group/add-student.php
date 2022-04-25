@@ -8,7 +8,7 @@ header("Content-Type: application/json;");
 try {
 
     $teacher_id = $_SESSION["user"]["id"];
-    
+
     $json = file_get_contents('php://input');
     $req = json_decode($json, true);
 
@@ -36,7 +36,6 @@ try {
     $res = array("student_id" => mysqli_insert_id($db), "group_id" => $group_id, "success" => $succes);
 
     echo json_encode($res);
-
 } catch (Exception $e) {
     echo json_encode(array("error" => $e->getMessage(), "success" => false), JSON_UNESCAPED_UNICODE);
 }

@@ -73,10 +73,10 @@ session_start();
       <div class="popup__subtitle">
         Найдите никнейм в поисковой строке:
       </div>
-      <form class="form" action="" id="">
+      <form class="form" action="" id="addStudent">
         <div class="form__fields">
           <div class="form__item">
-            <input class="form__input" name="" type="text" placeholder="Введите нинкнейм ученика" required>
+            <input class="form__input" name="student_email" type="text" placeholder="Введите нинкнейм ученика" required>
           </div>
         </div>
         <button class="form__btn">
@@ -97,10 +97,10 @@ session_start();
       <form class="form" action="" id="">
         <div class="form__fields">
           <div class="form__item">
-            <input class="form__input" name="" type="text" placeholder="Введите нинкнейм ученика" required>
+            <input class="form__input" name="student_email" type="text" placeholder="Введите нинкнейм ученика" required>
           </div>
         </div>
-        <button class="form__btn">
+        <button type="submit" class="form__btn">
           Добавить
         </button>
       </form>
