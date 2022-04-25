@@ -1,6 +1,8 @@
 <?php
 
 session_start();
+$id = $_GET["test_id"];
+$page_title = "Тест";
 
 ?>
 
@@ -26,8 +28,10 @@ session_start();
     </div>
   </aside>
   <main class="">
-
+      <div id="testContainer"></div>
   </main>
+
+  <script src="../js/quiz/get-one-quiz.js"></script>
 </body>
 
 </html>

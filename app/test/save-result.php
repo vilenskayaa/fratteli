@@ -7,8 +7,6 @@ require_once '../db.php';
 header("Content-Type: application/json;");
 $user_id = $_SESSION['user']['id'];
 
-print_r($_SESSION['user']);
-
 try {
     
     $json = file_get_contents('php://input');
@@ -47,7 +45,6 @@ try {
         (`exam_id`, `student_id`, `test_id`, `exam_rating`) VALUES
         (NULL, '$student_id', '$test_id', '$rating')";
 
-    echo $insertTestResult;
     $db->query($insertTestResult);    
     $rating_id = mysqli_insert_id($db);
 
