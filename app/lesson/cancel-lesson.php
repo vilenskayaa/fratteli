@@ -8,6 +8,7 @@ header("Content-Type: application/json;");
 try {
 
     $lesson_id = $_GET["lesson_id"];
+    $user_id = 
 
     $selectLesson = "SELECT COUNT(*) as `count` FROM `lesson` WHERE `lesson_id` = '$lesson_id' AND `canceled_at` IS NOT NULL;";
     $countLessons = (int)$db->query($selectLesson)->fetch_assoc()["count"];
@@ -16,7 +17,7 @@ try {
         throw new Exception("Урок не создан либо уже отменён!");
     }
 
-    $updateLesson = "UPDATE `lesson` SET `canceled_at` = NOW();";
+    $updateLesson = "UPDATE `lesson` SET `canceled_at` = NOW(), `canceled_by` = $user_id;";
 
 
     $db->query($updateLesson);
