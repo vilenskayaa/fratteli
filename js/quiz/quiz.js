@@ -16,7 +16,7 @@ const renderTests = async () => {
             <div class="test_title" id="testTitle">${test.test_title}</div>
             <div class="test_bottom">
                 <div class="test_info">
-                    <span id="questionsCount">24 вопроса</span>
+                    <span id="questionsCount">${test.questions_count} вопроса</span>
                     <span id="testTime">${test.test_time}</span>
                 </div>
                 <a class="black_arrow" href="quiz.php?test_id=${test.test_id}">-></a>

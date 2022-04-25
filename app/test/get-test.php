@@ -23,7 +23,8 @@ if ($test_id) {
         "test_time" => $testData["test_time"],
         "test_complexity" => $testData["test_complexity"],
         "test_level" => $testData["test_level"],
-        "questions" => []
+        "questions" => [],
+        "questions_count" => 0
     );
     
     while ($question = $questionsData->fetch_assoc()) {
@@ -42,7 +43,10 @@ if ($test_id) {
     
     }
 } else {
-    $selectTest = "SELECT * FROM `test` WHERE `created_by` = $teacher_id";
+    $selectTest = "SELECT 
+    t.`test_id`, t.`test_title`, t.`test_level`, t.`test_time`, t.`test_complexity`, t.`created_by`,
+    (SELECT COUNT(*) FROM `question` AS q WHERE q.`test_id` = t.`test_id`) as `questions_count`
+    FROM `test` AS t WHERE `created_by` = $teacher_id";
     $testsList = $db->query($selectTest);
 
     $res = [];
