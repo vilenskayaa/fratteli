@@ -19,11 +19,10 @@ const renderTests = async () => {
                     <span id="questionsCount">24 вопроса</span>
                     <span id="testTime">${test.test_time}</span>
                 </div>
-                <button class="black_arrow" id="btnTest">-></div>
+                <a class="black_arrow" href="quiz.php?test_id=${test.test_id}">-></a>
             </div>
         </div>`));
 };
 
 
 body.addEventListener("load", renderTests(), false);
-

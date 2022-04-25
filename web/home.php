@@ -17,7 +17,7 @@ session_start();
         <a href="" class="nav__item">Мои группы</a>
         <a href="" class="nav__item">Словарь</a>
         <a href="" class="nav__item">Словарь</a>
-        <a href="" class="nav__item">Тесты</a>
+        <a href="/quiz-list.php" class="nav__item">Тесты</a>
       </nav>
     </div>
     <div class="nav__bottom">
