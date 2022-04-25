@@ -1,0 +1,67 @@
+@import '../variables.scss';
+
+.head {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+
+  &__info {
+    width: 500px;
+  }
+
+  &__title {
+    font-size: $fz36;
+    font-weight: 600;
+    color: $black;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+
+    .head__level {
+      color: $ff;
+      background: #41bbff;
+      border-radius: 12px;
+      padding: 8px 20px;
+      font-weight: 600;
+      font-size: 16px;
+    }
+  }
+
+  &__subtitle {
+    font-size: $fz16;
+
+    &-600 {
+      font-weight: 600;
+    }
+  }
+
+  &__nav {
+    &-default {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 24px;
+    }
+
+    &-sub {
+      display: none;
+      align-items: center;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 24px;
+      gap: 24px;
+      color: $black;
+      transition: all 0.3;
+      transform: translateX(50px);
+
+      &.show {
+        display: flex;
+        transform: translateX(0);
+      }
+    }
+  }
+}

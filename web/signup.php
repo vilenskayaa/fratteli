@@ -28,7 +28,7 @@ $page_title = "Регистрация";
           <span>Есть аккаунт? <a class="sign__link" href="/web/signin.php">Войдите прямо сейчас!</a></span>
         </div>
       </header>
-      <form class="form" action="" id="signUp">
+      <form class="form form-sign" action="" id="signUp">
         <div class="form__fields">
           <div class="form__item">
             <input class="form__input" name="email" type="email" placeholder="Email" required>
@@ -63,7 +63,7 @@ $page_title = "Регистрация";
           <span>Есть аккаунт? <a class="sign__link" href="/web/signin.html">Войдите прямо сейчас!</a></span>
         </div>
       </header>
-      <form class="form" action="" id="signRole">
+      <form class="form form-sign" action="" id="signRole">
         <div class="form__fields form__fields-role">
           <label class="form__card">
             <input name="role" type="radio" value="student" hidden id="inputStudent" required>
@@ -105,7 +105,7 @@ $page_title = "Регистрация";
           <span>итальянского в разделе <a class="sign__link" href="/web/signin.html">Тесты</a></span>
         </div>
       </header>
-      <form class="form" action="" id="signLevel">
+      <form class="form form-sign" action="" id="signLevel">
         <div class="form__fields">
           <div class="form__item">
             <select class="form__input" name="level" placeholder="Выберите ваш уровень" required>

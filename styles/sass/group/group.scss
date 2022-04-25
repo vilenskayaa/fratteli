@@ -1,0 +1,143 @@
+@import '../variables.scss';
+
+.classgroup {
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  &__item {
+    width: 100%;
+    padding: 20px 32px;
+    background-color: $blue;
+    color: $ff;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+
+  &__info {
+  }
+
+  &__title {
+    font-size: $fz24;
+    font-weight: 600;
+  }
+
+  &__desc {
+    font-size: $fz14;
+  }
+
+  &__nav {
+  }
+}
+
+.grouplist {
+  &__title {
+    font-weight: 600;
+    font-size: 24px;
+    color: $black;
+  }
+}
+.table {
+  font-weight: 400;
+  font-size: 16px;
+
+  > :nth-child(odd) {
+    background-color: #f2f4fc;
+  }
+
+  &__row {
+    display: flex;
+    position: relative;
+    align-items: center;
+    padding: 16px 32px;
+  }
+  &__edit {
+    display: none;
+    background-color: #fff;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 5px;
+    width: 60px;
+
+    .btn-gray {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      padding: 14px;
+
+      &.active {
+        background-color: $black;
+      }
+      &.active path {
+        fill: $ff;
+      }
+      &.active path:nth-child(2) {
+        stroke: $ff;
+      }
+    }
+
+    .table__btn-container {
+      cursor: pointer;
+      right: 80px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: $red;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 24px;
+      display: none;
+      flex-direction: row;
+      align-items: center;
+      gap: 16px;
+      transition: all 0.3s;
+
+      > .btn-red {
+        padding: 14px;
+      }
+
+      &.show {
+        display: flex;
+      }
+    }
+  }
+
+  &__id {
+    width: 32px;
+  }
+
+  &__name {
+    width: 280px;
+  }
+
+  &__login {
+    width: 196px;
+  }
+
+  &__counter {
+    width: 100px;
+  }
+
+  &__mark {
+    color: $blue;
+    font-weight: 600;
+    border: none;
+    background-color: transparent;
+    padding: 12px 32px;
+    width: 80px;
+
+    &:not([disabled]) {
+      border: 1px solid rgba(0, 8, 40, 0.2);
+      box-sizing: border-box;
+      border-radius: 16px;
+      background-color: #fff;
+    }
+  }
+}

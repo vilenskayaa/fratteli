@@ -28,7 +28,7 @@ $page_title = "Авторизация";
               сейчас!</a></span>
         </div>
       </header>
-      <form class="form" action="" id="signIn">
+      <form class="form form-sign" action="" id="signIn">
         <div class="form__fields">
           <div class="form__item">
             <input class="form__input" name="email" type="email" id="email" placeholder="Email" required>

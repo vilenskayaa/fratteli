@@ -1,115 +1,85 @@
-@import '../variables.scss';
-
 .form {
   width: 100%;
   max-width: 540px;
   padding: 20px 0;
   display: flex;
-  flex-direction: column;
-
-  &-sign {
+  flex-direction: column; }
+  .form-sign {
     height: 460px;
-    justify-content: space-between;
-  }
-
-  &__fields {
+    justify-content: space-between; }
+  .form__fields {
     display: flex;
     flex-direction: column;
     gap: 24px;
-    width: 100%;
-
-    &-role {
+    width: 100%; }
+    .form__fields-role {
       flex-direction: row;
       gap: initial;
-      justify-content: space-between;
-    }
-  }
-
-  &__card {
+      justify-content: space-between; }
+  .form__card {
     width: 238px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 24px;
-    transform: all 0.2s;
-    // border: 1px solid rgba(0, 8, 40, 0.2);
-  }
-
-  #inputStudent:checked ~ &__card-picture,
-  #inputTeacher:checked ~ &__card-picture {
+    transform: all 0.2s; }
+  #inputStudent:checked ~ .form__card-picture, #inputTeacher:checked ~ .form__card-picture {
     transform: translateY(-20px);
     -webkit-box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
     -moz-box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
-    box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
-  }
-  &__card-picture {
+    box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2); }
+  .form__card-picture {
     width: 100%;
     border-radius: 16px;
     transition: all 0.2s;
-    cursor: pointer;
-  }
-
-  &__cart-image {
+    cursor: pointer; }
+  .form__cart-image {
     width: 100%;
     height: 100%;
-    object-fit: contain;
-  }
-
-  &__card-title {
+    object-fit: contain; }
+  .form__card-title {
     font-weight: 600;
     font-size: 16px;
     line-height: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-  }
-
-  &__item {
+    justify-content: center; }
+  .form__item {
     width: 100%;
-    position: relative;
-  }
-
-  &__input {
+    position: relative; }
+  .form__input {
     font-family: 'Proxima Nova Rg';
     width: inherit;
     padding: 20px 30px;
-    color: $black;
-    border: 1px solid $black-20;
+    color: #2e3134;
+    border: 1px solid rgba(1, 12, 59, 0.2);
     border-radius: 16px;
     outline: none;
-    transition: all 0.3s;
-
-    &.error {
-      border-color: $red;
-    }
-  }
-
-  &__item-icon {
+    transition: all 0.3s; }
+    .form__input.error {
+      border-color: #f26363; }
+  .form__item-icon {
     position: absolute;
     top: 20px;
     right: 20px;
-    font-size: $fz24;
+    font-size: 24px;
     opacity: 0.2;
     transition: opacity 0.2s;
-    cursor: pointer;
-
-    &.active {
-      opacity: 1;
-    }
-  }
-
-  &__btn {
+    cursor: pointer; }
+    .form__item-icon.active {
+      opacity: 1; }
+  .form__btn {
     width: 100%;
     padding: 20px 30px;
     text-transform: uppercase;
     font-weight: 600;
     font-size: 20px;
     border-radius: 16px;
-    background-color: $green;
+    background-color: #97cd92;
     border: none;
-    color: $ff;
-    cursor: pointer;
-  }
-}
+    color: #ffffff;
+    cursor: pointer; }
+
+/*# sourceMappingURL=form.css.map */
