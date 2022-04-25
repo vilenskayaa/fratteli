@@ -15,6 +15,10 @@ try {
     $answer_ids = $req['answer_ids'];
     $test_id = $req["test_id"];
 
+    if (count($answer_ids) == 0) {
+        throw new Exception("Вы не ответили ни на один вопрос! Пройдите тест позже:)");
+    }
+
     $answer_ids = array_map(function($i) { return "'$i'"; }, $answer_ids);
     $selectAnswersFromDbQuery = "SELECT * FROM `answer` WHERE `answer_id` IN (".implode(",", $answer_ids).")";
 
@@ -41,14 +45,27 @@ try {
     $selectStudentId = "SELECT `student_id` FROM `student` WHERE `user_id` = '$user_id'";
     $student_id = (int)$db->query($selectStudentId)->fetch_assoc()["student_id"];
 
-    $insertTestResult = "INSERT INTO `exam`
+    $selectResultsByTestIdAndStudentId = "SELECT `exam_id` FROM `exam` WHERE `student_id` = $student_id AND `test_id` = $test_id";
+    $exam_id = (int)$db->query($selectResultsByTestIdAndStudentId)->fetch_assoc()["exam_id"];
+
+    if (!$exam_id) {
+        $insertTestResult = "INSERT INTO `exam`
         (`exam_id`, `student_id`, `test_id`, `exam_rating`) VALUES
         (NULL, '$student_id', '$test_id', '$rating')";
 
-    $db->query($insertTestResult);    
-    $rating_id = mysqli_insert_id($db);
+        echo $insertTestResult;
+
+        $db->query($insertTestResult);    
+    } else {
+        $updateTestResult = "UPDATE `exam` SET `exam_rating` = $rating";
+
+        $db->query($updateTestResult); 
+    }
+
+    $rating_id = $db->query($selectResultsByTestIdAndStudentId)->fetch_assoc()["exam_id"];
 
     echo json_encode(array(
+        "success" => true,
         "count_questions" => $countQuestions,
         "count_correct" => $countOfCorrectAnswers,
         "rating" => $rating,
@@ -56,5 +73,5 @@ try {
     ), JSON_UNESCAPED_UNICODE);
 
 } catch (\Exception $e) {
-    echo json_encode($e->getMessage(), JSON_UNESCAPED_UNICODE);
+    echo json_encode(array("error" => $e->getMessage(), "success" => false), JSON_UNESCAPED_UNICODE);
 }
