@@ -8,6 +8,7 @@ header("Content-Type: application/json;");
 
 
 $test_id = $_GET["test_id"];
+$teacher_id = $_SESSION["user"]["id"];
 
 if ($test_id) {
     $selectTest = "SELECT * FROM `test` WHERE `test_id` = '$test_id'";
@@ -41,7 +42,7 @@ if ($test_id) {
     
     }
 } else {
-    $selectTest = "SELECT * FROM `test`";
+    $selectTest = "SELECT * FROM `test` WHERE `created_by` = $teacher_id";
     $testsList = $db->query($selectTest);
 
     $res = [];
