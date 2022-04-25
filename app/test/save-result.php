@@ -53,8 +53,6 @@ try {
         (`exam_id`, `student_id`, `test_id`, `exam_rating`) VALUES
         (NULL, '$student_id', '$test_id', '$rating')";
 
-        echo $insertTestResult;
-
         $db->query($insertTestResult);    
     } else {
         $updateTestResult = "UPDATE `exam` SET `exam_rating` = $rating";
