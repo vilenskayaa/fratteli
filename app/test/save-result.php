@@ -8,7 +8,7 @@ header("Content-Type: application/json;");
 $user_id = $_SESSION['user']['id'];
 
 try {
-    
+
     $json = file_get_contents('php://input');
     $req = json_decode($json, true);
 
@@ -33,7 +33,7 @@ try {
     $selectCountQuestionsOfTest = "SELECT COUNT(*) AS `questions_count` FROM `question` WHERE `test_id` = $test_id";
     $countQuestions = (int)$db->query($selectCountQuestionsOfTest)->fetch_assoc()["questions_count"];
 
-    $countOfCorrectAnswers = array_reduce($answersList, function($carry, $item) {
+    $countOfCorrectAnswers = array_reduce($answersList, function ($carry, $item) {
         if ($item["is_correct"]) {
             return $carry + 1;
         }
@@ -63,7 +63,6 @@ try {
     }
 
     $rating_id = $db->query($selectResultsByTestIdAndStudentId)->fetch_assoc()["exam_id"];
-
     echo json_encode(array(
         "success" => true,
         "count_questions" => $countQuestions,
@@ -71,7 +70,6 @@ try {
         "rating" => $rating,
         "exam_id" => $rating_id
     ), JSON_UNESCAPED_UNICODE);
-
 } catch (\Exception $e) {
     echo json_encode(array("error" => $e->getMessage(), "success" => false), JSON_UNESCAPED_UNICODE);
 }

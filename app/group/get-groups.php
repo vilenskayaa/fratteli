@@ -15,14 +15,13 @@ try {
     $res = array();
 
     $selectGroups = "SELECT * FROM `group` WHERE `teacher_id` = '$teacher_id';";
-    
+
     $groupsData = $db->query($selectGroups);
     while ($group = $groupsData->fetch_assoc()) {
         array_push($res, $group);
     }
 
     echo json_encode($res);
-
 } catch (Exception $e) {
     echo json_encode(array("error" => $e->getMessage(), "success" => false));
 }
