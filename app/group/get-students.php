@@ -7,16 +7,16 @@ header("Content-Type: application/json;");
 
 try {
 
-  $group_id = '';
-
   $json = file_get_contents('php://input');
   $req = json_decode($json, true);
 
+  $group_id = $_GET['id'];
+
   $res = array();
 
-  $selectGroups = "SELECT * FROM `group` WHERE `teacher_id` = '$teacher_id';";
+  $selectStudents = "SELECT * FROM `student` INNER JOIN user ON student.user_id=user.user_id WHERE `group_id` = '$group_id';";
 
-  $groupsData = $db->query($selectGroups);
+  $groupsData = $db->query($selectStudents);
   while ($group = $groupsData->fetch_assoc()) {
     array_push($res, $group);
   }
