@@ -8,7 +8,7 @@ header("Content-Type: application/json;");
 try {
 
     $lesson_id = $_GET["lesson_id"];
-    $user_id = 
+    $user_id = $_SESSION["user"]["id"];
 
     $selectLesson = "SELECT COUNT(*) as `count` FROM `lesson` WHERE `lesson_id` = '$lesson_id' AND `canceled_at` IS NOT NULL;";
     $countLessons = (int)$db->query($selectLesson)->fetch_assoc()["count"];
