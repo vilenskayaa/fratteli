@@ -8,8 +8,8 @@ $page_title = "Группы";
 <?php include "../layout/meta.php"; ?>
 
 <body class="container__aside">
-  
-<?php include "../layout/side-menu.php" ?>
+
+  <?php include "../layout/side-menu.php" ?>
   <main class="container">
     <div class="head">
       <div class="head__info">
