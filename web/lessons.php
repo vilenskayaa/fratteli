@@ -7,9 +7,19 @@ $page_title = "Группы";
 
 <?php include "../layout/meta.php"; ?>
 
+<style>
+  #lessonDate {
+    font-size: 24px;
+    padding: 12px 24px;
+    border-radius: 16px;
+    opacity: 0.5;
+    margin-bottom: 20px;
+  }
+</style>
+
 <body class="container__aside">
-  
-<?php include "../layout/side-menu.php" ?>
+
+  <?php include "../layout/side-menu.php" ?>
   <main class="container">
     <div class="head">
       <div class="head__info">
@@ -22,19 +32,21 @@ $page_title = "Группы";
         </div>
       </div>
     </div>
+
+    <div class="">
+      <input type="date" id="lessonDate">
+    </div>
     <div class="classgroup" id="classgroup">
 
     </div>
-    <div>
-        <input type="date" id="lessonDate">
-    </div>
+
   </main>
 
   <div class="overlay"></div>
   <div class="popup__overlay">
     <div class="popup">
       <div class="popup__title">
-        Создание группы
+        Создание урока
       </div>
       <div class="popup__subtitle">
         Введите нужные данные
@@ -54,7 +66,7 @@ $page_title = "Группы";
             <input class="form__input" id="lesson_link" type="text" placeholder="Ссылка на Google.Meet" required>
           </div>
         </div>
-        <button  id="createLessonBtn" class="form__btn">
+        <button id="createLessonBtn" class="form__btn">
           Далее
         </button>
       </form>

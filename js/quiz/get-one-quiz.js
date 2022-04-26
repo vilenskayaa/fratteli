@@ -74,7 +74,20 @@ const renderTest = async () => {
             })
         });
 
-        console.log({res: res.json()});
+        res = res.json() 
+
+        const result = res;
+        console.log(result)
+        const resultDiv = document.querySelector('#result')
+        resultDiv.innerHTML = ''
+        resultDiv.innerHTML = `
+        <h2>Правильных ответов:</h2>
+        <h3>${result.count_correct}/${result.count_questions}</h3>
+        <h2>Оценка:</h2>
+        <h3>${result.raiting}</h3>
+        <h2>Статус:</h2>
+        <h3>${result.succes}</h3>
+        `
     });
 
 

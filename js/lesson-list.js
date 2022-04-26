@@ -51,8 +51,8 @@ const fetchStudents = async (id) => {
   return group.json()
 }
 
-const fetchGroup = async (id) => {
-  const groupItem = await fetch(`/app/group/get-group-item.php?id=${id}`)
+const fetchLesson = async (id) => {
+  const groupItem = await fetch(`/app/lesson/get-lesson.php?lesson_id=${id}`)
   return groupItem.json()
 }
 
@@ -64,9 +64,9 @@ function getGet(name) {
 
 const body = document.getElementsByTagName("body")[0]
 
-const renderStudents = async () => {
+const renderStudents = async (id) => {
   
-  const groupData = await fetchStudents(getGet('id'))
+  const groupData = await fetchStudents(id)
   
   const container = document.querySelector('.table')
   container.innerHTML = ''
@@ -120,12 +120,14 @@ const renderStudents = async () => {
 }
 
 const renderInfo = async () => {
-  const group = await fetchGroup(getGet('id'))
-  $('.head__level').html(getLevel(group[0].group_level))
-  $('#headTitle').html(group[0].group_title)
+  const lesson = await fetchLesson(getGet('id'))
+  $('#headTitle').html(lesson.lesson_title)
+  $('[data-meet]').attr('href', lesson.lesson_link)
+
+  await renderStudents(lesson.group_id)
 }
 
-body.addEventListener("load", renderStudents(), false)
+// body.addEventListener("load", renderStudents(), false)
 body.addEventListener("load", renderInfo(), false)
 
 

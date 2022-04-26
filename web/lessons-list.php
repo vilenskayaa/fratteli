@@ -13,15 +13,19 @@ session_start();
       <div class="head__info">
         <div class="head__title">
           <span id="headTitle">Группа 1</span>
-          <div class="head__level">
-            Начинающие
-          </div>
         </div>
         <div class="head__subtitle head__subtitle-600">10/10</div>
       </div>
       <div class="head__nav">
         <div class="head__nav-default">
-          <div class="btn btn-square" data-popup>
+          <a href="" target="_blank" class="btn btn-square" data-meet="" style="background-color: #4D62ED;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9.17188 14.8287L14.8287 9.17188" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M7.75774 12.0001C8.14826 11.6096 8.14826 10.9764 7.75774 10.5859C7.36721 10.1953 6.73405 10.1953 6.34352 10.5859L7.75774 12.0001ZM13.4146 17.6569C13.8051 17.2664 13.8051 16.6332 13.4146 16.2427C13.0241 15.8522 12.3909 15.8522 12.0004 16.2427L13.4146 17.6569ZM6.34352 10.5859L4.92931 12.0001L6.34352 13.4143L7.75774 12.0001L6.34352 10.5859ZM12.0004 19.0711L13.4146 17.6569L12.0004 16.2427L10.5862 17.6569L12.0004 19.0711ZM4.92931 19.0711C6.88193 21.0238 10.0478 21.0238 12.0004 19.0711L10.5862 17.6569C9.41459 18.8285 7.5151 18.8285 6.34352 17.6569L4.92931 19.0711ZM4.92931 12.0001C2.97669 13.9527 2.97669 17.1185 4.92931 19.0711L6.34352 17.6569C5.17195 16.4854 5.17195 14.5859 6.34352 13.4143L4.92931 12.0001Z" fill="white" />
+              <path d="M10.5859 6.34303C10.1953 6.73356 10.1953 7.36672 10.5859 7.75725C10.9764 8.14777 11.6096 8.14777 12.0001 7.75725L10.5859 6.34303ZM16.2427 11.9999C15.8522 12.3904 15.8522 13.0236 16.2427 13.4141C16.6332 13.8046 17.2664 13.8046 17.6569 13.4141L16.2427 11.9999ZM12.0001 7.75725L13.4143 6.34304L12.0001 4.92882L10.5859 6.34303L12.0001 7.75725ZM17.6569 10.5857L16.2427 11.9999L17.6569 13.4141L19.0711 11.9999L17.6569 10.5857ZM17.6569 6.34304C18.8285 7.51461 18.8285 9.4141 17.6569 10.5857L19.0711 11.9999C21.0238 10.0473 21.0238 6.88144 19.0711 4.92882L17.6569 6.34304ZM13.4143 6.34304C14.5859 5.17146 16.4854 5.17146 17.6569 6.34304L19.0711 4.92882C17.1185 2.9762 13.9527 2.9762 12.0001 4.92882L13.4143 6.34304Z" fill="white" />
+            </svg>
+          </a>
+          <div class="btn btn-square">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M20.4852 12H3.51465" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
               <path d="M12 3.51469V20.4853" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -124,7 +128,7 @@ session_start();
 
 
   <script src="/js/jquery.js"></script>
-  <script src="/js/group-list.js"></script>
+  <script src="/js/lesson-list.js"></script>
 </body>
 
 </html>

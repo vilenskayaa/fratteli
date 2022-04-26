@@ -49,6 +49,11 @@ const renderLessons = (lessonsByDay) => {
       </div>
         `);
     });
+
+    $(".classgroup__item").click(function() {
+      const lessonId = $(this).attr('data-id')
+      window.location.href = `lessons-list.php?id=${lessonId}`;
+    });
 }
 
 $(document).ready(async function(){

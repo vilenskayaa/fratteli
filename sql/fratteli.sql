@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 26, 2022 at 03:39 AM
--- Server version: 8.0.24
--- PHP Version: 7.4.21
+-- Generation Time: Apr 26, 2022 at 08:19 AM
+-- Server version: 8.0.19
+-- PHP Version: 7.4.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -82,7 +82,8 @@ CREATE TABLE `exam` (
 --
 
 INSERT INTO `exam` (`exam_id`, `student_id`, `test_id`, `exam_rating`) VALUES
-(37, 9, 47, 100);
+(37, 9, 47, 0),
+(38, 9, 48, 0);
 
 -- --------------------------------------------------------
 
@@ -176,7 +177,8 @@ CREATE TABLE `student` (
 INSERT INTO `student` (`student_id`, `group_id`, `user_id`) VALUES
 (9, 5, 14),
 (10, 6, 15),
-(11, 3, 15);
+(11, 3, 15),
+(12, 5, 13);
 
 -- --------------------------------------------------------
 
@@ -341,7 +343,7 @@ ALTER TABLE `answer`
 -- AUTO_INCREMENT for table `exam`
 --
 ALTER TABLE `exam`
-  MODIFY `exam_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `exam_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `group`
@@ -365,7 +367,7 @@ ALTER TABLE `question`
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-  MODIFY `student_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `student_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `test`
