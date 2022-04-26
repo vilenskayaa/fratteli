@@ -22,8 +22,11 @@ $page_title = "Группы";
         </div>
       </div>
     </div>
-    <div class="classgroup">
+    <div class="classgroup" id="classgroup">
 
+    </div>
+    <div>
+        <input type="date" id="lessonDate">
     </div>
   </main>
 

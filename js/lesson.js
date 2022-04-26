@@ -12,6 +12,45 @@ const createLesson = async (data) => {
     return res.json();
 }
 
+const fetchLessonsByDay = async (lesson_date) => {
+    const res = await fetch(`${baseApi}/lesson/get-lesson.php?lesson_date=${lesson_date}`);
+
+    return res.json();
+}
+
+const formatDate = (date) => {
+    const year = date.getFullYear();
+    let month = date.getMonth() + 1;
+    const day = date.getDate();
+
+    if (month < 10) month = `0${month}`;
+
+    return `${year}-${month}-${day}`;
+}
+
+const renderLessons = (lessonsByDay) => {
+    const lessonsContainer = document.getElementById("classgroup");
+    lessonsContainer.innerHTML = "";
+
+    lessonsByDay.map((lesson) => {
+        lessonsContainer.innerHTML += (`
+        <div class="classgroup__item" data-id="${lesson.lesson_id}">
+        <div class="classgroup__info">
+          <div class="classgroup__title">
+            ${lesson.lesson_title}
+          </div>
+          <div class="classgroup__desc">
+            <span>${lesson.lesson_date}</span>
+          </div>
+        </div>
+        <div class="classgroup__nav">
+          <i class="ci-long_right"></i>
+        </div>
+      </div>
+        `);
+    });
+}
+
 $(document).ready(async function(){
     const groupsList = await fetchGroups();
     groupsList.forEach(g => {
@@ -40,6 +79,18 @@ $(document).ready(async function(){
             console.log("success",res);
         }
     });
+
+    const lessonDate = document.getElementById("lessonDate");
+    lessonDate.value = formatDate(new Date());
+
+    let lessonsByDay = await fetchLessonsByDay(lessonDate.value);
+
+    lessonDate.addEventListener("change", async () => {
+        lessonsByDay = await fetchLessonsByDay(lessonDate.value);
+        renderLessons(lessonsByDay);
+    });
+    
+    renderLessons(lessonsByDay);  
 
 
     $("[data-popup]").click(() => {
