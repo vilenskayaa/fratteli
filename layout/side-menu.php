@@ -1,9 +1,5 @@
 <aside class="nav">
-<<<<<<< HEAD
-  <div class="nav__top">
-    <div class="nav__logo">
-      <img src="/assets/img/logo.png" alt="">
-=======
+
     <div class="nav__top">
       <div class="nav__logo">
         <img src="/assets/img/logo.png" alt="">
@@ -14,7 +10,6 @@
         <a href="" class="nav__item">Словарь</a>
         <a href="../web/quiz-list.php" class="nav__item">Тесты</a>
       </nav>
->>>>>>> d111d94c2b432f6e3faec1f2ab7bb6c5102e011e
     </div>
     <nav class="nav__list">
       <a href="" class="nav__item">Мое расписание</a>
