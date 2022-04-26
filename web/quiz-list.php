@@ -57,9 +57,8 @@ margin: 20px 0;
   
 <?php include "../layout/side-menu.php" ?>
   <main class="">
-      <div id="testList" class="test_list">
-        
-      </div>
+      
+      <div id="testList" class="test_list"></div>
       
   </main>
 
