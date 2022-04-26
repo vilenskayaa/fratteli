@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 25, 2022 at 12:20 AM
+-- Generation Time: Apr 26, 2022 at 03:39 AM
 -- Server version: 8.0.24
 -- PHP Version: 7.4.21
 
@@ -82,7 +82,7 @@ CREATE TABLE `exam` (
 --
 
 INSERT INTO `exam` (`exam_id`, `student_id`, `test_id`, `exam_rating`) VALUES
-(22, 7, 47, 66.67);
+(37, 9, 47, 100);
 
 -- --------------------------------------------------------
 
@@ -102,7 +102,9 @@ CREATE TABLE `group` (
 --
 
 INSERT INTO `group` (`group_id`, `group_title`, `group_level`, `teacher_id`) VALUES
-(3, 'Группа 1', 'A2', 14);
+(3, 'Группа 1', 'A2', 14),
+(5, 'Группа 2', 'B1', 14),
+(6, 'Группа 1 - teacher2', 'B1', 16);
 
 -- --------------------------------------------------------
 
@@ -112,11 +114,23 @@ INSERT INTO `group` (`group_id`, `group_title`, `group_level`, `teacher_id`) VAL
 
 CREATE TABLE `lesson` (
   `lesson_id` int NOT NULL,
-  `class_id` int NOT NULL,
+  `group_id` int NOT NULL,
   `lesson_title` text NOT NULL,
   `lesson_date` date NOT NULL,
-  `lesson_link` text NOT NULL
+  `lesson_link` text NOT NULL,
+  `canceled_at` date DEFAULT NULL,
+  `canceled_by` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `lesson`
+--
+
+INSERT INTO `lesson` (`lesson_id`, `group_id`, `lesson_title`, `lesson_date`, `lesson_link`, `canceled_at`, `canceled_by`) VALUES
+(6, 3, 'Урок №1. Алфавит', '2022-04-25', 'https://meet.google.com/bhz-rroc-fft', NULL, 0),
+(7, 3, 'Урок №2. Приветствие', '2022-04-26', 'https://meet.google.com/bhz-rroc-fft', NULL, 0),
+(8, 6, 'Урок №1. teacher2 group_id 6', '2022-04-28', 'https://meet.google.com/bhz-rroc-fft', NULL, 0),
+(9, 5, 'кумукму', '2022-04-30', '131dsvsv', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -160,7 +174,9 @@ CREATE TABLE `student` (
 --
 
 INSERT INTO `student` (`student_id`, `group_id`, `user_id`) VALUES
-(7, 3, 13);
+(9, 5, 14),
+(10, 6, 15),
+(11, 3, 15);
 
 -- --------------------------------------------------------
 
@@ -206,7 +222,10 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`user_id`, `user_email`, `user_name`, `user_password`, `user_role`, `user_level`) VALUES
 (13, 'alla@gmail.com', 'Алла Виленская', '17bbaa41b9eea6fb22ea26852d4994d3', 'student', 'A1'),
-(14, 'teacher@mail.ru', 'Teacher Alla', '17bbaa41b9eea6fb22ea26852d4994d3', 'teacher', 'C2');
+(14, 'teacher@mail.ru', 'Teacher Alla', '17bbaa41b9eea6fb22ea26852d4994d3', 'teacher', 'C2'),
+(15, 'mail1@mail.ru', 'student1', '17bbaa41b9eea6fb22ea26852d4994d3', 'student', 'B1'),
+(16, 'teacher2@mail.ru', 'teacher2', '17bbaa41b9eea6fb22ea26852d4994d3', 'teacher', 'C1'),
+(17, 'aaa@mail.ru', 'aaa456', '200820e3227815ed1756a6b531e7e0d2', 'teacher', 'C1');
 
 -- --------------------------------------------------------
 
@@ -316,25 +335,25 @@ ALTER TABLE `word`
 -- AUTO_INCREMENT for table `answer`
 --
 ALTER TABLE `answer`
-  MODIFY `answer_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
+  MODIFY `answer_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
 
 --
 -- AUTO_INCREMENT for table `exam`
 --
 ALTER TABLE `exam`
-  MODIFY `exam_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `exam_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `group`
 --
 ALTER TABLE `group`
-  MODIFY `group_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `group_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `lesson`
 --
 ALTER TABLE `lesson`
-  MODIFY `lesson_id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `lesson_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `question`
@@ -346,7 +365,7 @@ ALTER TABLE `question`
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-  MODIFY `student_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `student_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `test`
@@ -358,7 +377,7 @@ ALTER TABLE `test`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `user_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `vocabulary`

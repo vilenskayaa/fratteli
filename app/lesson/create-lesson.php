@@ -27,12 +27,15 @@ try {
         (`lesson_id`, `group_id`, `lesson_title`, `lesson_date`, `lesson_link`) VALUES
         (NULL, '$group_id', '$lesson_title', '$lesson_date', '$lesson_link');";
 
+    $created = $db->query($insertLesson);
 
-    $db->query($insertLesson);
+    if($created) {
+        $res = array("lesson_id" => mysqli_insert_id($db), "success" => true);
 
-    $res = array("lesson_id" => mysqli_insert_id($db));
-
-    echo json_encode($res);
+        echo json_encode($res);
+    } else {
+        throw new Exception("Ой-ой, какая-то неизвестная ошибка, сообщите нам об этом!");
+    }
 
 } catch (Exception $e) {
     echo json_encode(array(

@@ -137,7 +137,7 @@ const addStudent = async () => {
 
   console.log(json)
 
-  const res = await fetch('/app/group/add-student.php', {
+  const res = await fetch(`${baseApi}/group/add-student.php`, {
     method: 'POST',
     body: json
   })

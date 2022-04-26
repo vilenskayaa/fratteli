@@ -12,7 +12,7 @@ $(document).ready(function(){
 });
 
 const fetchGroup = async () => {
-  const group = await fetch(`/app/group/get-groups.php`)
+  const group = await fetch(`${baseApi}/group/get-groups.php`)
   return group.json()
 }
 

@@ -4,8 +4,8 @@
         <img src="/assets/img/logo.png" alt="">
       </div>
       <nav class="nav__list">
-        <a href="" class="nav__item">Мое расписание</a>
-        <a href="../web/group-list.php" class="nav__item">Мои группы</a>
+        <a href="../web/lessons.php" class="nav__item">Мое расписание</a>
+        <a href="../web/group.php" class="nav__item">Мои группы</a>
         <a href="" class="nav__item">Словарь</a>
         <a href="../web/quiz-list.php" class="nav__item">Тесты</a>
       </nav>
