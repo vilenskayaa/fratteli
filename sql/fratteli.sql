@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 16, 2022 at 07:11 PM
--- Server version: 8.0.19
--- PHP Version: 7.4.5
+-- Generation Time: May 16, 2022 at 10:59 PM
+-- Server version: 8.0.24
+-- PHP Version: 7.4.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -280,8 +280,17 @@ CREATE TABLE `word` (
   `word_id` int NOT NULL,
   `word_italian` text NOT NULL,
   `word_rus` text NOT NULL,
-  `word_picture` text NOT NULL
+  `word_picture` text NOT NULL,
+  `created_by` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `word`
+--
+
+INSERT INTO `word` (`word_id`, `word_italian`, `word_rus`, `word_picture`, `created_by`) VALUES
+(8, 'gatto', 'кот', '/app/uploads/16527310421532440298_3.jpg', 16),
+(9, 'qweqwr', 'wer', '/app/uploads/16527310916010185746.jpg', 16);
 
 --
 -- Indexes for dumped tables
@@ -431,7 +440,7 @@ ALTER TABLE `vocabulary`
 -- AUTO_INCREMENT for table `word`
 --
 ALTER TABLE `word`
-  MODIFY `word_id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `word_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables
