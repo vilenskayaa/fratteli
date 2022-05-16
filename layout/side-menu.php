@@ -12,6 +12,7 @@
     </nav>
   </div>
   <div class="nav__bottom">
+    <a href="../web/reviews.php" class="nav__bottom-item">Отзывы</a>
     <a href="" class="nav__bottom-item">Настройки</a>
     <a href="/app/account/logout.php" class="nav__bottom-item">Выход</a>
   </div>
