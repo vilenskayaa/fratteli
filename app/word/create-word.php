@@ -3,7 +3,7 @@
 session_start();
 require_once '../db.php';
 
-header("Content-Type: application/json;");
+// header("Content-Type: application/json;");
 
 try {
 
@@ -16,7 +16,12 @@ try {
 
     $word_italian = $_POST["word_italian"];
     $word_rus = $_POST["word_rus"];
-    $word_picture = $_POST["word_picture"];
+    
+    $path = 'uploads/' . time() . $_FILES['word_picture']['name'];
+    if (!move_uploaded_file($_FILES['word_picture']['tmp_name'], '../' . $path)) {
+
+    }
+    $word_picture = '/app/' . $path;
 
     $insetWordRow = "INSERT INTO `word`
         (`word_id`, `word_italian`, `word_rus`, `word_picture`, `created_by`) VALUES

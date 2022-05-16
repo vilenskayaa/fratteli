@@ -14,6 +14,8 @@ try {
 
     $word_id = $_GET["word_id"];
 
+    
+
     $selectWordById = "SELECT COUNT(*) AS `count` FROM `word` WHERE `word_id` = '$word_id'";
     $wordExist = (int)$db->query($selectWordById)->fetch_assoc()["count"] == 1;
 

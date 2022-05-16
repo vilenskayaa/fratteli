@@ -1,20 +1,13 @@
 const btnCreate = document.getElementById('createWord');
 
+const form = document.querySelector("#create-word-form");
 
-const createNewWord = async (data) => {
-    return fetch(`${baseApi}/word/create-word.php`, {
-        method: 'POST',
-        body: data,
-      })
-        .then((response) => {
-          console.log(response);
-        })
-        .then((data) => {
-          console.log(data);
-        })
-        .catch((error) => {
-          console.error(error);
-        });
+const createNewWord = () => {
+
+  // alert(JSON.stringify(formData));
+  $(document).ready(function() {
+    
+  });
 }
 
 const fetchWords = async () => {
@@ -34,15 +27,20 @@ const fetchAddedWords = async () => {
 
 
 
-btnCreate.onclick = (e) => {
-    const word_rus = document.getElementById('word_rus').value;
-    const word_italian = document.getElementById('word_italian').value;
-    const word_picture = document.getElementById('word_picture').value;
-
-    const formData = new FormData();
-    formData.append("word_rus", word_rus);
-    formData.append("word_italian", word_italian);
-    formData.append("word_picture", word_picture);
-
-    createNewWord({word_rus, word_italian, word_picture});
-};
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const formData = new FormData(form);
+  $.ajax({
+    type: "post",
+    url: "/app/word/create-word.php",
+    data: formData,
+    contentType: false,
+    cache: false,
+    processData: false,
+    success: function(data) {
+        if (data) {
+            console.log(data);
+        }
+    }
+})
+})
