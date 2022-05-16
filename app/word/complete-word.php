@@ -23,13 +23,10 @@ try {
 
     $wordData = $db->query($selectWordById);
 
-    $completeWordToUserQuery = "INSERT INTO `user_word`
-        (`id`, `word_id`, `user_id`, `state`) VALUES
-        (NULL, '$word_id', '$user_id', '$complete_state')
-    ";
+    $completeWordToUserQuery = "UPDATE `user_word` SET `user_word`.`state` = '$complete_state' WHERE `user_word`.`user_id` = '$user_id' AND `user_word`.`word_id` = '$word_id'";
 
     $succes = $db->query($completeWordToUserQuery);
-    $res = array("id" => mysqli_insert_id($db), "word_id" => $word_id, "success" => $succes);
+    $res = array("affected" => mysqli_affected_rows($db), "word_id" => $word_id, "success" => $succes);
 
     echo json_encode($res);
 } catch (Exception $e) {
