@@ -60,6 +60,9 @@ $page_title = "Группы";
             <input class="form__input" id="lesson_date" type="date" placeholder="Дата" required>
           </div>
           <div class="form__item">
+            <input class="form__input" id="lesson_time" type="time" placeholder="Время занятия" required>
+          </div>
+          <div class="form__item">
             <select class="form__input" placeholder="Группа" required id="selectGroups"></select>
           </div>
           <div class="form__item">

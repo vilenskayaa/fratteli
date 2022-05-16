@@ -1,60 +1,61 @@
-$(document).ready(function(){
-  $('data-remove').hide(0)
+$(document).ready(function () {
+  $('data-remove').hide(0);
 
-  $("[data-popup]").click(() => {
-    $('.overlay').fadeIn(300)
-    $('#popup-1').fadeIn(300)
-  })
+  $('[data-popup]').click(() => {
+    $('.overlay').fadeIn(300);
+    $('#popup-1').fadeIn(300);
+  });
 
-  $(".overlay").click(() => {
-    $('.overlay').fadeOut(300)
-    $('#popup-1').fadeOut(300)
-  })
+  $('.overlay').click(() => {
+    $('.overlay').fadeOut(300);
+    $('#popup-1').fadeOut(300);
+  });
 });
 
 const toggleEditRow = (element) => {
-  const id = element.attr("data-edit")
-  element.toggleClass('active')
-  $(`[data-remove=${id}]`).toggleClass('show')
+  const id = element.attr('data-edit');
+  element.toggleClass('active');
+  $(`[data-remove=${id}]`).toggleClass('show');
   if ($(`[data-mark=${id}]`).attr('disabled')) {
-    $(`[data-mark=${id}]`).removeAttr('disabled')
+    $(`[data-mark=${id}]`).removeAttr('disabled');
   } else {
-    $(`[data-mark=${id}]`).attr('disabled', '')
-  } 
-}
+    $(`[data-mark=${id}]`).attr('disabled', '');
+  }
+};
 
 const removeEditRow = (element) => {
-  const id = element.attr("data-edit")
-  element.removeClass('active')
-  $(`[data-remove=${id}]`).removeClass('show')
-  $(`[data-mark=${id}]`).attr('disabled', '')
-}
+  const id = element.attr('data-edit');
+  element.removeClass('active');
+  $(`[data-remove=${id}]`).removeClass('show');
+  $(`[data-mark=${id}]`).attr('disabled', '');
+};
 
 const editShow = () => {
-  $('[data-editShow]').show(300)
-  $('.head__nav-default').hide(0)
-  $('.head__nav-sub').toggleClass('show')
-}
+  $('[data-editShow]').show(300);
+  $('.head__nav-default').hide(0);
+  $('.head__nav-sub').toggleClass('show');
+};
 
 const editHide = () => {
-  $('.head__nav-default').show(300)
-  $('[data-editShow]').hide(0)
-  $('.head__nav-sub').toggleClass('show')
-  $("div[data-edit]").each(function () {
-    removeEditRow($(this))
-  })
-}
-
+  $('.head__nav-default').show(300);
+  $('[data-editShow]').hide(0);
+  $('.head__nav-sub').toggleClass('show');
+  $('div[data-edit]').each(function () {
+    removeEditRow($(this));
+  });
+};
 
 const fetchStudents = async (id) => {
-  const group = await fetch(`/app/group/get-students.php?id=${id}`)
-  return group.json()
-}
+  const group = await fetch(`${baseApi}/group/get-students.php?id=${id}`);
+  return group.json();
+};
 
 const fetchLesson = async (id) => {
-  const groupItem = await fetch(`/app/lesson/get-lesson.php?lesson_id=${id}`)
-  return groupItem.json()
-}
+  const groupItem = await fetch(
+    `${baseApi}/lesson/get-lesson.php?lesson_id=${id}`,
+  );
+  return groupItem.json();
+};
 
 function getGet(name) {
   var s = window.location.search;
@@ -62,15 +63,16 @@ function getGet(name) {
   return s ? s[1] : false;
 }
 
-const body = document.getElementsByTagName("body")[0]
+const body = document.getElementsByTagName('body')[0];
 
 const renderStudents = async (id) => {
-  
-  const groupData = await fetchStudents(id)
-  
-  const container = document.querySelector('.table')
-  container.innerHTML = ''
-  groupData.forEach(student => container.innerHTML += (`
+  const groupData = await fetchStudents(id);
+
+  const container = document.querySelector('.table');
+  container.innerHTML = '';
+  groupData.forEach(
+    (student) =>
+      (container.innerHTML += `
   <div class="table__row">
   <div class="table__id">
     ${student.student_id}
@@ -103,78 +105,76 @@ const renderStudents = async (id) => {
     </div>
   </div>
 </div>
-  `));
+  `),
+  );
 
-
-  $("#edit").click(() => {
-    editShow()
-  })
-
-  $("#editHide").click(() => {
-    editHide() 
-  })
-
-  $("div[data-edit]").click(function() {
-    toggleEditRow($(this))
+  $('#edit').click(() => {
+    editShow();
   });
-}
+
+  $('#editHide').click(() => {
+    editHide();
+  });
+
+  $('div[data-edit]').click(function () {
+    toggleEditRow($(this));
+  });
+};
 
 const renderInfo = async () => {
-  const lesson = await fetchLesson(getGet('id'))
-  $('#headTitle').html(lesson.lesson_title)
-  $('[data-meet]').attr('href', lesson.lesson_link)
-
-  await renderStudents(lesson.group_id)
-}
+  const lesson = await fetchLesson(getGet('id'));
+  $('#headTitle').html(lesson.lesson_title);
+  $('[data-meet]').attr('href', lesson.lesson_link);
+  console.log(lesson);
+  await renderStudents(lesson.group_id);
+};
 
 // body.addEventListener("load", renderStudents(), false)
-body.addEventListener("load", renderInfo(), false)
+body.addEventListener('load', renderInfo(), false);
 
-
-$('#addStudent').submit(function(event) {
-  event.preventDefault()
+$('#addStudent').submit(function (event) {
+  event.preventDefault();
   // console.log('qweqweqwe')
-  addStudent() 
-})
+  addStudent();
+});
 
 const addStudent = async () => {
-  const form = document.querySelector('#addStudent')
-  const formData = new FormData(form)
+  const form = document.querySelector('#addStudent');
+  const formData = new FormData(form);
 
-  let json ={ ...JSON.parse(parsFormData(formData)), group_id: getGet('id')}
+  let json = { ...JSON.parse(parsFormData(formData)), group_id: getGet('id') };
   json = JSON.stringify(json);
 
-  console.log(json)
+  console.log(json);
 
   const res = await fetch(`${baseApi}/group/add-student.php`, {
     method: 'POST',
-    body: json
+    body: json,
   })
-  .then(response => {
-    renderStudents()
-    $('.overlay').fadeOut(300)
-    $('.popup__overlay').fadeOut(300)
-    return response.json()
-  })
-  .catch(error => {
-    console.error(error)
-  })
+    .then((response) => {
+      renderStudents();
+      $('.overlay').fadeOut(300);
+      $('.popup__overlay').fadeOut(300);
+      return response.json();
+    })
+    .catch((error) => {
+      console.error(error);
+    });
 
   console.log(res);
-}
-
+};
 
 const parsFormData = (formData) => {
   const object = {};
-  formData.forEach(function(value, key){
+  formData.forEach(function (value, key) {
     object[key] = value;
   });
   const json = JSON.stringify(object);
   return json;
-}
+};
 
 const getLevel = ($level) => {
-  if ($level[0] === 'C') return 'Профессионалы'
-  if ($level[0] === 'B') return 'Средний уровень'
-  if ($level[0] === 'A') return 'Начинающие'
-}
+  if ($level[0] === 'C') return 'Профессионалы';
+  if ($level[0] === 'B') return 'Средний уровень';
+  if ($level[0] === 'A') return 'Начинающие';
+};

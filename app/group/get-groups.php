@@ -21,6 +21,7 @@ try {
         array_push($res, $group);
     }
 
+
     echo json_encode($res);
 } catch (Exception $e) {
     echo json_encode(array("error" => $e->getMessage(), "success" => false));
