@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 23, 2022 at 11:10 PM
+-- Generation Time: May 24, 2022 at 12:10 AM
 -- Server version: 8.0.24
 -- PHP Version: 7.4.21
 
@@ -39,30 +39,26 @@ CREATE TABLE `answer` (
 --
 
 INSERT INTO `answer` (`answer_id`, `question_id`, `answer_title`, `is_correct`) VALUES
-(66, 44, 'Да', 1),
-(67, 44, 'Нет', 0),
-(68, 44, 'Все варианты верны', 0),
-(69, 44, 'Все варианты НЕверны', 0),
-(70, 45, 'Да', 1),
-(71, 45, 'Нет', 0),
-(72, 45, 'Все варианты верны', 0),
-(73, 45, 'Все варианты НЕверны', 0),
-(74, 46, 'Да', 1),
-(75, 46, 'Нет', 0),
-(76, 46, 'Все варианты верны', 0),
-(77, 46, 'Все варианты НЕверны', 0),
-(78, 47, 'Да', 1),
-(79, 47, 'Нет', 0),
-(80, 47, 'Все варианты верны', 0),
-(81, 47, 'Все варианты НЕверны', 0),
-(82, 48, 'Да', 1),
-(83, 48, 'Нет', 0),
-(84, 48, 'Все варианты верны', 0),
-(85, 48, 'Все варианты НЕверны', 0),
-(86, 49, 'Да', 1),
-(87, 49, 'Нет', 0),
-(88, 49, 'Все варианты верны', 0),
-(89, 49, 'Все варианты НЕверны', 0),
+(66, 44, 'Buongiorno, mi dica. Dove vuole andare?', 1),
+(67, 44, 'A che ora partite? Quanti siete?', 0),
+(68, 44, 'Come vuole pagare? A che ora deve arrivare?', 0),
+(69, 44, 'Buongiorno, mi dica, che cosa vuole? Va bene questo qui? Da bere?...', 0),
+(70, 45, 'ragazzo', 1),
+(71, 45, 'piace l’Italia', 0),
+(72, 45, 'vediamo', 0),
+(73, 45, 'possiamo sentire', 0),
+(74, 46, 'Ciao! Allora domani a che ora ci vediamo?', 1),
+(75, 46, 'Va bene, puoi dirmi come faccio ad arrivare da te?', 0),
+(76, 46, 'Che autobus devo prendere?', 0),
+(77, 46, 'Poi dove vado? Qual è casa tua?', 0),
+(78, 47, 'le montagne', 1),
+(79, 47, 'la montagne', 0),
+(80, 47, 'montagne', 0),
+(81, 47, 'pacchetto', 0),
+(82, 48, ' si bloccava letteralmente', 1),
+(83, 48, 'si bloccò letteralmente', 0),
+(84, 48, 'si blocca letteralmente', 0),
+(85, 48, 'si bloccava letteralmenta', 0),
 (256, 93, 'gatto', 1);
 
 -- --------------------------------------------------------
@@ -83,8 +79,7 @@ CREATE TABLE `exam` (
 --
 
 INSERT INTO `exam` (`exam_id`, `student_id`, `test_id`, `exam_rating`) VALUES
-(37, 9, 47, 100),
-(38, 9, 48, 100);
+(37, 9, 47, 50);
 
 -- --------------------------------------------------------
 
@@ -158,12 +153,11 @@ CREATE TABLE `question` (
 --
 
 INSERT INTO `question` (`question_id`, `test_id`, `question_title`, `question_desc`, `type`) VALUES
-(44, 47, 'Вы Алла Виленская?', 'Выберите вариант ответа', 0),
-(45, 47, 'Вы Алла Виленская??', 'Выберите вариант ответа', 0),
-(46, 47, 'Вы Алла Виленская???', 'Выберите вариант ответа', 0),
-(47, 48, 'Вы Алла Виленская?', 'Выберите вариант ответа', 0),
-(48, 48, 'Вы Алла Виленская??', 'Выберите вариант ответа', 0),
-(49, 48, 'Вы Алла Виленская???', 'Выберите вариант ответа', 0),
+(44, 47, 'Siete in Italia, in una stazione. Dovete andare in treno in un’altra città. Chiedete informazioni e comprate il biglietto. Poi comprate qualcosa da mangiare e da bere per il viaggio.', 'Выберите вариант ответа', 0),
+(45, 47, 'Siete in Italia, incontrate un ragazzo o una ragazza italiano/a simpatico/a. Parlate di voi, delle cose che vi piacciono dell’Italia e della città. Date e chiedete il numero di telefono.', 'Выберите вариант ответа', 0),
+(46, 47, 'Un amico italiano deve venire a casa tua. Gli dai le informazioni: gli dici come arrivare e gli descrivi com’è fatta casa tua da fuori.', 'Выберите вариант ответа', 0),
+(47, 47, 'Siete in Italia, incontrate un ________ o una ragazza italiano/a simpatico/a. Parlate di voi, delle cose che vi piacciono dell’Italia e della città. Date e chiedete il numero di telefono.', 'Выберите вариант ответа', 0),
+(48, 47, 'Un amico italiano deve venire a casa tua. Gli dai le informazioni: gli dici come arrivare e gli descrivi com’è fatta casa tua da fuori.', 'Выберите вариант ответа', 0),
 (93, 47, 'Переведите на итальянский: КОТ', 'Введите ответ с клавиатуры', 1);
 
 -- --------------------------------------------------------
@@ -230,8 +224,7 @@ CREATE TABLE `test` (
 --
 
 INSERT INTO `test` (`test_id`, `test_title`, `test_level`, `test_time`, `test_complexity`, `created_by`) VALUES
-(47, 'Тест Аллы Виленской', 'A2', '30', '3/5', 14),
-(48, 'Тест Аллы Виленской', 'A2', '30', '', 14);
+(47, 'Verifica la conoscenza di qualsiasi verbo', 'A2', '30', '3/5', 14);
 
 -- --------------------------------------------------------
 

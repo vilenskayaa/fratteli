@@ -45,9 +45,20 @@
       border-radius: 10px;
       padding: 5px;
     }
-    .testContainer{
-      width: 300px;
+    #testContainer{
+      width: 500px;
     }
 
+    input[type="text"] {
+      width: 200px;
+      border: 2px solid #cccccc;
+      outline: none;
+      border-radius: 5px;
+      padding: 3px;
+    }
+
+    input[type="text"]:hover {
+      border: 2px solid #454545;
+    }
   </style>
 </head>
