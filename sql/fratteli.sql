@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
--- Хост: 127.0.0.1:3306
--- Время создания: Май 23 2022 г., 09:05
--- Версия сервера: 8.0.15
--- Версия PHP: 7.3.2
+-- Host: 127.0.0.1:3306
+-- Generation Time: May 23, 2022 at 11:10 PM
+-- Server version: 8.0.24
+-- PHP Version: 7.4.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,24 +18,24 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `fratelli`
+-- Database: `fratteli`
 --
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `answer`
+-- Table structure for table `answer`
 --
 
 CREATE TABLE `answer` (
-  `answer_id` int(11) NOT NULL,
-  `question_id` int(11) NOT NULL,
+  `answer_id` int NOT NULL,
+  `question_id` int NOT NULL,
   `answer_title` text NOT NULL,
   `is_correct` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Дамп данных таблицы `answer`
+-- Dumping data for table `answer`
 --
 
 INSERT INTO `answer` (`answer_id`, `question_id`, `answer_title`, `is_correct`) VALUES
@@ -63,44 +62,45 @@ INSERT INTO `answer` (`answer_id`, `question_id`, `answer_title`, `is_correct`) 
 (86, 49, 'Да', 1),
 (87, 49, 'Нет', 0),
 (88, 49, 'Все варианты верны', 0),
-(89, 49, 'Все варианты НЕверны', 0);
+(89, 49, 'Все варианты НЕверны', 0),
+(256, 93, 'gatto', 1);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `exam`
+-- Table structure for table `exam`
 --
 
 CREATE TABLE `exam` (
-  `exam_id` int(11) NOT NULL,
-  `student_id` int(11) NOT NULL,
-  `test_id` int(11) NOT NULL,
+  `exam_id` int NOT NULL,
+  `student_id` int NOT NULL,
+  `test_id` int NOT NULL,
   `exam_rating` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Дамп данных таблицы `exam`
+-- Dumping data for table `exam`
 --
 
 INSERT INTO `exam` (`exam_id`, `student_id`, `test_id`, `exam_rating`) VALUES
-(37, 9, 47, 0),
-(38, 9, 48, 0);
+(37, 9, 47, 100),
+(38, 9, 48, 100);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `group`
+-- Table structure for table `group`
 --
 
 CREATE TABLE `group` (
-  `group_id` int(11) NOT NULL,
+  `group_id` int NOT NULL,
   `group_title` varchar(255) NOT NULL,
   `group_level` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `teacher_id` int(11) NOT NULL
+  `teacher_id` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Дамп данных таблицы `group`
+-- Dumping data for table `group`
 --
 
 INSERT INTO `group` (`group_id`, `group_title`, `group_level`, `teacher_id`) VALUES
@@ -113,22 +113,22 @@ INSERT INTO `group` (`group_id`, `group_title`, `group_level`, `teacher_id`) VAL
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `lesson`
+-- Table structure for table `lesson`
 --
 
 CREATE TABLE `lesson` (
-  `lesson_id` int(11) NOT NULL,
-  `group_id` int(11) NOT NULL,
+  `lesson_id` int NOT NULL,
+  `group_id` int NOT NULL,
   `lesson_title` text NOT NULL,
   `lesson_date` date NOT NULL,
   `lesson_time` varchar(100) DEFAULT NULL,
   `lesson_link` text NOT NULL,
   `canceled_at` date DEFAULT NULL,
-  `canceled_by` int(11) DEFAULT NULL
+  `canceled_by` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Дамп данных таблицы `lesson`
+-- Dumping data for table `lesson`
 --
 
 INSERT INTO `lesson` (`lesson_id`, `group_id`, `lesson_title`, `lesson_date`, `lesson_time`, `lesson_link`, `canceled_at`, `canceled_by`) VALUES
@@ -142,65 +142,45 @@ INSERT INTO `lesson` (`lesson_id`, `group_id`, `lesson_title`, `lesson_date`, `l
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `question`
+-- Table structure for table `question`
 --
 
 CREATE TABLE `question` (
-  `question_id` int(11) NOT NULL,
-  `test_id` int(11) NOT NULL,
-  `type_id` int(11) NOT NULL,
+  `question_id` int NOT NULL,
+  `test_id` int NOT NULL,
   `question_title` text NOT NULL,
-  `question_desc` text NOT NULL
+  `question_desc` text NOT NULL,
+  `type` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Дамп данных таблицы `question`
+-- Dumping data for table `question`
 --
 
-INSERT INTO `question` (`question_id`, `test_id`, `type_id`, `question_title`, `question_desc`) VALUES
-(44, 47, 0, 'Вы Алла Виленская?', 'Выберите вариант ответа'),
-(45, 47, 0, 'Вы Алла Виленская??', 'Выберите вариант ответа'),
-(46, 47, 0, 'Вы Алла Виленская???', 'Выберите вариант ответа'),
-(47, 48, 0, 'Вы Алла Виленская?', 'Выберите вариант ответа'),
-(48, 48, 0, 'Вы Алла Виленская??', 'Выберите вариант ответа'),
-(49, 48, 0, 'Вы Алла Виленская???', 'Выберите вариант ответа');
+INSERT INTO `question` (`question_id`, `test_id`, `question_title`, `question_desc`, `type`) VALUES
+(44, 47, 'Вы Алла Виленская?', 'Выберите вариант ответа', 0),
+(45, 47, 'Вы Алла Виленская??', 'Выберите вариант ответа', 0),
+(46, 47, 'Вы Алла Виленская???', 'Выберите вариант ответа', 0),
+(47, 48, 'Вы Алла Виленская?', 'Выберите вариант ответа', 0),
+(48, 48, 'Вы Алла Виленская??', 'Выберите вариант ответа', 0),
+(49, 48, 'Вы Алла Виленская???', 'Выберите вариант ответа', 0),
+(93, 47, 'Переведите на итальянский: КОТ', 'Введите ответ с клавиатуры', 1);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `question_type`
---
-
-CREATE TABLE `question_type` (
-  `type_id` int(11) NOT NULL,
-  `name` text NOT NULL,
-  `has_multiple_answers` bit(1) NOT NULL DEFAULT b'0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Дамп данных таблицы `question_type`
---
-
-INSERT INTO `question_type` (`type_id`, `name`, `has_multiple_answers`) VALUES
-(1, 'Выбор из одного варианта', b'0'),
-(2, 'Открытый вопрос', b'0'),
-(3, 'Множественный выбор', b'1');
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `review`
+-- Table structure for table `review`
 --
 
 CREATE TABLE `review` (
-  `review_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
+  `review_id` int NOT NULL,
+  `user_id` int NOT NULL,
   `review_text` text NOT NULL,
   `review_date` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Дамп данных таблицы `review`
+-- Dumping data for table `review`
 --
 
 INSERT INTO `review` (`review_id`, `user_id`, `review_text`, `review_date`) VALUES
@@ -209,17 +189,17 @@ INSERT INTO `review` (`review_id`, `user_id`, `review_text`, `review_date`) VALU
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `student`
+-- Table structure for table `student`
 --
 
 CREATE TABLE `student` (
-  `student_id` int(11) NOT NULL,
-  `group_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL
+  `student_id` int NOT NULL,
+  `group_id` int NOT NULL,
+  `user_id` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Дамп данных таблицы `student`
+-- Dumping data for table `student`
 --
 
 INSERT INTO `student` (`student_id`, `group_id`, `user_id`) VALUES
@@ -233,20 +213,20 @@ INSERT INTO `student` (`student_id`, `group_id`, `user_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `test`
+-- Table structure for table `test`
 --
 
 CREATE TABLE `test` (
-  `test_id` int(11) NOT NULL,
+  `test_id` int NOT NULL,
   `test_title` text NOT NULL,
   `test_level` varchar(500) NOT NULL,
   `test_time` text NOT NULL,
   `test_complexity` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `created_by` int(11) NOT NULL
+  `created_by` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Дамп данных таблицы `test`
+-- Dumping data for table `test`
 --
 
 INSERT INTO `test` (`test_id`, `test_title`, `test_level`, `test_time`, `test_complexity`, `created_by`) VALUES
@@ -256,11 +236,11 @@ INSERT INTO `test` (`test_id`, `test_title`, `test_level`, `test_time`, `test_co
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
-  `user_id` int(11) NOT NULL,
+  `user_id` int NOT NULL,
   `user_email` varchar(1000) NOT NULL,
   `user_name` varchar(1000) NOT NULL,
   `user_password` varchar(1000) NOT NULL,
@@ -269,7 +249,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Дамп данных таблицы `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`user_id`, `user_email`, `user_name`, `user_password`, `user_role`, `user_level`) VALUES
@@ -278,56 +258,58 @@ INSERT INTO `user` (`user_id`, `user_email`, `user_name`, `user_password`, `user
 (15, 'mail1@mail.ru', 'student1', '17bbaa41b9eea6fb22ea26852d4994d3', 'student', 'B1'),
 (16, 'teacher2@mail.ru', 'teacher2', '17bbaa41b9eea6fb22ea26852d4994d3', 'teacher', 'C1'),
 (17, 'aaa@mail.ru', 'aaa456', '200820e3227815ed1756a6b531e7e0d2', 'teacher', 'C1'),
-(18, 'admin@admin.com', 'admin', '200820e3227815ed1756a6b531e7e0d2', 'teacher', 'B2');
+(18, 'admin@admin.com', 'admin', '200820e3227815ed1756a6b531e7e0d2', 'teacher', 'B2'),
+(19, '09092019hqdev@mailforspam.com', 'dedwd', '17bbaa41b9eea6fb22ea26852d4994d3', 'teacher', 'C2');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `vocabulary`
+-- Table structure for table `vocabulary`
 --
 
 CREATE TABLE `vocabulary` (
-  `vocabulary_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `word_id` int(11) NOT NULL,
+  `vocabulary_id` int NOT NULL,
+  `user_id` int NOT NULL,
+  `word_id` int NOT NULL,
   `vocabulary_status` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `word`
+-- Table structure for table `word`
 --
 
 CREATE TABLE `word` (
-  `word_id` int(11) NOT NULL,
+  `word_id` int NOT NULL,
   `word_italian` text NOT NULL,
   `word_rus` text NOT NULL,
   `word_picture` text NOT NULL,
-  `created_by` int(11) NOT NULL
+  `created_by` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Дамп данных таблицы `word`
+-- Dumping data for table `word`
 --
 
 INSERT INTO `word` (`word_id`, `word_italian`, `word_rus`, `word_picture`, `created_by`) VALUES
 (8, 'gatto', 'кот', '/app/uploads/16527310421532440298_3.jpg', 16),
-(9, 'qweqwr', 'wer', '/app/uploads/16527310916010185746.jpg', 16);
+(9, 'qweqwr', 'wer', '/app/uploads/16527310916010185746.jpg', 16),
+(10, 'gatto', 'кот', '/app/uploads/1652977852Jp0mAUWkKaA.jpg', 14);
 
 --
--- Индексы сохранённых таблиц
+-- Indexes for dumped tables
 --
 
 --
--- Индексы таблицы `answer`
+-- Indexes for table `answer`
 --
 ALTER TABLE `answer`
   ADD PRIMARY KEY (`answer_id`),
   ADD KEY `question_id` (`question_id`);
 
 --
--- Индексы таблицы `exam`
+-- Indexes for table `exam`
 --
 ALTER TABLE `exam`
   ADD PRIMARY KEY (`exam_id`),
@@ -335,39 +317,33 @@ ALTER TABLE `exam`
   ADD KEY `test_id` (`test_id`);
 
 --
--- Индексы таблицы `group`
+-- Indexes for table `group`
 --
 ALTER TABLE `group`
   ADD PRIMARY KEY (`group_id`),
   ADD KEY `user_id` (`teacher_id`);
 
 --
--- Индексы таблицы `lesson`
+-- Indexes for table `lesson`
 --
 ALTER TABLE `lesson`
   ADD PRIMARY KEY (`lesson_id`);
 
 --
--- Индексы таблицы `question`
+-- Indexes for table `question`
 --
 ALTER TABLE `question`
   ADD PRIMARY KEY (`question_id`),
   ADD KEY `test_id` (`test_id`);
 
 --
--- Индексы таблицы `question_type`
---
-ALTER TABLE `question_type`
-  ADD PRIMARY KEY (`type_id`);
-
---
--- Индексы таблицы `review`
+-- Indexes for table `review`
 --
 ALTER TABLE `review`
   ADD PRIMARY KEY (`review_id`);
 
 --
--- Индексы таблицы `student`
+-- Indexes for table `student`
 --
 ALTER TABLE `student`
   ADD PRIMARY KEY (`student_id`),
@@ -375,20 +351,20 @@ ALTER TABLE `student`
   ADD KEY `group_id` (`group_id`) USING BTREE;
 
 --
--- Индексы таблицы `test`
+-- Indexes for table `test`
 --
 ALTER TABLE `test`
   ADD PRIMARY KEY (`test_id`),
   ADD KEY `created_by` (`created_by`);
 
 --
--- Индексы таблицы `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`user_id`);
 
 --
--- Индексы таблицы `vocabulary`
+-- Indexes for table `vocabulary`
 --
 ALTER TABLE `vocabulary`
   ADD PRIMARY KEY (`vocabulary_id`),
@@ -396,131 +372,125 @@ ALTER TABLE `vocabulary`
   ADD KEY `word_id` (`word_id`);
 
 --
--- Индексы таблицы `word`
+-- Indexes for table `word`
 --
 ALTER TABLE `word`
   ADD PRIMARY KEY (`word_id`);
 
 --
--- AUTO_INCREMENT для сохранённых таблиц
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT для таблицы `answer`
+-- AUTO_INCREMENT for table `answer`
 --
 ALTER TABLE `answer`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
+  MODIFY `answer_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=257;
 
 --
--- AUTO_INCREMENT для таблицы `exam`
+-- AUTO_INCREMENT for table `exam`
 --
 ALTER TABLE `exam`
-  MODIFY `exam_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `exam_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
--- AUTO_INCREMENT для таблицы `group`
+-- AUTO_INCREMENT for table `group`
 --
 ALTER TABLE `group`
-  MODIFY `group_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `group_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT для таблицы `lesson`
+-- AUTO_INCREMENT for table `lesson`
 --
 ALTER TABLE `lesson`
-  MODIFY `lesson_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `lesson_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT для таблицы `question`
+-- AUTO_INCREMENT for table `question`
 --
 ALTER TABLE `question`
-  MODIFY `question_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `question_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
 
 --
--- AUTO_INCREMENT для таблицы `question_type`
---
-ALTER TABLE `question_type`
-  MODIFY `type_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT для таблицы `review`
+-- AUTO_INCREMENT for table `review`
 --
 ALTER TABLE `review`
-  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `review_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT для таблицы `student`
+-- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-  MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `student_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT для таблицы `test`
+-- AUTO_INCREMENT for table `test`
 --
 ALTER TABLE `test`
-  MODIFY `test_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `test_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
--- AUTO_INCREMENT для таблицы `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `user_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT для таблицы `vocabulary`
+-- AUTO_INCREMENT for table `vocabulary`
 --
 ALTER TABLE `vocabulary`
-  MODIFY `vocabulary_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `vocabulary_id` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `word`
+-- AUTO_INCREMENT for table `word`
 --
 ALTER TABLE `word`
-  MODIFY `word_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `word_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- Ограничения внешнего ключа сохраненных таблиц
+-- Constraints for dumped tables
 --
 
 --
--- Ограничения внешнего ключа таблицы `answer`
+-- Constraints for table `answer`
 --
 ALTER TABLE `answer`
   ADD CONSTRAINT `answer_ibfk_1` FOREIGN KEY (`question_id`) REFERENCES `question` (`question_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ограничения внешнего ключа таблицы `exam`
+-- Constraints for table `exam`
 --
 ALTER TABLE `exam`
   ADD CONSTRAINT `exam_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `student` (`student_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `exam_ibfk_2` FOREIGN KEY (`test_id`) REFERENCES `test` (`test_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ограничения внешнего ключа таблицы `group`
+-- Constraints for table `group`
 --
 ALTER TABLE `group`
   ADD CONSTRAINT `group_ibfk_1` FOREIGN KEY (`teacher_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ограничения внешнего ключа таблицы `question`
+-- Constraints for table `question`
 --
 ALTER TABLE `question`
   ADD CONSTRAINT `question_ibfk_1` FOREIGN KEY (`test_id`) REFERENCES `test` (`test_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ограничения внешнего ключа таблицы `student`
+-- Constraints for table `student`
 --
 ALTER TABLE `student`
   ADD CONSTRAINT `student_ibfk_1` FOREIGN KEY (`group_id`) REFERENCES `group` (`group_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `student_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ограничения внешнего ключа таблицы `test`
+-- Constraints for table `test`
 --
 ALTER TABLE `test`
   ADD CONSTRAINT `creator_ibfk_2` FOREIGN KEY (`created_by`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ограничения внешнего ключа таблицы `vocabulary`
+-- Constraints for table `vocabulary`
 --
 ALTER TABLE `vocabulary`
   ADD CONSTRAINT `vocabulary_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
