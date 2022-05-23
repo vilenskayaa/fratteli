@@ -28,5 +28,26 @@
       color: #fff;
       margin: 20px 0;
     }
+
+    .answers-container {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+    }
+    .answer-item {
+      width: 300px;
+    }
+    .answer-item input[type="text"] {
+      width: 100px;
+    }
+    .questions-desc {
+      border: 2px solid #ececec;
+      border-radius: 10px;
+      padding: 5px;
+    }
+    .testContainer{
+      width: 300px;
+    }
+
   </style>
 </head>

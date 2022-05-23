@@ -29,7 +29,9 @@ const renderTest = async () => {
         questionTitle.innerText = q.question_title;
 
         const answersContainer = document.createElement("div");
+        answersContainer.setAttribute("class", "answers-container");
         const questionDesc = document.createElement("p");
+        questionDesc.setAttribute("class", "questions-desc");
         questionDesc.innerText = q.question_desc;
 
         if (q.type === "0") {
@@ -43,9 +45,16 @@ const renderTest = async () => {
                 const optionLabel = document.createElement("label");
                 optionLabel.setAttribute("for", `answer-${a.answer_id}`);
                 optionLabel.innerText = a.answer_title;
+
+                const optionsContainer = document.createElement("div");
+                optionsContainer.setAttribute("class", "answer-item");
     
-                answersContainer.appendChild(option);
-                answersContainer.appendChild(optionLabel);
+
+
+                optionsContainer.appendChild(option);
+                optionsContainer.appendChild(optionLabel);
+
+                answersContainer.appendChild(optionsContainer);
             });
         } else if (q.type === "1") {
             const inputAnswer = document.createElement("input");
@@ -94,9 +103,9 @@ const renderTest = async () => {
         <h2>Правильных ответов:</h2>
         <h3>${result.count_correct}/${result.count_questions}</h3>
         <h2>Оценка:</h2>
-        <h3>${result.raiting}</h3>
+        <h3>${result.rating}</h3>
         <h2>Статус:</h2>
-        <h3>${result.succes}</h3>
+        <h3>${result.success}</h3>
         `
     });
 
