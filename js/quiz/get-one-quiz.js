@@ -33,11 +33,20 @@ const renderTest = async () => {
         questionDesc.innerText = q.question_desc;
 
         q.answers.forEach(a => {
-            const option = document.createElement("input");
-            option.setAttribute("type", "radio");
-            option.setAttribute("id", `answer${a.answer_id}`);
-            option.setAttribute("value", a.answer_id);
-            option.setAttribute("name", `question${a.question_id}`);
+            if(a["is_text_answer"]){
+                const option = document.createElement("input")
+                option.setAttribute("type", "text");
+                option.setAttribute("id", `answer${a.answer_id}`);
+                option.setAttribute("name", `question${a.question_id}`);
+            }
+            else
+                {
+                const option = document.createElement("input");
+                option.setAttribute("type", "radio");
+                option.setAttribute("id", `answer${a.answer_id}`);
+                option.setAttribute("value", a.answer_id);
+                option.setAttribute("name", `question${a.question_id}`);
+            }
 
             const optionLabel = document.createElement("label");
             optionLabel.setAttribute("for", `answer-${a.answer_id}`);
@@ -63,8 +72,10 @@ const renderTest = async () => {
     let answer_ids = [];
     
     sendTestBtn.addEventListener("click", async () => {
-        const optionsChecked = document.querySelectorAll("input[type=radio]:checked");
-        answer_ids = [].map.call(optionsChecked, r => r.value);
+        const options = document.querySelectorAll("input");
+        answer_ids = [].map.call(options, r => r.value);
+
+
 
         const res = await fetch(`${baseApi}/test/save-result.php`, {
             method: 'POST',
