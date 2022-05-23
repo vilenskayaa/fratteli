@@ -32,29 +32,30 @@ const renderTest = async () => {
         const questionDesc = document.createElement("p");
         questionDesc.innerText = q.question_desc;
 
-        q.answers.forEach(a => {
-            if(a["is_text_answer"]){
-                const option = document.createElement("input")
-                option.setAttribute("type", "text");
-                option.setAttribute("id", `answer${a.answer_id}`);
-                option.setAttribute("name", `question${a.question_id}`);
-            }
-            else
-                {
+        if (q.type === "0") {
+            q.answers.forEach(a => {
                 const option = document.createElement("input");
                 option.setAttribute("type", "radio");
-                option.setAttribute("id", `answer${a.answer_id}`);
+                option.setAttribute("id", `answer`);
                 option.setAttribute("value", a.answer_id);
                 option.setAttribute("name", `question${a.question_id}`);
-            }
+    
+                const optionLabel = document.createElement("label");
+                optionLabel.setAttribute("for", `answer-${a.answer_id}`);
+                optionLabel.innerText = a.answer_title;
+    
+                answersContainer.appendChild(option);
+                answersContainer.appendChild(optionLabel);
+            });
+        } else if (q.type === "1") {
+            const inputAnswer = document.createElement("input");
+            inputAnswer.setAttribute("type", "text");
+            inputAnswer.setAttribute("id", `answer-text`);
 
-            const optionLabel = document.createElement("label");
-            optionLabel.setAttribute("for", `answer-${a.answer_id}`);
-            optionLabel.innerText = a.answer_title;
+            answersContainer.appendChild(inputAnswer);
+        }
 
-            answersContainer.appendChild(option);
-            answersContainer.appendChild(optionLabel);
-        });
+        
 
         
         questionsContainer.appendChild(questionTitle);
@@ -72,22 +73,20 @@ const renderTest = async () => {
     let answer_ids = [];
     
     sendTestBtn.addEventListener("click", async () => {
-        const options = document.querySelectorAll("input");
-        answer_ids = [].map.call(options, r => r.value);
-
-
+        const optionsChecked = document.querySelectorAll("input[type=radio]:checked");
+        const answersText = document.querySelectorAll("#answer-text");
+        options_ids = [].map.call(optionsChecked, r => r.value);
+        textAnswersValues = [].map.call(answersText, r => r.value);
 
         const res = await fetch(`${baseApi}/test/save-result.php`, {
             method: 'POST',
             body: JSON.stringify({
-                answer_ids,
+                answer_ids: [...options_ids, ...textAnswersValues],
                 test_id: testData.test_id,
             })
-        });
+        }); 
 
-        res = res.json() 
-
-        const result = res;
+        const result = await res.json();
         console.log(result)
         const resultDiv = document.querySelector('#result')
         resultDiv.innerHTML = ''
