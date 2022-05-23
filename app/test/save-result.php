@@ -19,8 +19,8 @@ try {
         throw new Exception("Вы не ответили ни на один вопрос! Пройдите тест позже:)");
     }
 
-    $answer_ids = array_map(function($i) { return "'$i'"; }, $answer_ids);
-    $selectAnswersFromDbQuery = "SELECT * FROM `answer` WHERE `answer_id` IN (".implode(",", $answer_ids).")";
+//    $answer_ids = array_map(function($i) { return "'$i'"; }, $answer_ids);
+    $selectAnswersFromDbQuery = "SELECT * FROM `answer`";
 
     $answersData = $db->query($selectAnswersFromDbQuery);
 
@@ -33,12 +33,36 @@ try {
     $selectCountQuestionsOfTest = "SELECT COUNT(*) AS `questions_count` FROM `question` WHERE `test_id` = $test_id";
     $countQuestions = (int)$db->query($selectCountQuestionsOfTest)->fetch_assoc()["questions_count"];
 
-    $countOfCorrectAnswers = array_reduce($answersList, function ($carry, $item) {
-        if ($item["is_correct"]) {
-            return $carry + 1;
+    $countOfCorrectAnswers = 0;
+
+    for($i = 0; $i<count($answer_ids); $i++){
+        for ($j = 0;  $j<count($answersList); $j++) {
+
+            if($answer_ids[$i]==$answersList[$j]["answer_id"]){
+                if ($answersList[$j]["is_correct"]) {
+                    $countOfCorrectAnswers++;
+                }
+            }
+            else{
+                if($answer_ids[$i]==$answersList[$j]["answer_title"]){
+                    if ($answersList[$j]["is_correct"]) {
+                        $countOfCorrectAnswers++;
+                    }
+                }
+            }
         }
-        return $carry;
-    }, 0);
+    }
+
+
+//    $countOfCorrectAnswers = array_reduce($answersList, function ($carry, $item) {
+//
+//        if()
+//        if ($item["is_correct"]) {
+//            return $carry + 1;
+//        }
+//
+//        return $carry;
+//    }, 0);
 
     $rating = round($countOfCorrectAnswers * 100 / $countQuestions, 2);
 
@@ -52,6 +76,8 @@ try {
         $insertTestResult = "INSERT INTO `exam`
         (`exam_id`, `student_id`, `test_id`, `exam_rating`) VALUES
         (NULL, '$student_id', '$test_id', '$rating')";
+
+echo $insertTestResult;
 
         $db->query($insertTestResult);    
     } else {

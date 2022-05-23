@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 16, 2022 at 10:59 PM
+-- Generation Time: May 24, 2022 at 12:10 AM
 -- Server version: 8.0.24
 -- PHP Version: 7.4.21
 
@@ -39,30 +39,27 @@ CREATE TABLE `answer` (
 --
 
 INSERT INTO `answer` (`answer_id`, `question_id`, `answer_title`, `is_correct`) VALUES
-(66, 44, 'Да', 1),
-(67, 44, 'Нет', 0),
-(68, 44, 'Все варианты верны', 0),
-(69, 44, 'Все варианты НЕверны', 0),
-(70, 45, 'Да', 1),
-(71, 45, 'Нет', 0),
-(72, 45, 'Все варианты верны', 0),
-(73, 45, 'Все варианты НЕверны', 0),
-(74, 46, 'Да', 1),
-(75, 46, 'Нет', 0),
-(76, 46, 'Все варианты верны', 0),
-(77, 46, 'Все варианты НЕверны', 0),
-(78, 47, 'Да', 1),
-(79, 47, 'Нет', 0),
-(80, 47, 'Все варианты верны', 0),
-(81, 47, 'Все варианты НЕверны', 0),
-(82, 48, 'Да', 1),
-(83, 48, 'Нет', 0),
-(84, 48, 'Все варианты верны', 0),
-(85, 48, 'Все варианты НЕверны', 0),
-(86, 49, 'Да', 1),
-(87, 49, 'Нет', 0),
-(88, 49, 'Все варианты верны', 0),
-(89, 49, 'Все варианты НЕверны', 0);
+(66, 44, 'Buongiorno, mi dica. Dove vuole andare?', 1),
+(67, 44, 'A che ora partite? Quanti siete?', 0),
+(68, 44, 'Come vuole pagare? A che ora deve arrivare?', 0),
+(69, 44, 'Buongiorno, mi dica, che cosa vuole? Va bene questo qui? Da bere?...', 0),
+(70, 45, 'ragazzo', 1),
+(71, 45, 'piace l’Italia', 0),
+(72, 45, 'vediamo', 0),
+(73, 45, 'possiamo sentire', 0),
+(74, 46, 'Ciao! Allora domani a che ora ci vediamo?', 1),
+(75, 46, 'Va bene, puoi dirmi come faccio ad arrivare da te?', 0),
+(76, 46, 'Che autobus devo prendere?', 0),
+(77, 46, 'Poi dove vado? Qual è casa tua?', 0),
+(78, 47, 'le montagne', 1),
+(79, 47, 'la montagne', 0),
+(80, 47, 'montagne', 0),
+(81, 47, 'pacchetto', 0),
+(82, 48, ' si bloccava letteralmente', 1),
+(83, 48, 'si bloccò letteralmente', 0),
+(84, 48, 'si blocca letteralmente', 0),
+(85, 48, 'si bloccava letteralmenta', 0),
+(256, 93, 'gatto', 1);
 
 -- --------------------------------------------------------
 
@@ -82,8 +79,7 @@ CREATE TABLE `exam` (
 --
 
 INSERT INTO `exam` (`exam_id`, `student_id`, `test_id`, `exam_rating`) VALUES
-(37, 9, 47, 0),
-(38, 9, 48, 0);
+(37, 9, 47, 50);
 
 -- --------------------------------------------------------
 
@@ -148,20 +144,21 @@ CREATE TABLE `question` (
   `question_id` int NOT NULL,
   `test_id` int NOT NULL,
   `question_title` text NOT NULL,
-  `question_desc` text NOT NULL
+  `question_desc` text NOT NULL,
+  `type` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `question`
 --
 
-INSERT INTO `question` (`question_id`, `test_id`, `question_title`, `question_desc`) VALUES
-(44, 47, 'Вы Алла Виленская?', 'Выберите вариант ответа'),
-(45, 47, 'Вы Алла Виленская??', 'Выберите вариант ответа'),
-(46, 47, 'Вы Алла Виленская???', 'Выберите вариант ответа'),
-(47, 48, 'Вы Алла Виленская?', 'Выберите вариант ответа'),
-(48, 48, 'Вы Алла Виленская??', 'Выберите вариант ответа'),
-(49, 48, 'Вы Алла Виленская???', 'Выберите вариант ответа');
+INSERT INTO `question` (`question_id`, `test_id`, `question_title`, `question_desc`, `type`) VALUES
+(44, 47, 'Siete in Italia, in una stazione. Dovete andare in treno in un’altra città. Chiedete informazioni e comprate il biglietto. Poi comprate qualcosa da mangiare e da bere per il viaggio.', 'Выберите вариант ответа', 0),
+(45, 47, 'Siete in Italia, incontrate un ragazzo o una ragazza italiano/a simpatico/a. Parlate di voi, delle cose che vi piacciono dell’Italia e della città. Date e chiedete il numero di telefono.', 'Выберите вариант ответа', 0),
+(46, 47, 'Un amico italiano deve venire a casa tua. Gli dai le informazioni: gli dici come arrivare e gli descrivi com’è fatta casa tua da fuori.', 'Выберите вариант ответа', 0),
+(47, 47, 'Siete in Italia, incontrate un ________ o una ragazza italiano/a simpatico/a. Parlate di voi, delle cose che vi piacciono dell’Italia e della città. Date e chiedete il numero di telefono.', 'Выберите вариант ответа', 0),
+(48, 47, 'Un amico italiano deve venire a casa tua. Gli dai le informazioni: gli dici come arrivare e gli descrivi com’è fatta casa tua da fuori.', 'Выберите вариант ответа', 0),
+(93, 47, 'Переведите на итальянский: КОТ', 'Введите ответ с клавиатуры', 1);
 
 -- --------------------------------------------------------
 
@@ -227,8 +224,7 @@ CREATE TABLE `test` (
 --
 
 INSERT INTO `test` (`test_id`, `test_title`, `test_level`, `test_time`, `test_complexity`, `created_by`) VALUES
-(47, 'Тест Аллы Виленской', 'A2', '30', '3/5', 14),
-(48, 'Тест Аллы Виленской', 'A2', '30', '', 14);
+(47, 'Verifica la conoscenza di qualsiasi verbo', 'A2', '30', '3/5', 14);
 
 -- --------------------------------------------------------
 
@@ -255,7 +251,8 @@ INSERT INTO `user` (`user_id`, `user_email`, `user_name`, `user_password`, `user
 (15, 'mail1@mail.ru', 'student1', '17bbaa41b9eea6fb22ea26852d4994d3', 'student', 'B1'),
 (16, 'teacher2@mail.ru', 'teacher2', '17bbaa41b9eea6fb22ea26852d4994d3', 'teacher', 'C1'),
 (17, 'aaa@mail.ru', 'aaa456', '200820e3227815ed1756a6b531e7e0d2', 'teacher', 'C1'),
-(18, 'admin@admin.com', 'admin', '200820e3227815ed1756a6b531e7e0d2', 'teacher', 'B2');
+(18, 'admin@admin.com', 'admin', '200820e3227815ed1756a6b531e7e0d2', 'teacher', 'B2'),
+(19, '09092019hqdev@mailforspam.com', 'dedwd', '17bbaa41b9eea6fb22ea26852d4994d3', 'teacher', 'C2');
 
 -- --------------------------------------------------------
 
@@ -290,7 +287,8 @@ CREATE TABLE `word` (
 
 INSERT INTO `word` (`word_id`, `word_italian`, `word_rus`, `word_picture`, `created_by`) VALUES
 (8, 'gatto', 'кот', '/app/uploads/16527310421532440298_3.jpg', 16),
-(9, 'qweqwr', 'wer', '/app/uploads/16527310916010185746.jpg', 16);
+(9, 'qweqwr', 'wer', '/app/uploads/16527310916010185746.jpg', 16),
+(10, 'gatto', 'кот', '/app/uploads/1652977852Jp0mAUWkKaA.jpg', 14);
 
 --
 -- Indexes for dumped tables
@@ -380,13 +378,13 @@ ALTER TABLE `word`
 -- AUTO_INCREMENT for table `answer`
 --
 ALTER TABLE `answer`
-  MODIFY `answer_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
+  MODIFY `answer_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=257;
 
 --
 -- AUTO_INCREMENT for table `exam`
 --
 ALTER TABLE `exam`
-  MODIFY `exam_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `exam_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT for table `group`
@@ -404,7 +402,7 @@ ALTER TABLE `lesson`
 -- AUTO_INCREMENT for table `question`
 --
 ALTER TABLE `question`
-  MODIFY `question_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `question_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
 
 --
 -- AUTO_INCREMENT for table `review`
@@ -428,7 +426,7 @@ ALTER TABLE `test`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `user_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `vocabulary`
@@ -440,7 +438,7 @@ ALTER TABLE `vocabulary`
 -- AUTO_INCREMENT for table `word`
 --
 ALTER TABLE `word`
-  MODIFY `word_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `word_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Constraints for dumped tables

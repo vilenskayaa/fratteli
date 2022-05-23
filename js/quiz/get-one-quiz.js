@@ -29,23 +29,42 @@ const renderTest = async () => {
         questionTitle.innerText = q.question_title;
 
         const answersContainer = document.createElement("div");
+        answersContainer.setAttribute("class", "answers-container");
         const questionDesc = document.createElement("p");
+        questionDesc.setAttribute("class", "questions-desc");
         questionDesc.innerText = q.question_desc;
 
-        q.answers.forEach(a => {
-            const option = document.createElement("input");
-            option.setAttribute("type", "radio");
-            option.setAttribute("id", `answer${a.answer_id}`);
-            option.setAttribute("value", a.answer_id);
-            option.setAttribute("name", `question${a.question_id}`);
+        if (q.type === "0") {
+            q.answers.forEach(a => {
+                const option = document.createElement("input");
+                option.setAttribute("type", "radio");
+                option.setAttribute("id", `answer`);
+                option.setAttribute("value", a.answer_id);
+                option.setAttribute("name", `question${a.question_id}`);
+    
+                const optionLabel = document.createElement("label");
+                optionLabel.setAttribute("for", `answer-${a.answer_id}`);
+                optionLabel.innerText = a.answer_title;
 
-            const optionLabel = document.createElement("label");
-            optionLabel.setAttribute("for", `answer-${a.answer_id}`);
-            optionLabel.innerText = a.answer_title;
+                const optionsContainer = document.createElement("div");
+                optionsContainer.setAttribute("class", "answer-item");
+    
 
-            answersContainer.appendChild(option);
-            answersContainer.appendChild(optionLabel);
-        });
+
+                optionsContainer.appendChild(option);
+                optionsContainer.appendChild(optionLabel);
+
+                answersContainer.appendChild(optionsContainer);
+            });
+        } else if (q.type === "1") {
+            const inputAnswer = document.createElement("input");
+            inputAnswer.setAttribute("type", "text");
+            inputAnswer.setAttribute("id", `answer-text`);
+
+            answersContainer.appendChild(inputAnswer);
+        }
+
+        
 
         
         questionsContainer.appendChild(questionTitle);
@@ -64,19 +83,19 @@ const renderTest = async () => {
     
     sendTestBtn.addEventListener("click", async () => {
         const optionsChecked = document.querySelectorAll("input[type=radio]:checked");
-        answer_ids = [].map.call(optionsChecked, r => r.value);
+        const answersText = document.querySelectorAll("#answer-text");
+        options_ids = [].map.call(optionsChecked, r => r.value);
+        textAnswersValues = [].map.call(answersText, r => r.value);
 
         const res = await fetch(`${baseApi}/test/save-result.php`, {
             method: 'POST',
             body: JSON.stringify({
-                answer_ids,
+                answer_ids: [...options_ids, ...textAnswersValues],
                 test_id: testData.test_id,
             })
-        });
+        }); 
 
-        res = res.json() 
-
-        const result = res;
+        const result = await res.json();
         console.log(result)
         const resultDiv = document.querySelector('#result')
         resultDiv.innerHTML = ''
@@ -84,9 +103,9 @@ const renderTest = async () => {
         <h2>Правильных ответов:</h2>
         <h3>${result.count_correct}/${result.count_questions}</h3>
         <h2>Оценка:</h2>
-        <h3>${result.raiting}</h3>
+        <h3>${result.rating}</h3>
         <h2>Статус:</h2>
-        <h3>${result.succes}</h3>
+        <h3>${result.success}</h3>
         `
     });
 

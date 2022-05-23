@@ -28,5 +28,37 @@
       color: #fff;
       margin: 20px 0;
     }
+
+    .answers-container {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+    }
+    .answer-item {
+      width: 300px;
+    }
+    .answer-item input[type="text"] {
+      width: 100px;
+    }
+    .questions-desc {
+      border: 2px solid #ececec;
+      border-radius: 10px;
+      padding: 5px;
+    }
+    #testContainer{
+      width: 500px;
+    }
+
+    input[type="text"] {
+      width: 200px;
+      border: 2px solid #cccccc;
+      outline: none;
+      border-radius: 5px;
+      padding: 3px;
+    }
+
+    input[type="text"]:hover {
+      border: 2px solid #454545;
+    }
   </style>
 </head>

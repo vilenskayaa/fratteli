@@ -28,19 +28,22 @@ const addQuestion = () => {
         <div class="form__fields">
           <div class="form__item answer">
             <input type="radio" name="is_correct" value="1">
-            <input class="form__input" name="answer_title" type="text" placeholder="Текст ответа" required>
+            <input class="form__input" name="answer_title" type="text" placeholder="Текст ответа">
           </div>
           <div class="form__item answer">
             <input type="radio" name="is_correct" value="2">
-            <input class="form__input" name="answer_title" type="text" placeholder="Текст ответа" required>
+            <input class="form__input" name="answer_title" type="text" placeholder="Текст ответа">
           </div>
           <div class="form__item answer">
             <input type="radio" name="is_correct" value="3">
-            <input class="form__input" name="answer_title" type="text" placeholder="Текст ответа" required>
+            <input class="form__input" name="answer_title" type="text" placeholder="Текст ответа">
           </div>
           <div class="form__item answer">
             <input type="radio" name="is_correct" value="4">
-            <input class="form__input" name="answer_title" type="text" placeholder="Текст ответа" required>
+            <input class="form__input" name="answer_title" type="text" placeholder="Текст ответа">
+          </div>
+           <div class="form__item answer">
+            <input type="text" name="is_correct">
           </div>
         </div>
       </form>
