@@ -46,7 +46,7 @@ ul {
   display: flex;
   flex-direction: column;
   padding: 64px 60px 80px;
-
+  max-height: 100vh;
   .logo {
     padding-bottom: 120px;
   }
