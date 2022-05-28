@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Май 25 2022 г., 20:29
+-- Время создания: Май 28 2022 г., 16:07
 -- Версия сервера: 8.0.15
 -- Версия PHP: 7.3.2
 
@@ -65,6 +65,20 @@ INSERT INTO `answer` (`answer_id`, `question_id`, `answer_title`, `is_correct`) 
 (88, 49, 'Все варианты верны', 0),
 (89, 49, 'Все варианты НЕверны', 0),
 (91, 51, 'Hui', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `books`
+--
+
+CREATE TABLE `books` (
+  `book_id` int(11) NOT NULL,
+  `name` text NOT NULL,
+  `image` text,
+  `file` text NOT NULL,
+  `description` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -323,6 +337,12 @@ ALTER TABLE `answer`
   ADD KEY `question_id` (`question_id`);
 
 --
+-- Индексы таблицы `books`
+--
+ALTER TABLE `books`
+  ADD PRIMARY KEY (`book_id`);
+
+--
 -- Индексы таблицы `exam`
 --
 ALTER TABLE `exam`
@@ -406,6 +426,12 @@ ALTER TABLE `word`
 --
 ALTER TABLE `answer`
   MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
+
+--
+-- AUTO_INCREMENT для таблицы `books`
+--
+ALTER TABLE `books`
+  MODIFY `book_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT для таблицы `exam`
