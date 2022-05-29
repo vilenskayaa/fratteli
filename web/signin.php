@@ -3,7 +3,7 @@
 session_start();
 
 if ($_SESSION['user']) {
-  header('location: /web/home.php');
+  header('location: /web/lessons.php');
 }
 
 $page_title = "Авторизация";
