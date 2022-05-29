@@ -114,7 +114,7 @@ body {
 }
 .sign__container {
   width: 740px;
-  min-height: 100vh;
+  height: 100vh;
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
@@ -125,16 +125,16 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 44px;
-  margin-top: 140px;
+  margin-bottom: 3vh;
+  margin-top: 10vh;
 }
 .sign__header-title {
   font-style: normal;
   font-weight: 600;
   font-size: 36px;
   line-height: 36px;
-  padding-bottom: 16px;
-  padding-top: 60px;
+  padding-bottom: 2vh;
+  padding-top: 8vh;
 }
 .sign__subtitle {
   font-style: normal;
