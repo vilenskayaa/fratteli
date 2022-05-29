@@ -42,6 +42,11 @@ function initExitPopup() {
         popupContainer.style.visibility = 'hidden';
     });
 
+    confirmBtn.addEventListener('click', () => {
+        popupContainer.style.visibility = 'hidden';
+        location.href = "../app/account/logout.php";
+    });
+
     popupClose.addEventListener('click', () => {
         popupContainer.style.visibility = 'hidden';
     });
