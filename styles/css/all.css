@@ -123,6 +123,7 @@ body {
 }
 .sign__header {
   display: flex;
+  width: 740px;
   flex-direction: column;
   align-items: center;
   margin-bottom: 3vh;
@@ -193,7 +194,7 @@ body {
 .form__fields {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 2vh;
   width: 100%;
 }
 .form__fields-role {
@@ -207,7 +208,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 24px;
+  gap: 2vh;
   transform: all 0.2s;
 }
 #inputStudent:checked ~ .form__card-picture, #inputTeacher:checked ~ .form__card-picture {
@@ -241,17 +242,17 @@ body {
   position: relative;
 }
 .form__input {
-  font-family: 'Proxima Nova Rg';
-  width: inherit;
-  padding: 20px 30px;
-  color: #2e3134;
-  border: 1px solid rgba(1, 12, 59, 0.2);
-  border-radius: 16px;
-  outline: none;
-  transition: all 0.3s;
+  font-family: 'Proxima Nova Rg' !important;
+  width: inherit !important;
+  padding: 2vh 3vh !important;
+  color: #2e3134 !important;
+  border: 1px solid rgba(1, 12, 59, 0.2) !important;
+  border-radius: 16px !important;
+  outline: none !important;
+  transition: all 0.3s !important;
 }
 .form__input.error {
-  border-color: #f26363;
+  border-color: #f26363 !important;
 }
 .form__item-icon {
   position: absolute;
@@ -267,7 +268,7 @@ body {
 }
 .form__btn {
   width: 100%;
-  padding: 20px 30px;
+  padding: 2vh 3vh;
   text-transform: uppercase;
   font-weight: 600;
   font-size: 20px;

@@ -1,16 +1,20 @@
 // view password
 const viewPassword = () => {
   const viewField = document.querySelector('#viewField')
-  const inputPass = document.querySelector('input[type="password"]')
+  const inputPass = document.querySelectorAll('input[type="check"]')
+
+  if (viewField === null || inputPass.length == 0) {
+    return
+  }
 
   viewField.addEventListener('click', (event) => {  
     viewField.classList.toggle('active')
 
-    const passAttr = inputPass.getAttribute('type')
+    const passAttr = inputPass[0].getAttribute('type')
     if (passAttr === 'text') {
-      inputPass.setAttribute('type', 'password')
+      inputPass.forEach(function(x) { x.setAttribute('type', 'password') })
     } else if (passAttr === 'password') {
-      inputPass.setAttribute('type', 'text')
+      inputPass.forEach(function(x) { x.setAttribute('type', 'text') })
     }
   })
 }

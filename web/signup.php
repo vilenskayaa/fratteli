@@ -41,11 +41,11 @@ $page_title = "Регистрация";
             <i id="viewField" class="form__item-icon ci-hide"></i>
           </div>
           <div class="form__item">
-            <input class="form__input" name="passwordRepeat" type="password" placeholder="Пароль" required>
+            <input class="form__input" name="passwordRepeat" type="password" placeholder="Подтвердите пароль" required>
           </div>
         </div>
         <button class="form__btn">
-          Войти
+          Зарегистрироваться
         </button>
       </form>
     </section>
