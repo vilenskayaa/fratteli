@@ -1,52 +1,52 @@
 $(document).ready(function() {
-  $("#signIn").submit(function(event) {
-      event.preventDefault();
-      
-      $.ajax({
-          type: "post",
-          url: "/app/account/signin.php",
-          data: new FormData(this),
-          contentType: false,
-          cache: false,
-          processData: false,
-          success: function(data) {
-              validation = jQuery.parseJSON(data)
+    $("#signIn").submit(function(event) {
+        event.preventDefault();
 
-              const inputEmail = document.querySelector("#email");
-              const inputnPassword = document.querySelector("#password");
+        $.ajax({
+            type: "post",
+            url: "/app/account/signin.php",
+            data: new FormData(this),
+            contentType: false,
+            cache: false,
+            processData: false,
+            success: function(data) {
+                validation = jQuery.parseJSON(data)
 
-              inputEmail.classList.remove("error")
-              inputnPassword.classList.remove("error")
+                const inputEmail = document.querySelector("#email");
+                const inputnPassword = document.querySelector("#password");
 
-              if (validation.key === 'true') {
-                  window.location.href = "/web/home.php"
-              } else {
-                  if (validation.key === 'email') {
-                    inputEmail.classList.add("error")
-                  }
-                  if (validation.key === 'password') {
-                    inputnPassword.classList.add("error")
-                  }
-              }
-          }
-      })
-  })
+                inputEmail.classList.remove("error")
+                inputnPassword.classList.remove("error")
+
+                if (validation.key === 'true') {
+                    window.location.href = "/web/lessons.php"
+                } else {
+                    if (validation.key === 'email') {
+                        inputEmail.classList.add("error")
+                    }
+                    if (validation.key === 'password') {
+                        inputnPassword.classList.add("error")
+                    }
+                }
+            }
+        })
+    })
 })
 
 const viewPassword = () => {
-  const viewField = document.querySelector('#viewField')
-  const inputPass = document.querySelector('input[type="password"]')
+    const viewField = document.querySelector('#viewField')
+    const inputPass = document.querySelector('input[type="password"]')
 
-  viewField.addEventListener('click', (event) => {  
-    viewField.classList.toggle('active')
+    viewField.addEventListener('click', (event) => {
+        viewField.classList.toggle('active')
 
-    const passAttr = inputPass.getAttribute('type')
-    if (passAttr === 'text') {
-      inputPass.setAttribute('type', 'password')
-    } else if (passAttr === 'password') {
-      inputPass.setAttribute('type', 'text')
-    }
-  })
+        const passAttr = inputPass.getAttribute('type')
+        if (passAttr === 'text') {
+            inputPass.setAttribute('type', 'password')
+        } else if (passAttr === 'password') {
+            inputPass.setAttribute('type', 'text')
+        }
+    })
 }
 
 viewPassword()

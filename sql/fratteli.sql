@@ -33,7 +33,7 @@ CREATE TABLE `answer` (
   `question_id` int(11) NOT NULL,
   `answer_title` text NOT NULL,
   `is_correct` tinyint(1) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Дамп данных таблицы `answer`
@@ -91,7 +91,7 @@ CREATE TABLE `exam` (
   `student_id` int(11) NOT NULL,
   `test_id` int(11) NOT NULL,
   `exam_rating` double NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Дамп данных таблицы `exam`
@@ -110,9 +110,9 @@ INSERT INTO `exam` (`exam_id`, `student_id`, `test_id`, `exam_rating`) VALUES
 CREATE TABLE `group` (
   `group_id` int(11) NOT NULL,
   `group_title` varchar(255) NOT NULL,
-  `group_level` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `group_level` text CHARACTER SET utf8mb4 NOT NULL,
   `teacher_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Дамп данных таблицы `group`
@@ -140,7 +140,7 @@ CREATE TABLE `lesson` (
   `lesson_link` text NOT NULL,
   `canceled_at` date DEFAULT NULL,
   `canceled_by` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Дамп данных таблицы `lesson`
@@ -179,7 +179,7 @@ CREATE TABLE `question` (
   `type_id` int(11) NOT NULL,
   `question_title` text NOT NULL,
   `question_desc` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Дамп данных таблицы `question`
@@ -205,7 +205,7 @@ CREATE TABLE `review` (
   `user_id` int(11) NOT NULL,
   `review_text` text NOT NULL,
   `review_date` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Дамп данных таблицы `review`
@@ -224,7 +224,7 @@ CREATE TABLE `student` (
   `student_id` int(11) NOT NULL,
   `group_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Дамп данных таблицы `student`
@@ -249,9 +249,9 @@ CREATE TABLE `test` (
   `test_title` text NOT NULL,
   `test_level` varchar(500) NOT NULL,
   `test_time` text NOT NULL,
-  `test_complexity` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `test_complexity` text CHARACTER SET utf8mb4  NULL,
   `created_by` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Дамп данных таблицы `test`
@@ -274,7 +274,7 @@ CREATE TABLE `user` (
   `user_password` varchar(1000) NOT NULL,
   `user_role` varchar(50) NOT NULL,
   `user_level` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Дамп данных таблицы `user`
@@ -301,7 +301,7 @@ CREATE TABLE `vocabulary` (
   `user_id` int(11) NOT NULL,
   `word_id` int(11) NOT NULL,
   `vocabulary_status` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 -- --------------------------------------------------------
 
@@ -315,7 +315,7 @@ CREATE TABLE `word` (
   `word_rus` text NOT NULL,
   `word_picture` text NOT NULL,
   `created_by` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Дамп данных таблицы `word`
