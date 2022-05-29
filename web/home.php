@@ -11,6 +11,7 @@ $page_title = "Fratteli";
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="../styles/sass/all.scss" rel="stylesheet"/>
+  <link href="../styles/css/landing.css" rel="stylesheet"/>
   <link href="../styles/css/slick.css" rel="stylesheet"/>
   <link href="../styles/css/slick-theme.css" rel="stylesheet"/>
 </head>
