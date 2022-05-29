@@ -1,18 +1,3 @@
-@font-face {
-    font-family: "Proxima Nova";
-    font-weight: 600;
-    src: url("../assets/fonts/ProximaNova-Semibold.woff") format("woff");
-  }
-  @font-face {
-    font-family: "Proxima Nova";
-    font-weight: 300;
-    src: url("../assets/fonts/ProximaNova-Light.woff") format("woff");
-  }
-  @font-face {
-    font-family: "Proxima Nova";
-    font-weight: 400;
-    src: url("../assets/fonts/ProximaNova-Regular.woff") format("woff");
-  }
   * {
     box-sizing: border-box;
     margin: 0;
@@ -24,7 +9,7 @@
   }
   
   body {
-    background-color: #000000;
+    background-color: #2E3134;
   }
   
   main {
@@ -36,18 +21,18 @@
   }
   
   h2 {
-    font-family: "Proxima Nova";
+    font-family: "Proxima Nova Rg";
     font-style: normal;
     font-weight: 600;
     font-size: 64px;
     line-height: 72px;
-    color: #000000;
+    color: #2E3134;
     padding: 0 0 104px;
     text-align: center;
   }
   
   h3 {
-    font-family: "Proxima Nova";
+    font-family: "Proxima Nova Rg";
     font-style: normal;
     font-weight: 600;
     font-size: 44px;
@@ -57,16 +42,16 @@
   }
   
   h4 {
-    font-family: "Proxima Nova";
+    font-family: "Proxima Nova Rg";
     font-style: normal;
     font-weight: 600;
     font-size: 32px;
     line-height: 40px;
-    color: #000000;
+    color: #2E3134;
   }
   
   .main__text {
-    font-family: "Proxima Nova";
+    font-family: "Proxima Nova Rg";
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
@@ -75,16 +60,16 @@
   }
   
   .btn {
-    background: #00f;
+    background: #97CD92;
     border-radius: 16px;
-    font-family: "Proxima Nova";
+    font-family: "Proxima Nova Rg";
     font-style: normal;
     font-weight: 600;
     font-size: 20px;
     line-height: 20px;
     text-align: center;
     text-transform: uppercase;
-    color: #000000;
+    color: #2E3134;
     padding: 20px 122px;
     border: 0;
     max-width: 320px;
@@ -116,10 +101,10 @@
     z-index: 10;
     position: fixed;
     width: 100%;
-    background-color: #333;
+    background-color: #FF7A00;
     color: #fff;
-    font-family: "Proxima Nova";
-    font-weight: 600;
+    font-family: "Proxima Nova Rg";
+    font-weight: 300;
     font-size: 24px;
   }
   .header__container {
@@ -137,12 +122,11 @@
     position: relative;
   }
   .hero h1 {
-    font-family: "Proxima Nova";
-    font-style: normal;
+    font-family: "Proxima Nova Rg";
     font-weight: 600;
     font-size: 64px;
     line-height: 72px;
-    color: #444;
+    color: #FCFCFC;
     padding: 100px 0 50px;
   }
   .hero__background {
@@ -155,19 +139,18 @@
     padding: 170px 15px 0;
   }
   .hero__offer__text {
-    font-family: "Proxima Nova";
-    font-style: normal;
+    font-family: "Proxima Nova Rg";
     font-weight: 400;
     font-size: 20px;
     line-height: 26px;
-    color: #444;
+    color: #FCFCFC;
     max-width: 630px;
   }
   .hero__offer__button {
     margin-top: 120px;
   }
   .hero__offer__button a {
-    color: #000000;
+    color: #2E3134;
   }
   
   .about {
@@ -192,12 +175,12 @@
     padding: 15px;
   }
   .about__block__text .list__item {
-    font-family: "Proxima Nova";
+    font-family: "Proxima Nova Rg";
     font-style: normal;
     font-weight: 300;
     font-size: 18px;
     line-height: 26px;
-    color: #444;
+    color: #FCFCFC;
     padding: 12px 0;
   }
   .about__block__img {
@@ -205,12 +188,12 @@
   }
   
   .block__text__link {
-    font-family: "Proxima Nova";
+    font-family: "Proxima Nova Rg";
     font-style: normal;
     font-weight: 600;
     font-size: 20px;
     line-height: 26px;
-    color: #00f;
+    color: #97CD92;
     transition: all 0.3s ease;
   }
   .block__text__link img {
@@ -223,7 +206,7 @@
   .course {
     background-color: #fff;
     display: flex;
-    flex-wrap: wrap-reverse;
+    flex-wrap: revert;
   }
   .course__text {
     padding-top: 60px;
@@ -233,12 +216,12 @@
     max-width: 550px;
   }
   .course__text__offer .block__text__link {
-    color: #00f;
+    color: #97CD92;
   }
   .course__img {
     max-width: 50%;
     position: relative;
-    background-color: #0f0;
+    background-color: #97CD92;
     border-radius: 96px 0 0 0;
     padding: 110px 240px 120px 70px;
   }
@@ -255,7 +238,7 @@
   }
   
   .clients {
-    background-color: #000000;
+    background-color: #FAF8EE;
     padding: 100px 0;
   }
   .clients .container {
@@ -297,7 +280,7 @@
     padding-bottom: 24px;
   }
   .start-edu__text {
-    font-family: "Proxima Nova";
+    font-family: "Proxima Nova Rg";
     font-style: normal;
     font-weight: 600;
     font-size: 20px;
@@ -336,7 +319,7 @@
     height: auto;
   }
   .footer__text {
-    font-family: "Proxima Nova";
+    font-family: "Proxima Nova Rg";
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
@@ -346,7 +329,7 @@
   }
   .footer .seperator {
     height: 8px;
-    background-color: #0f0;
+    background-color: #97CD92;
     box-shadow: 0px 0px 64px rgba(255, 255, 255, 0.16);
     transform: rotate(-180deg);
     max-width: 75px;
@@ -363,7 +346,7 @@
   }
   .footer .socials__link__img:hover .socials--hover path {
     transition: all 0.3s ease-in-out;
-    fill: #0f0;
+    fill: #97CD92;
   }
   
   @media (max-width: 550px) {
