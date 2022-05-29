@@ -1,35 +1,44 @@
 <?php
 
 session_start();
+$page_title = "Fratteli";
 
 ?>
-
 <?php include "../layout/meta.php"; ?>
 
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../styles/sass/all.scss" rel="stylesheet"/>
+  <link href="../styles/css/slick.css" rel="stylesheet"/>
+  <link href="../styles/css/slick-theme.css" rel="stylesheet"/>
+</head>
+
+
 <body>
-  <?php include "../layout/side-menu.php" ?>
   <header class="header">
     <div class="header__container">
-      <p class="header__text">Зарегестрируйся сейчас и получи бесплатно доступ к тесту P.L.I.D.A.</p>
-      <img src="/assets/icons/cross.svg" class="header__img" alt="close">
+      <p class="header__text">Зарегистрируйся сейчас и получи бесплатно доступ к тесту P.L.I.D.A.</p>
+      <img src="../assets/icons/cross.svg" class="header__img" alt="close">
     </div>
   </header>
   <main>
     <section class="hero" id="hero">
-      <img class="hero__background" src="/assets/img/heroBack2.svg" alt="">
+      <img class="hero__background" src="../assets/img/heroBack2.svg" alt="">
       <div class="container">
         <div class="hero__offer">
-          <img class="hero__offer__image" src="/assets/img/logo.svg" alt="">
+          <img class="hero__offer__image" src="../assets/img/logo.svg" alt="">
           <h1>Начни свое
             итальянское путешествие!</h1>
           <p class="hero__offer__text">Только до 21.04.2022 подарок для новых пользователей - карточки заданий к тесту
             P.L.I.D.A.!</p>
           <div class="hero__offer__button btn">
-            <a href="/web/signin.php">начать</a>
+            <a href="../web/signin.php">начать</a>
           </div>
         </div>
         <div class="hero__person">
-          <img src="/assets/img/heroMan.png" class="hero__person__image" alt="">
+          <img src="../assets/img/heroMan.png" class="hero__person__image" alt="">
         </div>
       </div>
     </section>
@@ -45,23 +54,23 @@ session_start();
               <li class="list__item">Занимайся в удобном темпе, не беспокоясь о неудобном расписании. Никакого кота в
                 мешке, плати так, как выгодно тебе</li>
             </ul>
-            <a class="block__text__link" href="./signin.php">Найти преподавателя <img
-                src="/assets/icons/arrow--green.svg" alt=""></a>
+            <a class="block__text__link" href="../signin.php">Найти преподавателя <img
+                src="../assets/icons/arrow--green.svg" alt=""></a>
           </div>
           <div class="about__block__img">
-            <img src="/assets/img/aboutImg1.png" alt="Современные уроки итальянского">
+            <img src="../assets/img/aboutImg1.png" alt="Современные уроки итальянского">
           </div>
         </div>
         <div class="about__block">
           <div class="about__block__img">
-            <img src="/assets/img/aboutImg2.png" alt="Современные уроки итальянского">
+            <img src="../assets/img/aboutImg2.png" alt="Современные уроки итальянского">
           </div>
           <div class="about__block__text">
             <h3>Расширяй возможности изучения за пределами занятий</h3>
             <ul class="block__text__list list">
               <li class="list__item">Узнай свой уровень с помощью бесплатного теста</li>
             </ul>
-            <a class="block__text__link" href="./signin.php">Узнать больше <img src="/assets/icons/arrow--green.svg"
+            <a class="block__text__link" href="../signin.php">Узнать больше <img src="../assets/icons/arrow--green.svg"
                 alt=""></a>
           </div>
         </div>
@@ -76,20 +85,20 @@ session_start();
               это поможет тебе в карьере
               или для
               прохождения собеседования</p>
-            <a class="block__text__link" href="./signin.php">Расширяй словарный запас<img
-                src="/assets/icons/arrow--blue.svg" alt=""></a>
+            <a class="block__text__link" href="../signin.php">Расширяй словарный запас<img
+                src="../assets/icons/arrow--blue.svg" alt=""></a>
           </div>
           <div class="course__text__offer">
             <h4>Подготовка к экзамену</h4>
             <p class="main__text">Получи необходимый балл для сдачи экзаменов</p>
-            <a class="block__text__link" href="./signin.php">Готовься к тестам<img src="/assets/icons/arrow--blue.svg"
+            <a class="block__text__link" href="../signin.php">Готовься к тестам<img src="../assets/icons/arrow--blue.svg"
                 alt=""></a>
           </div>
           <div class="course__text__offer">
             <h4>Разговорная практика</h4>
             <p class="main__text">Подари себе уверенность в разговорах и общайся на темы, которые тебе
               интересны</p>
-            <a class="block__text__link" href="./signin.php">Практикуй язык<img src="/assets/icons/arrow--blue.svg"
+            <a class="block__text__link" href="../signin.php">Практикуй язык<img src="../assets/icons/arrow--blue.svg"
                 alt=""></a>
           </div>
         </div>
@@ -98,7 +107,7 @@ session_start();
       <div class="course__img">
         <h3>Занятия под твои цели и интересы</h3>
         <div class="course__img__block">
-          <img src="/assets/img/aboutImg3.png" alt="Занятия под твои цели и интересы">
+          <img src="../assets/img/aboutImg3.png" alt="Занятия под твои цели и интересы">
         </div>
       </div>
     </section>
@@ -107,7 +116,7 @@ session_start();
         <h2>Нам доверяют</h2>
         <div class="clients__cards">
           <div class="cards__item">
-            <img src="/assets/img/client1.png" alt="client">
+            <img src="../assets/img/client1.png" alt="client">
             <h4>Алексей</h4>
             <p class="main__text">
               Я начал учиться два месяца назад и могу сказать, что добился заметных успехов в итальянском. Уже на самом
@@ -116,7 +125,7 @@ session_start();
             </p>
           </div>
           <div class="cards__item">
-            <img src="/assets/img/client2.png" alt="client">
+            <img src="../assets/img/client2.png" alt="client">
             <h4>Ксения</h4>
             <p class="main__text">
               У меня было пять уроков и просто поразительно, сколько я уже узнала. Мой преподаватель не только
@@ -124,7 +133,7 @@ session_start();
               на итальянском, но и отправляет материалы, которыми я могу заниматься в своем ритме.</p>
           </div>
           <div class="cards__item">
-            <img src="/assets/img/client3.png" alt="client">
+            <img src="../assets/img/client3.png" alt="client">
             <h4>Максим</h4>
             <p class="main__text">
               Я заметил что мой подход к изучению итальянского языка стал гораздо эффективнее. Я даже прошел несколько
@@ -132,7 +141,7 @@ session_start();
               на итальянском. Еще несколько месяцев назад это было совершенно невозможно.</p>
           </div>
           <div class="cards__item">
-            <img src="/assets/img/client4.png" alt="client">
+            <img src="../assets/img/client4.png" alt="client">
             <h4>Юлия</h4>
             <p class="main__text">
               Я сомневалась, что смогу найти достаточно гибкого преподавателя, но уже на первом уроке мои сомнения
@@ -183,10 +192,10 @@ session_start();
       </div>
       <div class="seperator"></div>
       <div class="footer__block">
-        <a href="#hero"><img src="/assets/img/logo.svg" alt="Logo"></a>
+        <a href="#hero"><img src="../assets/img/logo.svg" alt="Logo"></a>
         <div class="footer__block__sign">
-          <a href="./signin.php" class="block__text__link">Войти или зарегестрироваться <img
-              src="/assets/icons/arrow--white.svg" alt=""></a>
+          <a href="../signin.php" class="block__text__link">Войти или зарегестрироваться <img
+              src="../assets/icons/arrow--white.svg" alt=""></a>
         </div>
       </div>
       <p class="footer__text">[TERMS] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit at mattis
@@ -199,10 +208,10 @@ session_start();
     </div>
   </footer>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="/js/slick.min.js"></script>
-  <script src="/js/addClose.js"></script>
-  <script src="/js/slider.js"></script>
+  <script src="../js/slick.min.js"></script>
+  <script src="../js/addClose.js"></script>
+  <script src="../js/slider.js"></script>
 </body>
-</body>
+
 
 </html>
