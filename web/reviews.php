@@ -10,10 +10,9 @@ if (!$_SESSION['user']) {
 
 <?php include "../layout/meta.php"; ?>
 
-<body class="container__aside">
-  
-<?php include "../layout/side-menu.php" ?>
-  <main class="reviews">
+<body>
+  <?php include "../layout/side-menu.php" ?>
+  <main class="reviews container__aside">
     <div class="head__info">
         <div class="head__title">
           <span id="headTitle">Отзывы о Fratteli</span>

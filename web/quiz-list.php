@@ -56,12 +56,9 @@ $page_title = "Мои тесты"
     }
 </style>
 
-<body class="container__aside">
-
-    <?php include "../layout/side-menu.php" ?>
-
-
-    <main class="container">
+<body>
+  <?php include "../layout/side-menu.php" ?>
+  <main class="container container__aside">
         <div class="head">
             <div class="head__info">
                 <div class="head__title">Тесты</div>

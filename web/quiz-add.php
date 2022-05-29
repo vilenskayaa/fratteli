@@ -21,10 +21,9 @@ $page_title = "Создание теста"
   }
 </style>
 
-<body class="container__aside">
-
+<body>
   <?php include "../layout/side-menu.php" ?>
-  <main class="container">
+  <main class="container container__aside">
     <div class="head">
       <div class="head__info">
         <div class="head__title">Создание теста</div>

@@ -6,9 +6,8 @@ session_start();
 
 <?php include "../layout/meta.php"; ?>
 
-<body class="container__aside">
-  
-<?php include "../layout/side-menu.php" ?>
+<body>
+  <?php include "../layout/side-menu.php" ?>
   <header class="header">
     <div class="header__container">
       <p class="header__text">Зарегестрируйся сейчас и получи бесплатно доступ к тесту P.L.I.D.A.</p>

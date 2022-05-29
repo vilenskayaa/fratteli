@@ -8,10 +8,9 @@ $page_title = "Словарь";
 
 <?php include "../layout/meta.php"; ?>
 
-<body class="container__aside">
-
+<body>
   <?php include "../layout/side-menu.php" ?>
-  <main class="">
+  <main class="container__aside">
       <form id="create-word-form" enctype="multipart/form-data">
         <input type="text" name="word_rus" placeholder="На русском"/>
         <input type="text" name="word_italian" placeholder="На итальянском"/>

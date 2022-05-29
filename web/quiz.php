@@ -8,10 +8,9 @@ $page_title = "Тест";
 
 <?php include "../layout/meta.php"; ?>
 
-<body class="container__aside">
-
+<body>
   <?php include "../layout/side-menu.php" ?>
-  <main class="">
+  <main class="container__aside">
     <div id="testContainer"></div>
     <div class="" id="result"></div>
   </main>

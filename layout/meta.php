@@ -10,7 +10,12 @@
     
   </script>
   <script src="../js/popup.js"></script>
-  <script src="/js/popup.js"></script>
+  <script>
+    window.onload = function() {
+      initExitPopup();
+    };
+  </script>
+  <link rel="stylesheet" href="../styles/css/components/popup.css">
   <link rel="stylesheet" href="../styles/css/reset.css">
   <link rel="stylesheet" href="../styles/css/fonts.css">
   <link rel="stylesheet" href="../styles/css/coolicons.css">
