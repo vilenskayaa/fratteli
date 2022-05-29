@@ -10,8 +10,8 @@ const backBtn = document.createElement('button');
 const btnContainer = document.createElement('div');
 const exitBtn = document.querySelector('.exit__btn');
 
-popupImg.setAttribute('src', '/assets/img/popup.png');
-popupClose.setAttribute('src', '/assets/icons/modal-close.svg');
+popupImg.setAttribute('src', '../assets/img/popup.png');
+popupClose.setAttribute('src', '../assets/icons/modal-close.svg');
 
 popupTitle.classList.add('title__text');
 popup.classList.add('popup');
@@ -33,13 +33,13 @@ popupTitle.innerText = 'Уже уходишь?';
 popupText.innerText = 'Кажется, у нас осталось что-то интересное для вас....';
 
 exitBtn.addEventListener('click', () => {
-  popupContainer.style.visibility = 'visible';
+    popupContainer.style.visibility = 'visible';
 });
 
 backBtn.addEventListener('click', () => {
-  popupContainer.style.visibility = 'hidden';
+    popupContainer.style.visibility = 'hidden';
 });
 
 popupClose.addEventListener('click', () => {
-  popupContainer.style.visibility = 'hidden';
+    popupContainer.style.visibility = 'hidden';
 });
