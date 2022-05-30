@@ -45,8 +45,8 @@
     font-family: "Proxima Nova Rg";
     font-style: normal;
     font-weight: 600;
-    font-size: 32px;
-    line-height: 40px;
+    font-size: 28px;
+    line-height: 34px;
     color: #2E3134;
   }
   
@@ -54,9 +54,9 @@
     font-family: "Proxima Nova Rg";
     font-style: normal;
     font-weight: 400;
-    font-size: 18px;
-    line-height: 24px;
-    padding: 24px 0;
+    font-size: 16px;
+    line-height: 22px;
+    padding: 18px 0;
   }
   
   .btn {
@@ -90,11 +90,6 @@
     padding: 0 15px;
     display: flex;
     justify-content: space-between;
-  }
-  
-  .block__text__link:hover img {
-    transition: transform 0.2s ease-in-out;
-    transform: translate(140%, 25%);
   }
   
   .header {
@@ -191,13 +186,21 @@
     font-family: "Proxima Nova Rg";
     font-style: normal;
     font-weight: 600;
-    font-size: 20px;
-    line-height: 26px;
+    font-size: 18px;
+    line-height: 22px;
     color: #97CD92;
     transition: all 0.3s ease;
   }
-  .block__text__link img {
-    transform: translate(100%, 25%);
+  a.block__text__link:after {
+    content: url('../../assets/icons/arrow--green.svg');
+    display: inline-block;
+    position: relative;
+    left: 16px;
+    top: 6px;
+  }
+  a.block__text__link:hover:after {
+    transition: transform 0.2s ease-in-out;
+    transform: translate(50%, 0%);
   }
   .block__text__link:hover {
     color: #74b36e;
@@ -212,7 +215,7 @@
     padding-top: 60px;
   }
   .course__text__offer {
-    padding-top: 50px;
+    padding-bottom: 40px;
     max-width: 550px;
   }
   .course__text__offer .block__text__link {
@@ -347,6 +350,12 @@
   .footer .socials__link__img:hover .socials--hover path {
     transition: all 0.3s ease-in-out;
     fill: #97CD92;
+  }
+  .footer__block__sign {
+    margin-right: 20px;
+  }
+  .footer__block__sign .block__text__link:after {
+    content: url('../../assets/icons/arrow--white.svg');
   }
   
   @media (max-width: 550px) {

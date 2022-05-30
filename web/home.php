@@ -34,8 +34,8 @@ $page_title = "Fratteli";
             итальянское путешествие!</h1>
           <p class="hero__offer__text">Только до 21.04.2022 подарок для новых пользователей - карточки заданий к тесту
             P.L.I.D.A.!</p>
-          <div class="hero__offer__button btn">
-            <a href="../web/signin.php">начать</a>
+          <div class="hero__offer__button">
+            <a class="btn" href="../web/signin.php">начать</a>
           </div>
         </div>
         <div class="hero__person">
@@ -55,8 +55,7 @@ $page_title = "Fratteli";
               <li class="list__item">Занимайся в удобном темпе, не беспокоясь о неудобном расписании. Никакого кота в
                 мешке, плати так, как выгодно тебе</li>
             </ul>
-            <a class="block__text__link" href="../signin.php">Найти преподавателя <img
-                src="../assets/icons/arrow--green.svg" alt=""></a>
+            <a class="block__text__link" href="../web/signin.php">Найти преподавателя</a>
           </div>
           <div class="about__block__img">
             <img src="../assets/img/aboutImg1.png" alt="Современные уроки итальянского">
@@ -68,11 +67,8 @@ $page_title = "Fratteli";
           </div>
           <div class="about__block__text">
             <h3>Расширяй возможности изучения за пределами занятий</h3>
-            <ul class="block__text__list list">
-              <li class="list__item">Узнай свой уровень с помощью бесплатного теста</li>
-            </ul>
-            <a class="block__text__link" href="../signin.php">Узнать больше <img src="../assets/icons/arrow--green.svg"
-                alt=""></a>
+            <div class="list__item">Узнай свой уровень с помощью бесплатного теста</div>
+            <a class="block__text__link" href="../web/signin.php">Узнать больше</a>
           </div>
         </div>
       </div>
@@ -86,21 +82,18 @@ $page_title = "Fratteli";
               это поможет тебе в карьере
               или для
               прохождения собеседования</p>
-            <a class="block__text__link" href="../signin.php">Расширяй словарный запас<img
-                src="../assets/icons/arrow--blue.svg" alt=""></a>
+            <a class="block__text__link" href="../web/signin.php">Расширяй словарный запас</a>
           </div>
           <div class="course__text__offer">
             <h4>Подготовка к экзамену</h4>
             <p class="main__text">Получи необходимый балл для сдачи экзаменов</p>
-            <a class="block__text__link" href="../signin.php">Готовься к тестам<img src="../assets/icons/arrow--blue.svg"
-                alt=""></a>
+            <a class="block__text__link" href="../web/signin.php">Готовься к тестам</a>
           </div>
           <div class="course__text__offer">
             <h4>Разговорная практика</h4>
             <p class="main__text">Подари себе уверенность в разговорах и общайся на темы, которые тебе
               интересны</p>
-            <a class="block__text__link" href="../signin.php">Практикуй язык<img src="../assets/icons/arrow--blue.svg"
-                alt=""></a>
+            <a class="block__text__link" href="../web/signin.php">Практикуй язык</a>
           </div>
         </div>
 
@@ -157,8 +150,8 @@ $page_title = "Fratteli";
         <h2>Изучай больше, чем просто язык!</h2>
         <p class="start-edu__text">С Fratteli вы приобретете полезные навыки, расширите свой кругозор и познакомитесь с
           потрясающими людьми.</p>
-        <div class="hero__offer__button btn">
-          <a class="start-edu__link" href="/web/signin.php">начать</a>
+        <div class="hero__offer__button">
+          <a class="start-edu__link btn" href="../web/signin.php">начать</a>
         </div>
       </div>
     </section>
@@ -195,8 +188,7 @@ $page_title = "Fratteli";
       <div class="footer__block">
         <a href="#hero"><img src="../assets/img/logo.svg" alt="Logo"></a>
         <div class="footer__block__sign">
-          <a href="../signin.php" class="block__text__link">Войти или зарегестрироваться <img
-              src="../assets/icons/arrow--white.svg" alt=""></a>
+          <a href="../web/signin.php" class="block__text__link">Войти или зарегестрироваться</a>
         </div>
       </div>
       <p class="footer__text">[TERMS] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit at mattis
