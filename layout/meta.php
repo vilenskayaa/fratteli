@@ -22,7 +22,10 @@
   <link rel="stylesheet" href="../styles/css/all.css">
   <link rel="stylesheet" href="../styles/css/slick.css">
   <link rel="stylesheet" href="../styles/css/slick-theme.css">
+  <link rel="stylesheet" href="../styles/css/slick-theme.css">
+  
   <style>
+  
     .test_level {
       background: #41BBFF;
       border-radius: 12px;
@@ -54,6 +57,10 @@
     }
     #testContainer{
       width: 500px;
+    }
+
+    body {
+    background-color: #fafafa;
     }
 
     input[type="text"] {

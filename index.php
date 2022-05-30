@@ -1,3 +1,3 @@
 <?php
 
-header('location: /web/signin.php');
+header('location: /web/home.php');
