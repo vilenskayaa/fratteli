@@ -16,7 +16,7 @@ try {
         throw new Exception("Урок не создан либо уже отменён!");
     }
 
-    $updateLesson = "UPDATE `lesson` SET `canceled_at` = NOW();";
+    $updateLesson = "UPDATE `lesson` SET `canceled_at` = NOW() WHERE lesson_id = {$lesson_id}";
 
 
     $db->query($updateLesson);

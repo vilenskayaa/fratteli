@@ -11,8 +11,8 @@ try {
     $user_id = $_SESSION["user"]["id"];
     $user_role = $_SESSION["user"]["role"];
 
-    $lesson_date = $_GET["lesson_date"];
-    $lesson_id = $_GET["lesson_id"];
+    $lesson_date = $_GET["lesson_date"] ?? null;
+    $lesson_id = $_GET["lesson_id"] ?? null;
 
 
     $select = "SELECT * FROM `lesson` as l

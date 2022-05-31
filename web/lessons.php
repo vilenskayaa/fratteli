@@ -21,15 +21,17 @@ $page_title = "Группы";
   <?php include "../layout/side-menu.php" ?>
   <main class="container container__aside">
     <div class="head">
-      <div class="head__info">
-        <div class="head__title">Расписание</div>
-        <div class="head__subtitle">Актуальные события на день грядущий</div>
-      </div>
-      <div class="head__nav">
-        <div class="btn" data-popup>
-          Создать урок
+        <div class="head__info">
+            <div class="head__title">Расписание</div>
+            <div class="head__subtitle">Актуальные события на день грядущий</div>
         </div>
-      </div>
+        <?php if ($_SESSION['user']['role'] === 'teacher'): ?>
+            <div class="head__nav">
+                <div class="btn" data-popup>
+                Создать урок
+                </div>
+            </div>
+        <?php endif; ?>
     </div>
 
     <div class="">

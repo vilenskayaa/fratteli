@@ -15,11 +15,13 @@ $page_title = "Группы";
         <div class="head__title">Мои группы</div>
         <div class="head__subtitle">Здесь можно найти список всех ваших групп, отредактировать их и настроить для дальнейшего взаимодействия</div>
       </div>
+        <?php if ($_SESSION['user']['role'] === 'teacher'): ?>
       <div class="head__nav">
         <div class="btn" data-popup>
           Создать группу
         </div>
       </div>
+        <?php endif; ?>
     </div>
     <div class="classgroup">
 

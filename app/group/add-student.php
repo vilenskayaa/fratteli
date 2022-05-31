@@ -28,8 +28,7 @@ try {
     }
 
     $insertUserToGroup = "INSERT INTO `student`
-        (`student_id`, `group_id`, `user_id`) VALUES
-        (NULL, '$group_id', '$user_id')
+        (`group_id`, `user_id`) VALUES ('$group_id', '$user_id')
     ";
 
     $succes = $db->query($insertUserToGroup);

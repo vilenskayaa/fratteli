@@ -1,0 +1,25 @@
+Index: app/db.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\n\n$db = mysqli_connect(\n  'localhost',\n  'root',\n  '',\n  'fratteli'\n);\n\nif (!$db) {\n  die('Error connect to DataBase');\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/db.php b/app/db.php
+--- a/app/db.php	(revision ee66fb19a1d5c234344a77c0543b44802609811f)
++++ b/app/db.php	(date 1653917700115)
+@@ -1,9 +1,11 @@
+ <?php
+-
++ini_set('error_reporting', E_ALL);
++ini_set('display_errors', 1);
++ini_set('display_startup_errors', 1);
+ $db = mysqli_connect(
+   'localhost',
+-  'root',
+-  '',
++  'fratteli',
++  '123QWEfghnm,',
+   'fratteli'
+ );
+ 
