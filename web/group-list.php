@@ -83,7 +83,7 @@ $count = $groupsData['count'] ?? 0;
       <form class="form" action="" id="addStudent">
         <div class="form__fields">
           <div class="form__item">
-            <input class="form__input" name="student_email" type="text" placeholder="Введите нинкнейм ученика" required>
+            <input class="form__input" name="student_email" type="text" placeholder="Введите email ученика" required>
           </div>
         </div>
         <button class="form__btn">
