@@ -37,7 +37,6 @@ ul {
   position: relative;
   min-height: 100vh;
   overflow: hidden;
-  z-index: 0;
 }
 
 h1 {
@@ -326,7 +325,7 @@ h2 {
     padding: 0;
   }
 }
-/*# sourceMappingURL=library.css.map */
+
 @media(max-width: 700px) {
   .nav {
     position: static;

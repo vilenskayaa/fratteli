@@ -50,6 +50,7 @@ body {
     justify-content: space-between;
     padding: 64px 0 80px 0;
     background-color: #ffffff;
+    z-index: 999;
 }
 
 .nav__top {
@@ -619,6 +620,3 @@ body {
 .reviews__date {
     color: rgba(1, 12, 59, 0.2);
 }
-
-
-/*# sourceMappingURL=all.css.map */

@@ -12,7 +12,9 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 64px 0 80px 0;
-  background-color: #ffffff; }
+  background-color: #ffffff;
+  z-index: 999;
+}
   .nav__top {
     display: flex;
     flex-direction: column;
@@ -49,4 +51,3 @@
     color: #2e3134;
     opacity: 0.6; }
 
-/*# sourceMappingURL=nav.css.map */
