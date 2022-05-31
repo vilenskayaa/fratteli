@@ -84,10 +84,9 @@ $page_title = "Библиотека"
           <img src="/assets/img/library/song-avatar.png" alt="">
         </div>
         <audio class="song__bar" controls>
-          <source src="myAudio.mp3" type="audio/mpeg">
-          <source src="myAudio.ogg" type="audio/ogg">
+          <source src="/assets/audio/Torna_a_casa.mp3" type="audio/mpeg">
           <p>Ваш браузер не поддерживает HTML5 аудио. Вот взамен
-            <a href="myAudio.mp4">ссылка на аудио</a>
+            <a href="/assets/audio/Torna_a_casa.mp3">скачайте песню и послушайте локально</a>
           </p>
         </audio>
       </section>
