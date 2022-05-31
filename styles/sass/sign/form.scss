@@ -1,115 +1,102 @@
 @import '../variables.scss';
-
 .form {
-  width: 100%;
-  max-width: 540px;
-  padding: 20px 0;
-  display: flex;
-  flex-direction: column;
-
-  &-sign {
-    height: 460px;
-    justify-content: space-between;
-  }
-
-  &__fields {
+    width: 100%;
+    max-width: 540px;
+    padding: 20px 0;
     display: flex;
     flex-direction: column;
-    gap: 24px;
-    width: 100%;
-
-    &-role {
-      flex-direction: row;
-      gap: initial;
-      justify-content: space-between;
+    &-sign {
+        height: 460px;
+        justify-content: space-between;
     }
-  }
-
-  &__card {
-    width: 238px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 24px;
-    transform: all 0.2s;
-    // border: 1px solid rgba(0, 8, 40, 0.2);
-  }
-
-  #inputStudent:checked ~ &__card-picture,
-  #inputTeacher:checked ~ &__card-picture {
-    transform: translateY(-20px);
-    -webkit-box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
-    -moz-box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
-    box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
-  }
-  &__card-picture {
-    width: 100%;
-    border-radius: 16px;
-    transition: all 0.2s;
-    cursor: pointer;
-  }
-
-  &__cart-image {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-
-  &__card-title {
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  &__item {
-    width: 100%;
-    position: relative;
-  }
-
-  &__input {
-    font-family: 'Proxima Nova Rg';
-    width: inherit;
-    padding: 20px 30px;
-    color: $black;
-    border: 1px solid $black-20;
-    border-radius: 16px;
-    outline: none;
-    transition: all 0.3s;
-
-    &.error {
-      border-color: $red;
+    &__fields {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        width: 100%;
+        &-role {
+            flex-direction: row;
+            gap: initial;
+            justify-content: space-between;
+        }
     }
-  }
-
-  &__item-icon {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: $fz24;
-    opacity: 0.2;
-    transition: opacity 0.2s;
-    cursor: pointer;
-
-    &.active {
-      opacity: 1;
+    &__card {
+        width: 238px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+        transform: all 0.2s;
+        // border: 1px solid rgba(0, 8, 40, 0.2);
     }
-  }
-
-  &__btn {
-    width: 100%;
-    padding: 20px 30px;
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 20px;
-    border-radius: 16px;
-    background-color: $green;
-    border: none;
-    color: $ff;
-    cursor: pointer;
-  }
+    #inputStudent:checked~&__card-picture,
+    #inputTeacher:checked~&__card-picture {
+        transform: translateY(-20px);
+        -webkit-box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
+        -moz-box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
+        box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    }
+    &__card-picture {
+        width: 100%;
+        border-radius: 16px;
+        transition: all 0.2s;
+        cursor: pointer;
+    }
+    &__cart-image {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    &__card-title {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    &__item {
+        width: 100%;
+        position: relative;
+        margin-bottom: 30px;
+    }
+    &__input {
+        font-family: 'Proxima Nova Rg';
+        width: inherit;
+        padding: 20px 30px;
+        color: $black;
+        border: 1px solid $black-20;
+        border-radius: 16px;
+        outline: none;
+        transition: all 0.3s;
+        &.error {
+            border-color: $red;
+        }
+    }
+    &__item-icon {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: $fz24;
+        opacity: 0.2;
+        transition: opacity 0.2s;
+        cursor: pointer;
+        &.active {
+            opacity: 1;
+        }
+    }
+    &__btn {
+        width: 100%;
+        padding: 20px 30px;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 20px;
+        border-radius: 16px;
+        background-color: $green;
+        border: none;
+        color: $ff;
+        cursor: pointer;
+    }
 }
