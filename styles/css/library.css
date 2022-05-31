@@ -264,7 +264,6 @@ h2 {
   .nav {
     -webkit-box-align: center;
         -ms-flex-align: center;
-            align-items: center;
     padding-bottom: 0;
   }
   .nav .logo {
@@ -272,7 +271,6 @@ h2 {
     padding-bottom: 30px;
   }
   .nav__list {
-    text-align: center;
   }
   .nav__list--bottom {
     text-align: center;
@@ -312,3 +310,29 @@ h2 {
   }
 }
 /*# sourceMappingURL=library.css.map */
+@media(max-width: 700px) {
+  .nav {
+    position: static;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .nav__item {
+    padding-left: 0;
+  }
+  .nav__logo {
+    padding-left: 0;
+  }
+  .nav__bottom {
+    padding-left: 0;
+  }
+  .container__aside {
+    padding: 24px;
+  }
+  .music {
+    padding-left: 0 !important;
+    max-width: 50%;
+    margin: 0 auto;
+  }
+}
