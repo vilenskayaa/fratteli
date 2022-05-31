@@ -10,6 +10,11 @@ $(document).ready(function () {
     $('.overlay').fadeOut(300);
     $('#popup-1').fadeOut(300);
   });
+
+  $('#delete').click(() => {
+    cancelLesson();
+  });
+
 });
 
 const toggleEditRow = (element) => {
@@ -172,6 +177,22 @@ const parsFormData = (formData) => {
   const json = JSON.stringify(object);
   return json;
 };
+
+const cancelLesson = async () => {
+  let json = { lesson_id: getGet('id') };
+  json = JSON.stringify(json);
+
+  const response = await fetch(`${baseApi}/lesson/cancel-lesson.php`, {
+    method: 'POST',
+    body: json,
+  });
+
+  const data = await response.json();
+  console.log(data)
+  if (data.success) {
+    window.location.href = '/web/lesson.php'
+  }
+}
 
 const getLevel = ($level) => {
   if ($level[0] === 'C') return 'Профессионалы';

@@ -6,8 +6,9 @@ require_once '../db.php';
 header("Content-Type: application/json;");
 
 try {
-
-    $lesson_id = $_GET["lesson_id"];
+    $json = file_get_contents('php://input');
+    $req = json_decode($json, true);
+    $lesson_id = $req["lesson_id"];
 
     $selectLesson = "SELECT COUNT(*) as `count` FROM `lesson` WHERE `lesson_id` = '$lesson_id' AND `canceled_at` IS NOT NULL;";
     $countLessons = (int)$db->query($selectLesson)->fetch_assoc()["count"];
@@ -21,7 +22,7 @@ try {
 
     $db->query($updateLesson);
 
-    $res = array("affected_rows" => mysqli_affected_rows($db));
+    $res = array("affected_rows" => mysqli_affected_rows($db), 'success' => true);
 
     echo json_encode($res);
 
