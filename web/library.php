@@ -32,13 +32,13 @@ $page_title = "Библиотека"
     <div class="wrapper">
 
     <main class="container container__aside">
-      <div class="main__title">
-        <h1>Библиотека</h1>
-        <p class="main__title__text">
-          Здесь только самые интересные материалы
-          для изучения итальянского
-        </p>
+  
+      <div class="head">
+      <div class="head__info">
+        <div class="head__title">Библиотека</div>
+        <div class="head__subtitle">Здесь только самые интересные материалы для изучения итальянского</div>
       </div>
+    </div>
       <section class="main__content">
         <div class="main__content__block">
           <h2>Читальный зал</h2>
