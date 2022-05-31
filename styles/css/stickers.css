@@ -70,6 +70,7 @@ h2 {
 }
 
 .title__text {
+  padding-top: 16px;
   padding-bottom: 16px;
   font-family: 'Proxima Nova';
   font-style: normal;
@@ -105,9 +106,12 @@ h2 {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 24px;
+  margin-top: 24px;
 }
 
 .selected__cards__item {
+  background: #fff;
+  border-radius: 16px;
   padding: 24px 47px;
   display: -webkit-box;
   display: -ms-flexbox;
