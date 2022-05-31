@@ -1,15 +1,25 @@
 $(document).ready(function () {
   $('data-remove').hide(0);
 
-  $('[data-popup]').click(() => {
+  $('[data-popup="popup-1"]').click(() => {
     $('.overlay').fadeIn(300);
     $('#popup-1').fadeIn(300);
   });
 
-  $('.overlay').click(() => {
+  $('[data-popup="popup-3"]').click(() => {
+    $('.overlay').fadeIn(300);
+    $('#popup-3').fadeIn(300);
+  });
+
+  $('.overlay, #popup-3 .btn-gray').click(() => {
     $('.overlay').fadeOut(300);
     $('#popup-1').fadeOut(300);
+    $('#popup-3').fadeOut(300);
   });
+
+  $('#popup-3 .yes').click((e) => {
+    removeGroup()
+  })
 });
 
 const toggleEditRow = (element) => {
@@ -158,6 +168,21 @@ const addStudent = async () => {
     });
 
   console.log(res);
+};
+
+const removeGroup = async () => {
+  let json = { group_id: getGet('id') };
+  json = JSON.stringify(json);
+
+  const response = await fetch(`${baseApi}/group/remove-group.php`, {
+    method: 'POST',
+    body: json,
+  });
+
+  const data = await response.json();
+  if (data.success) {
+    window.location.href = '/web/group.php'
+  }
 };
 
 const parsFormData = (formData) => {

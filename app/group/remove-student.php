@@ -12,13 +12,13 @@ try {
     $json = file_get_contents('php://input');
     $req = json_decode($json, true);
 
-    $user_id = $_GET["user_id"];
-    $group_id = $_GET["group_id"];
+    $user_id = $req["user_id"];
+    $group_id = $req["group_id"];
 
     $deleteUserFromGroup = "DELETE FROM `student` WHERE `user_id` = '$user_id' AND `group_id` = '$group_id'";
 
     $succes = $db->query($deleteUserFromGroup);
-    $res = array("removed" => mysqli_affected_rows($db));
+    $res = array("removed" => mysqli_affected_rows($db), "success" => true);
 
     echo json_encode($res);
 

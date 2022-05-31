@@ -5,13 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b5778a18-996a-4c02-8f09-7d34fedec0c8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/app/db.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/db.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/group/add-student.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/group/add-student.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lesson/cancel-lesson.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lesson/cancel-lesson.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lesson/get-lesson.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lesson/get-lesson.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layout/meta.php" beforeDir="false" afterPath="$PROJECT_DIR$/layout/meta.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/group.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/group.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/lessons.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/lessons.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/group/remove-group.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/group/get-groups.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/group/get-groups.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/group/remove-student.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/group/remove-student.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/group-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/group-list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/group-list.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/group-list.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/lessons-list.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/lessons-list.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +43,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/var/www/html",
+    "last_opened_file_path": "/home/user/projects/leadsgate",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -60,7 +60,7 @@
       <option name="presentableId" value="Default" />
       <updated>1653917536935</updated>
       <workItem from="1653917538127" duration="216000" />
-      <workItem from="1653983749941" duration="3121000" />
+      <workItem from="1653983749941" duration="10692000" />
     </task>
     <servers />
   </component>
