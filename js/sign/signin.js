@@ -12,8 +12,8 @@ $(document).ready(function() {
             success: function(data) {
                 validation = jQuery.parseJSON(data)
 
-                const inputEmail = document.querySelector("#email");
-                const inputnPassword = document.querySelector("#password");
+                const inputEmail = document.querySelector(".input_field_email");
+                const inputnPassword = document.querySelector(".input_field_password");
 
                 inputEmail.classList.remove("error")
                 inputnPassword.classList.remove("error")

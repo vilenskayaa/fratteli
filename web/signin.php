@@ -10,6 +10,10 @@ $page_title = "Авторизация";
 
 ?>
 
+<head>
+  <link rel="stylesheet" href="/styles/css/sign.css">
+</head>
+
 <?php include "../layout/meta.php"; ?>
 
 <body>
@@ -30,11 +34,13 @@ $page_title = "Авторизация";
       </header>
       <form class="form form-sign" action="" id="signIn">
         <div class="form__fields">
-          <div class="form__item">
+          <div class="form__item input_field_email">
             <input class="form__input" name="email" type="email" id="email" placeholder="Email" required>
+            <div class="form_input_error_text">Неверный email</div>
           </div>
-          <div class="form__item">
+          <div class="form__item input_field_password">
             <input class="form__input" name="password" type="password" id="password" placeholder="Пароль" required>
+            <div class="form_input_error_text">Неверный пароль</div>
             <i id="viewField" class="form__item-icon ci-hide"></i>
           </div>
         </div>

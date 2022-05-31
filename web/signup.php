@@ -30,18 +30,21 @@ $page_title = "Регистрация";
       </header>
       <form class="form form-sign" action="" id="signUp">
         <div class="form__fields">
-          <div class="form__item">
+          <div class="form__item input_field_email">
             <input class="form__input" name="email" type="email" placeholder="Email" required>
+            <div class="form_input_error_text">Пользователь с таким email уже зарегистрирован</div>
           </div>
           <div class="form__item">
             <input class="form__input" name="name" type="text" placeholder="Имя пользователя" required>
           </div>
-          <div class="form__item">
+          <div class="form__item input_field_password">
             <input class="form__input" name="password" type="password" placeholder="Пароль" required>
+            <div class="form_input_error_text">Пароль должен быть не менее 6 символов, содержать буквы и цифры</div>
             <i id="viewField" class="form__item-icon ci-hide"></i>
           </div>
-          <div class="form__item">
+          <div class="form__item input_field_password_repeat">
             <input class="form__input" name="passwordRepeat" type="password" placeholder="Подтвердите пароль" required>
+            <div class="form_input_error_text">Пароли должны совпадать</div>
           </div>
         </div>
         <button class="form__btn">

@@ -68,21 +68,24 @@ const changeBg = () => {
 }
 
 const chekValidation = (formData) => {
+    console.log("chekValidation")
     const password = formData.get('password')
     const passwordRepeat = formData.get('passwordRepeat')
     const reg = /(?=.*[0-9])(?=.*[a-z])[0-9a-zA-Z!@#$%^&*]{6,}/g;
-    const inputPass = document.querySelector("input[name=password]")
-    const inputPassRepeat = document.querySelector("input[name=passwordRepeat]")
+    const inputPass = document.querySelector(".input_field_password")
+    const inputPassRepeat = document.querySelector(".input_field_password_repeat")
 
     inputPass.classList.remove('error')
     inputPassRepeat.classList.remove('error')
 
     let flag = true;
     if (!reg.test(password)) {
+        console.log("wrong pass")
         inputPass.classList.add('error')
         flag = false
     }
     if (password !== passwordRepeat) {
+        console.log("wrong repeat pass")
         inputPassRepeat.classList.add('error')
         flag = false
     }
