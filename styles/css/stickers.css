@@ -32,14 +32,15 @@ ul {
 }
 
 .wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  max-width: 1440px;
-  margin: 0 auto;
   position: relative;
   min-height: 100vh;
   overflow: hidden;
+  z-index: -1;
+}
+.container {
+  max-width: 100%;
+  padding-right: 160px;
 }
 
 .main__title__text {
@@ -197,3 +198,38 @@ h2 {
   }
 }
 /*# sourceMappingURL=stickers.css.map */
+
+@media(max-width: 700px) {
+  .nav {
+    position: static;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .nav__item {
+    padding-left: 0;
+  }
+  .nav__logo {
+    padding-left: 0;
+  }
+  .nav__bottom {
+    padding-left: 0;
+  }
+  .container__aside {
+    padding: 24px;
+  }
+  .container__aside {
+    padding-right: 24px;
+  }
+  .main__title {
+    text-align: center;
+  }
+  .main__title__text {
+    text-align: center;
+    margin: 0 auto;
+  }
+  .selected__title {
+    justify-content: center;
+  }
+}
