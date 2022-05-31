@@ -22,10 +22,10 @@ $page_title = "Стикеры"
   <div class="wrapper">
     <main class="container container__aside">
       <div class="main__title">
-        <h1 class="title__text">Стикеры</h1>
-        <p class="main__title__text">
+      <div class="head__title">Стикеры</div>
+      <div class="head__subtitle">
           Тут будут слова, отмеченные вами и собранные в одном месте
-        </p>
+</div>
       </div>
       <section class="selected">
         <div class="selected__title">
