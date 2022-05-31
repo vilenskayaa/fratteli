@@ -33,33 +33,32 @@ $page_title = "Библиотека"
     <section class="question">
         <div class="question__title">
           <h2>Вопрос 1</h2>
-          <p class="question__text">Напишите вопрос в двух частях (между ними будет пропущенная часть)</p>
         </div>
         <div class="question__parts">
           <div class="answer__item">
-            <p class="answer__item__text">Durata globale</p>
-          </div>
-          <div class="answer__item">
-            <p class="answer__item__text">sostenuta − a discrezione dei candidati − in coppia o singolarmente.</p>
+            <p class="answer__item__text">Durata globale: 10 minuti circa. La prova può essere sostenuta − a discrezione dei candidati − in coppia o singolarmente.</p>
           </div>
         </div>
     </section>
     <section class="answers">
       <h2>Ответы (4)</h2>
-      <div class="answers__list">
-        <div class="answer__item answer__item--active">
-          <p class="answer__item__text">può essere sostenuta</p>
-          <img src="../assets/icons/que-selected.svg" alt="">
+      <div class="answers__list answers__list--images">
+        <div class=" answer__item answer__item--image answer__item--image--active">
+            <img  src="../assets/img/create-test-img.png" alt="">
+            <img class="que__selected__icon" src="../assets/icons/que-selected.svg" alt="">
         </div>
-        <div class="answer__item">
-          <p class="answer__item__text">può essere sostenuta</p>
+        <div class=" answer__item answer__item--image">
+          <img class="add__image__icon" src="../assets/icons/plus.svg" alt="">
+
         </div>
-        <div class="answer__item">
-          <p class="answer__item__text">può essere sostenuta</p>
+        <div class=" answer__item answer__item--image">
+          <img class="add__image__icon" src="../assets/icons/plus.svg" alt="">
+
         </div>
-        <div class="answer__item">
-          <p class="answer__item__text">può essere sostenuta</p>
+        <div class=" answer__item answer__item--image">
+          <img class="add__image__icon" src="../assets/icons/plus.svg" alt="">
         </div>
+        
       </div>
     </section>
         
