@@ -41,10 +41,8 @@ try {
             "LEFT JOIN `group` AS g ON g.`group_id` = l.`group_id` WHERE g.`teacher_id` = $user_id" :
             "LEFT JOIN `student` AS s ON s.`group_id` = l.`group_id` WHERE s.`user_id` = $user_id";
         $select .= "
-        AND l.`lesson_id` = '$lesson_id';
-        AND l.canceled_at IS NULL
+        AND l.`lesson_id` = '$lesson_id'
         ";
-
 
         $lessonsData = $db->query($select)->fetch_assoc();
 

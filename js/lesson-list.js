@@ -190,7 +190,7 @@ const cancelLesson = async () => {
   const data = await response.json();
   console.log(data)
   if (data.success) {
-    window.location.href = '/web/lesson.php'
+    window.location.href = '/web/lessons.php'
   }
 }
 

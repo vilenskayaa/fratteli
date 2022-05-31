@@ -6,10 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b5778a18-996a-4c02-8f09-7d34fedec0c8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lesson/cancel-lesson.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lesson/cancel-lesson.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/lesson/get-lesson.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lesson/get-lesson.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/lesson-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/lesson-list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/lessons-list.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/lessons-list.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +39,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/user/projects/leadsgate",
+    "last_opened_file_path": "/var/www/html",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -58,7 +56,8 @@
       <option name="presentableId" value="Default" />
       <updated>1653917536935</updated>
       <workItem from="1653917538127" duration="216000" />
-      <workItem from="1653983749941" duration="11619000" />
+      <workItem from="1653983749941" duration="12465000" />
+      <workItem from="1654003978132" duration="486000" />
     </task>
     <servers />
   </component>
