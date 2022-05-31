@@ -42,9 +42,10 @@
 }
 
 .btn {
+  padding: 20px 75px;
   border: none;
   border-radius: 16px;
-  font-family: 'Proxima Nova Rg';
+  font-family: 'Proxima Nova';
   font-style: normal;
   font-weight: 600;
   font-size: 20px;
@@ -57,22 +58,15 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 10vw;
-  top: 80%;
+  gap: 140px;
+  top: 70%;
 }
 
-.btn__container .btn {
-  width: 160px;
-  height: 60px;
-}
-
-
-.btn__container .btn--confirm {
-  background-color: #FAF8EE;
+.btn--confirm {
   color: #FF7A00;
 }
 
-.btn__container .btn--back {
+.btn--back {
   background-color: #97CD92;
   color: #fff;
 }

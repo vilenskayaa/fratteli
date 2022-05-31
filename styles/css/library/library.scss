@@ -111,22 +111,28 @@ h2 {
 
 .main {
     max-width: 60%;
-    padding: 64px 160px 20px 60px;
+    padding: 64px 0px 20px 60px;
+
     &__title {
         padding-bottom: 44px;
     }
+
     &__content {
         &__block {
             padding: 24px;
+
             img {
                 max-width: 100%;
             }
+
             .block__cards {
                 display: flex;
                 flex-wrap: wrap;
                 gap: 24px;
+
                 &__item {
                     position: relative;
+
                     .download__btn {
                         position: absolute;
                         right: 12px;
@@ -139,6 +145,7 @@ h2 {
                     }
                 }
             }
+
             h3 {
                 padding-top: 30px;
                 padding-bottom: 12px;
@@ -149,6 +156,7 @@ h2 {
                 line-height: 24px;
                 color: #2E3134;
             }
+
             .blog__text {
                 font-family: 'Proxima Nova';
                 font-style: normal;
@@ -158,6 +166,7 @@ h2 {
                 color: #2E3134;
                 padding-bottom: 12px;
             }
+
             .blog__link {
                 max-width: 200px;
                 font-family: 'Proxima Nova';
@@ -169,6 +178,7 @@ h2 {
                 display: flex;
                 align-items: center;
                 gap: 25px;
+
                 &:hover {
                     img {
                         transition: all 0.3s ease-in-out;
@@ -181,24 +191,30 @@ h2 {
 }
 
 .music {
-    padding: 212px 52px 60px 0;
+    padding: 212px 22px 60px 0;
+
     &__content {
         padding: 24px 32px 32px;
+
         h1 {
             padding-bottom: 8px;
         }
+
         .main__title__text {
             padding-bottom: 27px;
         }
     }
+
     &__controlls {
         display: flex;
         justify-content: space-between;
+
         .group {
             display: flex;
             gap: 16px;
         }
     }
+
     .btn__controll {
         background: none;
         border: 0;
@@ -208,14 +224,17 @@ h2 {
 
 .song {
     padding: 24px 24px 32px 24px;
+
     &__info {
         display: flex;
         align-items: center;
         justify-content: space-between;
+
         h2 {
             padding-bottom: 8px;
         }
     }
+
     &__bar {
         margin-top: 32px;
         display: flex;
@@ -225,6 +244,7 @@ h2 {
         padding: 20px 13px;
         align-items: center;
     }
+
     &__duration {
         &-text {
             font-family: 'Proxima Nova';
@@ -235,6 +255,7 @@ h2 {
             letter-spacing: 0.01em;
             color: #000000;
         }
+
         &-board {
             width: 95px;
             height: 4px;
@@ -248,39 +269,61 @@ h2 {
     .wrapper {
         flex-direction: column;
     }
+
     .main {
         max-width: 100%;
     }
+
     .nav {
         align-items: center;
         padding-bottom: 0;
+
         .logo {
             max-width: 120px;
             padding-bottom: 30px;
         }
+
         &__list {
             text-align: center;
+
             &--bottom {
                 text-align: center;
             }
         }
     }
+
     .main {
         padding: 54px 24px 0;
+
         &__title {
             text-align: center;
+
             &__text {
                 max-width: 100%;
             }
         }
     }
+
     aside {
         padding: 54px 24px !important;
+
         .product {
             img {
                 display: block;
                 margin: 0 auto;
             }
         }
+    }
+}
+
+@media(max-width: 550px) {
+    h2 {
+        text-align: center;
+    }
+    .block__cards {
+        justify-content: center;
+    }
+    .main__content__block {
+        padding: 0;
     }
 }
