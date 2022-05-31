@@ -1,0 +1,173 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  font-weight: 600;
+  src: url("/assets/fonts/ProximaNova-Semibold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  font-weight: 300;
+  src: url("/assets/fonts/ProximaNova-Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  font-weight: 400;
+  src: url("/assets/fonts/ProximaNova-Regular.woff") format("woff");
+}
+
+.wrapper {
+  display: flex;
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.main__title__text {
+  font-family: 'Proxima Nova';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  max-width: 420px;
+}
+
+h2 {
+  padding-bottom: 16px;
+  font-family: 'Proxima Nova';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+  color: #2E3134
+}
+
+.main {
+  flex: 1;
+  padding: 64px 60px;
+}
+
+.title__text {
+  padding-bottom: 16px;
+  font-family: 'Proxima Nova';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 36px;
+  color: #2E3134;
+}
+
+.selected {
+  padding-top: 44px;
+  margin-bottom: 24px;
+
+
+  h2 {
+    padding: 0;
+  }
+
+  &__title {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
+  &__cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+
+    &__item {
+      padding: 24px 47px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .like__btn {
+        margin-top: 20px;
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        border-radius: 40px;
+        border: 0;
+        background-color: #FAF8EE;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+.completed {
+  padding: 186px 12px 60px 0;
+
+  .title__text {
+    padding-bottom: 8px;
+  }
+
+  &__cards {
+    &__item {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 24px;
+
+      img {
+        width: 80px;
+        height: 80px;
+      }
+    }
+  }
+}
+
+@media(max-width:900px) {
+  .selected__cards {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 550px) {
+  .nav {
+    padding: 24px;
+  }
+
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .main {
+    padding: 24px;
+
+    &__title {
+      text-align: center;
+
+      &__text {
+        margin: 0 auto;
+
+      }
+    }
+
+    .selected {
+      &__title {
+        justify-content: center;
+      }
+    }
+  }
+}
