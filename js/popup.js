@@ -1,4 +1,9 @@
 function initExitPopup() {
+    const exitBtn = document.querySelector('.exit__btn');
+    if (exitBtn === null) {
+        return;
+    }
+
     const popup = document.createElement('div');
     const body = document.querySelector('body');
     const popupTitle = document.createElement('h1');
@@ -9,7 +14,6 @@ function initExitPopup() {
     const confirmBtn = document.createElement('button');
     const backBtn = document.createElement('button');
     const btnContainer = document.createElement('div');
-    const exitBtn = document.querySelector('.exit__btn');
 
     popupImg.setAttribute('src', '../assets/img/popup.png');
     popupClose.setAttribute('src', '../assets/icons/modal-close.svg');
