@@ -61,7 +61,7 @@
     }
 
     body {
-    background-color: #fafafa;
+      background-color: #f1f1f8;
     }
 
     input[type="text"] {

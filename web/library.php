@@ -6,25 +6,11 @@ $page_title = "Библиотека"
 ?>
 
 <?php include "../layout/meta.php"; ?>
-<!-- <style>
-  .form__item.answer {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .form__item.answer input[type="radio"] {
-    background-color: #000;
-    width: 24px;
-    height: 24px;
-  }
-</style> -->
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="../styles/css/library.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="/styles/css/components/popup.css">
 
 </head>
 <body>
