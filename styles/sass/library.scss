@@ -30,6 +30,8 @@ ul {
     src: url("/assets/fonts/ProximaNova-Regular.woff") format("woff");
 }
 
+
+
 .wrapper {
     display: flex;
     max-width: 1440px;
@@ -191,6 +193,7 @@ h2 {
 }
 
 .music {
+
     padding: 212px 22px 60px 0;
 
     &__content {
@@ -320,9 +323,11 @@ h2 {
     h2 {
         text-align: center;
     }
+
     .block__cards {
         justify-content: center;
     }
+
     .main__content__block {
         padding: 0;
     }

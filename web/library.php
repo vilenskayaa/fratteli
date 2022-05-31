@@ -23,11 +23,12 @@ $page_title = "Библиотека"
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="../styles/css/library/library.css" rel="stylesheet"/>
-  <link href="../styles/css/library/library.scss" rel="stylesheet"/>
+  <link href="../styles/css/library.css" rel="stylesheet"/>
 </head>
 <body>
   <?php include "../layout/side-menu.php" ?>
+    <div class="wrapper">
+
     <main class="container container__aside">
       <div class="main__title">
         <h1>Библиотека</h1>
@@ -103,6 +104,8 @@ $page_title = "Библиотека"
         </audio>
       </section>
     </aside>
+    </div>
+
   <script src="/js/popup.js"></script>
 </body>
 

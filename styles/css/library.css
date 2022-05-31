@@ -31,12 +31,9 @@ ul {
   src: url("/assets/fonts/ProximaNova-Regular.woff") format("woff");
 }
 
+
 .wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  max-width: 1440px;
-  margin: 0 auto;
   position: relative;
   min-height: 100vh;
   overflow: hidden;
@@ -71,6 +68,11 @@ h2 {
   max-width: 420px;
 }
 
+.container__aside {
+  flex: 1;
+}
+
+
 .main {
   max-width: 60%;
   padding: 64px 0px 20px 60px;
@@ -103,6 +105,9 @@ h2 {
 
 .main__content__block .block__cards__item .download__btn {
   position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   right: 12px;
   bottom: 12px;
   background: #2E3134;
@@ -287,6 +292,9 @@ h2 {
   aside .product img {
     display: block;
     margin: 0 auto;
+  }
+  .music {
+    padding-left: 320px !important;
   }
 }
 
