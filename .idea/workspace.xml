@@ -5,17 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b5778a18-996a-4c02-8f09-7d34fedec0c8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/web/quiz-c1.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/account/update-name.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/db.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/test/create-test.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/test/create-test.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/test/get-test.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/test/get-test.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/word/get-words.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/word/get-words.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/quiz/get-one-quiz.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/quiz/get-one-quiz.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/quiz/quiz-add.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/quiz/quiz-add.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layout/meta.php" beforeDir="false" afterPath="$PROJECT_DIR$/layout/meta.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/quiz-add.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/quiz-add.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/signup.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/signup.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/reviews.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/reviews.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/reviews.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/reviews.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,19 +45,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/var/www/html/web",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/var/www/html/web&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/web" />
@@ -86,7 +79,7 @@
       <workItem from="1653917538127" duration="216000" />
       <workItem from="1653983749941" duration="12465000" />
       <workItem from="1654003978132" duration="1436000" />
-      <workItem from="1654098246375" duration="5986000" />
+      <workItem from="1654098246375" duration="7645000" />
     </task>
     <servers />
   </component>

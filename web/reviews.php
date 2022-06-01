@@ -31,7 +31,7 @@ if (!$_SESSION['user']) {
             <input class="form__input" name="name" type="text" placeholder="Новое имя пользователя" required>
           </div>
         </div>
-        <button type="submit" class="form__btn" id="renameButton">
+        <button type="button" class="form__btn" id="renameButton">
           Сохранить
         </button>
       </form>
