@@ -1,237 +1,260 @@
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 ul {
-  list-style: none;
+    list-style: none;
 }
 
 @font-face {
-  font-family: "Proxima Nova";
-  font-weight: 600;
-  src: url("/assets/fonts/ProximaNova-Semibold.woff") format("woff");
+    font-family: "Proxima Nova";
+    font-weight: 600;
+    src: url("/assets/fonts/ProximaNova-Semibold.woff") format("woff");
 }
 
 @font-face {
-  font-family: "Proxima Nova";
-  font-weight: 300;
-  src: url("/assets/fonts/ProximaNova-Light.woff") format("woff");
+    font-family: "Proxima Nova";
+    font-weight: 300;
+    src: url("/assets/fonts/ProximaNova-Light.woff") format("woff");
 }
 
 @font-face {
-  font-family: "Proxima Nova";
-  font-weight: 400;
-  src: url("/assets/fonts/ProximaNova-Regular.woff") format("woff");
+    font-family: "Proxima Nova";
+    font-weight: 400;
+    src: url("/assets/fonts/ProximaNova-Regular.woff") format("woff");
+}
+
+@keyframes bounce {
+    0%,
+    20%,
+    60%,
+    100% {
+        transform: translateY(0);
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
+    80% {
+        transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
 }
 
 .wrapper {
-  display: flex;
-  position: relative;
-  min-height: 100vh;
-  overflow: hidden;
+    display: flex;
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
 }
+
 .container {
-  max-width: 100%;
-  padding-right: 160px;
+    max-width: 100%;
+    padding-right: 160px;
 }
 
 .main__title__text {
-  font-family: 'Proxima Nova';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 26px;
-  max-width: 420px;
+    font-family: 'Proxima Nova';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    max-width: 420px;
 }
 
 h2 {
-  padding-bottom: 16px;
-  font-family: 'Proxima Nova';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 36px;
-  color: #2E3134;
+    padding-bottom: 16px;
+    font-family: 'Proxima Nova';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    color: #2E3134;
 }
 
 .main {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  padding: 64px 60px;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    padding: 64px 60px;
 }
 
 .title__text {
-  padding-top: 16px;
-  padding-bottom: 16px;
-  font-family: 'Proxima Nova';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 36px;
-  line-height: 36px;
-  color: #2E3134;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    font-family: 'Proxima Nova';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 36px;
+    color: #2E3134;
 }
 
 .selected {
-  padding-top: 44px;
-  margin-bottom: 24px;
+    padding-top: 44px;
+    margin-bottom: 24px;
 }
 
 .selected h2 {
-  padding: 0;
+    padding: 0;
 }
 
 .selected__title {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 20px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 20px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
 
 .selected__cards {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  gap: 24px;
-  margin-top: 24px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 24px;
 }
 
 .selected__cards__item {
-  background: #fff;
-  border-radius: 16px;
-  padding: 24px 47px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px 47px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
 
 .selected__cards__item .like__btn {
-  margin-top: 20px;
-  cursor: pointer;
-  width: 50px;
-  height: 50px;
-  border-radius: 40px;
-  border: 0;
-  background-color: #FAF8EE;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+    margin-top: 20px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 40px;
+    border: 0;
+    background-color: #FAF8EE;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.selected__cards__item .like__btn:hover {
+    animation: bounce 1s;
 }
 
 .completed {
-  padding: 186px 12px 60px 0;
+    padding: 186px 12px 60px 0;
 }
 
 .completed .title__text {
-  padding-bottom: 8px;
+    padding-bottom: 8px;
 }
 
 .completed__cards__item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 24px;
-  margin-bottom: 24px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 24px;
 }
 
 .completed__cards__item img {
-  width: 80px;
-  height: 80px;
+    width: 80px;
+    height: 80px;
 }
 
 @media (max-width: 900px) {
-  .selected__cards {
-    -webkit-box-pack: center;
+    .selected__cards {
+        -webkit-box-pack: center;
         -ms-flex-pack: center;
-            justify-content: center;
-  }
+        justify-content: center;
+    }
 }
 
 @media (max-width: 550px) {
-  .nav {
-    padding: 24px;
-  }
-  .wrapper {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
+    .nav {
+        padding: 24px;
+    }
+    .wrapper {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
         -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .main {
-    padding: 24px;
-  }
-  .main__title {
-    text-align: center;
-  }
-  .main__title__text {
-    margin: 0 auto;
-  }
-  .main .selected__title {
-    -webkit-box-pack: center;
+        flex-direction: column;
+    }
+    .main {
+        padding: 24px;
+    }
+    .main__title {
+        text-align: center;
+    }
+    .main__title__text {
+        margin: 0 auto;
+    }
+    .main .selected__title {
+        -webkit-box-pack: center;
         -ms-flex-pack: center;
-            justify-content: center;
-  }
+        justify-content: center;
+    }
 }
 
 @media(max-width: 700px) {
-  .nav {
-    position: static;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  }
-  .nav__item {
-    padding-left: 0;
-  }
-  .nav__logo {
-    padding-left: 0;
-  }
-  .nav__bottom {
-    padding-left: 0;
-  }
-  .container__aside {
-    padding: 24px;
-  }
-  .container__aside {
-    padding-right: 24px;
-  }
-  .main__title {
-    text-align: center;
-  }
-  .main__title__text {
-    text-align: center;
-    margin: 0 auto;
-  }
-  .selected__title {
-    justify-content: center;
-  }
+    .nav {
+        position: static;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .nav__item {
+        padding-left: 0;
+    }
+    .nav__logo {
+        padding-left: 0;
+    }
+    .nav__bottom {
+        padding-left: 0;
+    }
+    .container__aside {
+        padding: 24px;
+    }
+    .container__aside {
+        padding-right: 24px;
+    }
+    .main__title {
+        text-align: center;
+    }
+    .main__title__text {
+        text-align: center;
+        margin: 0 auto;
+    }
+    .selected__title {
+        justify-content: center;
+    }
 }

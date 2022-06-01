@@ -5,11 +5,4 @@ function download(filename, textInput) {
     element.setAttribute('download', filename);
     document.body.appendChild(element);
     element.click();
-    //document.body.removeChild(element);
 }
-document.getElementById("btn")
-    .addEventListener("click", function() {
-        var text = document.getElementById("text").value;
-        var filename = "cera_and_volte_adesso.pdf";
-        download(filename, text);
-    }, false);
