@@ -7,7 +7,7 @@ require_once '../db.php';
 header("Content-Type: application/json;");
 
 
-$test_id = $_GET["test_id"];
+$test_id = $_GET["test_id"] ?? 0;
 
 if ($test_id) {
     $selectTest = "SELECT * FROM `test` WHERE `test_id` = '$test_id'";
@@ -16,7 +16,7 @@ if ($test_id) {
     $testData = $db->query($selectTest)->fetch_assoc();
     $questionsData = $db->query($selectQuestions);
 
-    $res = array(
+    $res = [
         "test_id" => $testData["test_id"],
         "test_title" => $testData["test_title"],
         "test_time" => $testData["test_time"],
@@ -24,7 +24,7 @@ if ($test_id) {
         "test_level" => $testData["test_level"],
         "questions" => [],
         "questions_count" => 0
-    );
+    ];
 
     while ($question = $questionsData->fetch_assoc()) {
         $question_id = $question["question_id"];
@@ -44,7 +44,7 @@ if ($test_id) {
     $selectTest = "SELECT 
     t.`test_id`, t.`test_title`, t.`test_level`, t.`test_time`, t.`test_complexity`, t.`created_by`,
     (SELECT COUNT(*) FROM `question` AS q WHERE q.`test_id` = t.`test_id`) as `questions_count`
-    FROM `test` AS t";
+    FROM `test` AS t WHERE test_id != 47";
     $testsList = $db->query($selectTest);
 
     $res = [];

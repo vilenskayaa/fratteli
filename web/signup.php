@@ -100,8 +100,8 @@ $page_title = "Регистрация";
           Ваш уровень итальянского?
         </div>
         <div class="sign__subtitle">
-          <span>Если вы не знаете свой уровень - пройдите тест на знание</span>
-          <span>итальянского в разделе <a class="sign__link" href="/web/signin.html">Тесты</a></span>
+              <span>Если вы не знаете свой уровень - пройдите тест на знание</span>
+          <span>итальянского в разделе <a class="sign__link" href="/web/quiz-c1.php">Тесты</a></span>
         </div>
       </header>
       <form class="form form-sign" action="" id="signLevel">

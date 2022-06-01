@@ -57,7 +57,7 @@ $page_title = "Создание теста"
               <input class="form__input" name="test_time" type="text" placeholder="Примерное время прохождения" required>
             </div>
             <div class="form__item">
-              <input class="form__input" name="test_complexety" type="text" placeholder="Порог в формате < 3/5 >">
+              <input class="form__input" name="test_complexity" type="text" placeholder="Порог в формате < 3/5 >">
             </div>
           </div>
         </form>

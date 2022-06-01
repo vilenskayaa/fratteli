@@ -10,7 +10,7 @@ try {
     
     $user_id = $_SESSION['user']['id'];
 
-    $state = $_GET["state"];
+    $state = $_GET["state"] ?? '';
 
     if (isValidState($state)) {
         $selectWords = "SELECT * FROM `user_word` AS `uw` LEFT JOIN `word` AS `w` ON `w`.`word_id` = `uw`.`word_id` WHERE `uw`.`state` = '$state'";

@@ -10,7 +10,7 @@ const addReviews = async (data) => {
   });
 };
 
-const renderReviews = async () => {
+const renderReviews = async (data) => {
   const reviewsContainer = document.getElementById('reviews');
   reviewsContainer.innerHTML = '';
   const reviewsList = await fetchReviews();
@@ -30,6 +30,14 @@ const renderReviews = async () => {
   });
 };
 
+const updateName = async (data) => {
+  const res = await fetch(`${baseApi}/account/update-name.php`, {
+    method: 'POST',
+    body: JSON.stringify(data),
+  });
+  return await res.json()
+}
+
 $(document).ready(async function () {
   const reviewsAddButton = document.getElementById('reviewsAddButton');
   const reviewsTextarea = document.querySelector('textarea[name=reviews_text]');
@@ -46,6 +54,12 @@ $(document).ready(async function () {
     addReviews(data);
     renderReviews();
   });
+
+  document.getElementById('renameButton').addEventListener('click', async () => {
+    const newName = document.getElementById('rename').querySelector('[name="name"]').value;
+    console.log(newName)
+    const res = await updateName({name: newName});
+  })
 });
 
 const body = document.getElementsByTagName('body')[0];

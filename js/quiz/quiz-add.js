@@ -61,12 +61,12 @@ const packQuestion = async () => {
   const test_title = (document.querySelector('[name=test_title]')).value
   const test_level = (document.querySelector('[name=test_level]')).value
   const test_time = (document.querySelector('[name=test_time]')).value
-  const test_complexety = (document.querySelector('[name=test_complexety]')).value
+  const test_complexity = (document.querySelector('[name=test_complexity]')).value
 
   json.test_title = test_title;
   json.test_level = test_level;
   json.test_time = test_time;
-  json.test_complexety = test_complexety;
+  json.test_complexity = test_complexity;
 
   let questionsList = []
   questions.forEach(element => {
@@ -75,7 +75,8 @@ const packQuestion = async () => {
     const question_desc = (document.querySelector('[name=question_desc]')).value
     json.question_title = question_title;
     json.question_desc = question_desc;
-    
+    json.type = 0;
+
     const answerList = element.querySelectorAll('.answer')
     let answers = []
     answerList.forEach(answer => {

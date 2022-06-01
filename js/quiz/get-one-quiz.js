@@ -1,3 +1,5 @@
+const isTeacher = user?.role === 'teacher';
+
 const fetchTestById = async (test_id) => {
     const res = await fetch(`${baseApi}/test/get-test.php?test_id=${test_id}`);
     return res.json();
@@ -9,7 +11,7 @@ const renderTest = async () => {
     const testContainer = document.getElementById("testContainer");
 
     const params = new URLSearchParams(window.location.search);
-    const testData = await fetchTestById(params.get("test_id"));
+    const testData = await fetchTestById(params.get("test_id") ?? 47);
 
     const testTitle = document.createElement("h2");
     testTitle.innerText = testData.test_title;
@@ -50,8 +52,7 @@ const renderTest = async () => {
                 optionsContainer.setAttribute("class", "answer-item");
     
 
-
-                optionsContainer.appendChild(option);
+                if (!isTeacher) optionsContainer.appendChild(option);
                 optionsContainer.appendChild(optionLabel);
 
                 answersContainer.appendChild(optionsContainer);
@@ -61,12 +62,9 @@ const renderTest = async () => {
             inputAnswer.setAttribute("type", "text");
             inputAnswer.setAttribute("id", `answer-text`);
 
-            answersContainer.appendChild(inputAnswer);
+            if (!isTeacher) answersContainer.appendChild(inputAnswer);
         }
 
-        
-
-        
         questionsContainer.appendChild(questionTitle);
         questionsContainer.appendChild(questionDesc);
         questionsContainer.appendChild(answersContainer);
@@ -77,7 +75,7 @@ const renderTest = async () => {
     sendTestBtn.innerText = "Заверщить";
 
     testContainer.appendChild(questionsContainer);
-    testContainer.appendChild(sendTestBtn);
+    if (!isTeacher) testContainer.appendChild(sendTestBtn);
 
     let answer_ids = [];
     

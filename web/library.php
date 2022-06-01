@@ -31,19 +31,19 @@ $page_title = "Библиотека"
           <div class="block__cards">
             <div class="block__cards__item">
               <img src="/assets/img/library/book1.png" alt="">
-              <button class="download__btn"><img src="../assets/icons/Download.svg" alt=""></button>
+              <button class="download__btn" onclick="download('assets/books/cera_and_volte_adesso.pdf')"><img src="../assets/icons/Download.svg" alt=""></button>
             </div>
             <div class="block__cards__item">
               <img src="/assets/img/library/book2.png" alt="">
-              <button class="download__btn"><img src="../assets/icons/Download.svg" alt=""></button>
+              <button class="download__btn" onclick="download('assets/books/i capolavori.pdf')"><img src="../assets/icons/Download.svg" alt=""></button>
             </div>
             <div class="block__cards__item">
               <img src="/assets/img/library/book3.png" alt="">
-              <button class="download__btn"><img src="../assets/icons/Download.svg" alt=""></button>
+              <button class="download__btn" onclick="download('assets/books/il libro della giungla.pdf')"><img src="../assets/icons/Download.svg" alt=""></button>
             </div>
             <div class="block__cards__item">
               <img src="/assets/img/library/book4.png" alt="">
-              <button class="download__btn"><img src="../assets/icons/Download.svg" alt=""></button>
+              <button class="download__btn" onclick="download('assets/books/le mani nei cappelli.pdf')"><img src="../assets/icons/Download.svg" alt=""></button>
             </div>
           </div>
         </div>
@@ -93,7 +93,7 @@ $page_title = "Библиотека"
       </section>
     </aside>
     </div>
-
+  <script src="/js/bookdownload.js"></script>
   <script src="/js/popup.js"></script>
 </body>
 
