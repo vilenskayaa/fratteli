@@ -14,7 +14,7 @@ const createLesson = async (data) => {
     method: 'POST',
     body: JSON.stringify(data),
   });
-  return res.json();
+  return await res.json();
 };
 
 const fetchLessonsByDay = async (lesson_date) => {
@@ -86,17 +86,17 @@ $(document).ready(async function () {
         lesson_date: document.getElementById('lesson_date').value,
         lesson_time: document.getElementById('lesson_time').value,
         lesson_link: document.getElementById('lesson_link').value,
-        group_id: document.getElementById('selectGroups').value,
+        group_id: document.getElementById('selectGroups').value
       };
-
       const res = await createLesson(data);
-      // console.log(res);
 
-      // if (!res.succes) {
-      //   alert(res.error);
-      // } else {
-      //   console.log('success', res);
-      // }
+      if (!res.success) {
+         alert(res.error);
+         return;
+      }
+
+      $('.overlay').fadeOut(300);
+      $('.popup__overlay').fadeOut(300);
 
       const lessonDate = document.getElementById('lessonDate');
       lessonDate.value = formatDate(new Date());
