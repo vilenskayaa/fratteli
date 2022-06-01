@@ -72,6 +72,10 @@ h2 {
     flex: 1;
 }
 
+.blog_item {
+    padding-bottom: 44px;
+}
+
 .main {
     max-width: 60%;
     padding: 64px 0px 20px 60px;
@@ -170,6 +174,10 @@ h2 {
     transition: all 0.3s ease-in-out;
     -webkit-transform: translate(50%);
     transform: translate(50%);
+}
+
+.fix {
+    position: fixed;
 }
 
 .music {
@@ -276,6 +284,10 @@ h2 {
 
 .product img {
     width: 100%;
+}
+
+.img__card {
+    height: 340px;
 }
 
 @media (max-width: 900px) {
