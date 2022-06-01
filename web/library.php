@@ -12,6 +12,7 @@ $page_title = "Библиотека"
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="../styles/css/library.css" rel="stylesheet"/>
 
+
 </head>
 <body>
   <?php include "../layout/side-menu.php" ?>
@@ -22,12 +23,13 @@ $page_title = "Библиотека"
       <div class="head">
       <div class="head__info">
         <div class="head__title">Библиотека</div>
-        <div class="head__subtitle">Здесь только самые интересные материалы для изучения итальянского</div>
+        <div class="head__subtitle">Заходи и читай здесь самые интересные материалы для изучения итальянского</div>
       </div>
     </div>
       <section class="main__content">
         <div class="main__content__block">
-          <h2>Читальный зал</h2>
+          <h2> Лучшие книги недели  </h2>
+          
           <div class="block__cards">
             <div class="block__cards__item">
               <img src="/assets/img/library/book1.png" alt="">
@@ -48,7 +50,7 @@ $page_title = "Библиотека"
           </div>
         </div>
         <div class="main__content__block">
-          <h2>Блог</h2>
+          <h2>Статья недели</h2>
           <img src="/assets/img/library/blogImg.png" alt="">
           <h3>Какие заимствования пришли к нам из Италии?</h3>
           <p class="blog__text">
@@ -56,8 +58,10 @@ $page_title = "Библиотека"
             Санкт-Петербурге были
             созданы итальянскими гениями, самый известный из которых –Растрелли...
           </p>
-          <a class="blog__link" href="#">Читать далее <img src="/assets/icons/arrow--blue.svg" alt=""></a>
+          <a href="#" class="blog__link">Читать далее <img src="/assets/icons/arrow--blue.svg" alt=""></a>
         </div>
+
+
       </section>
     </main>
     <aside class="music">
@@ -76,7 +80,7 @@ $page_title = "Библиотека"
       <section class="song">
         <div class="song__info">
           <div class="song__info__title">
-            <h2>Песня дня</h2>
+            <h2>Песня недели</h2>
             <p class="main__title__text">Maneskin - Torna a Casa</p>
           </div>
           <img src="/assets/img/library/song-avatar.png" alt="">
@@ -93,6 +97,7 @@ $page_title = "Библиотека"
     </div>
   <script src="/js/bookdownload.js"></script>
   <script src="/js/popup.js"></script>
+  <script src="/js/blogpopup.js"></script>
 </body>
 
 </html>
