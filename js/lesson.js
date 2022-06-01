@@ -95,18 +95,13 @@ $(document).ready(async function () {
          return;
       }
 
+      const lessonDate = document.getElementById('lessonDate');
+      lessonDate.value = document.getElementById('lesson_date').value;
+      lessonsByDay = await fetchLessonsByDay(lessonDate.value);
+      renderLessons(lessonsByDay);
+
       $('.overlay').fadeOut(300);
       $('.popup__overlay').fadeOut(300);
-
-      const lessonDate = document.getElementById('lessonDate');
-      lessonDate.value = formatDate(new Date());
-
-      let lessonsByDay = await fetchLessonsByDay(lessonDate.value);
-
-      lessonDate.addEventListener('change', async () => {
-        lessonsByDay = await fetchLessonsByDay(lessonDate.value);
-        renderLessons(lessonsByDay);
-      });
     });
 
   const lessonDate = document.getElementById('lessonDate');
