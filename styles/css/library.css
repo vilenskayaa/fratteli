@@ -208,6 +208,13 @@ h2 {
     background: none;
     border: 0;
     border-radius: 50%;
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+
+.music .btn__controll:hover {
+    border: 0;
+    border-radius: 50%;
 }
 
 .song {

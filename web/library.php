@@ -68,10 +68,8 @@ $page_title = "Библиотека"
           <p class="main__title__text">стул</p>
           <div class="music__controlls">
             <button class="btn__controll"><img src="/assets/img/library/controll__complete.svg" alt=""></button>
-            <div class="group">
-              <button class="btn__controll"><img src="/assets/img/library/controll__close.svg" alt=""></button>
+              <!-- <button class="btn__controll"><img src="/assets/img/library/controll__close.svg" alt=""></button> -->
               <button class="btn__controll"><img src="/assets/img/library/controll__favorite.svg" alt=""></button>
-            </div>
           </div>
         </div>
       </section>
