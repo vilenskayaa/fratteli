@@ -212,9 +212,8 @@ h2 {
     cursor: pointer;
 }
 
-.music .btn__controll:hover {
-    border: 0;
-    border-radius: 50%;
+.music .btn__controll:active {
+    transform: scale(0.8);
 }
 
 .song {

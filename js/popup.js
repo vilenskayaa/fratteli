@@ -36,7 +36,7 @@ function initExitPopup() {
     backBtn.innerText = 'Нет';
     confirmBtn.innerText = 'Да';
     popupTitle.innerText = 'Уже уходишь?';
-    popupText.innerText = 'Кажется, у нас осталось что-то интересное для вас...';
+    popupText.innerText = 'Кажется, у нас осталось что-то интересное...';
 
     exitBtn.addEventListener('click', () => {
         popupContainer.style.visibility = 'visible';
