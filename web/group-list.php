@@ -78,7 +78,7 @@ $count = $groupsData['count'] ?? 0;
         Добавить нового ученика?
       </div>
       <div class="popup__subtitle">
-        Найдите никнейм в поисковой строке:
+        Введите email пользователя:
       </div>
       <form class="form" action="" id="addStudent">
         <div class="form__fields">
@@ -99,7 +99,7 @@ $count = $groupsData['count'] ?? 0;
         Добавить нового ученика?
       </div>
       <div class="popup__subtitle">
-        Найдите никнейм в поисковой строке:
+        Введите email пользователя:
       </div>
       <form class="form" action="" id="">
         <div class="form__fields">
