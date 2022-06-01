@@ -8,7 +8,7 @@
         "test_title": "Тест Аллы Виленской",
         "test_level": "A2",
         "test_time": 30,
-        "test_complexety": "3/5",
+        "test_complexity": "3/5",
         "questions": [
             {
                 "question_title": "Вы Алла Виленская?",
@@ -50,7 +50,7 @@ try {
     
     $json = file_get_contents('php://input');
     $req = json_decode($json, true);
-    $res = array("test_id" => "", "success" => false);
+    $res = ["test_id" => "", "success" => false];
 
     $test_title = $req['test_title'];
     $test_complexity = $req['test_complexity'];
@@ -72,20 +72,19 @@ try {
     foreach ($req['questions'] as $question) {
         $question_title = $question['question_title'];
         $question_desc = $question['question_desc'];
+        $question_type = $question['type'];
 
         $insertQuestionRow = "INSERT INTO `question`
-            (`question_id`, `test_id`, `question_title`, `question_desc`) VALUES
-            (NULL, '$test_id', '$question_title', '$question_desc');";
+            (`question_id`, `test_id`, `question_title`, `question_desc`, `type`) VALUES
+            (NULL, '$test_id', '$question_title', '$question_desc', $question_type);";
 
         $createdQuestion = mysqli_query($db, $insertQuestionRow);
         $res["success"] = $res["success"] && $createdQuestion;
 
         $question_id = mysqli_insert_id($db);
 
-
         $insertAnswerRow = "INSERT INTO `answer`
         (`answer_id`, `question_id`, `answer_title`, `is_correct`) VALUES ";
-
         foreach ($question['answers'] as $answer) {
             $is_correct = $answer['is_correct'] ? 1 : 0;
             $answer_title = $answer['answer_title'];
@@ -95,7 +94,6 @@ try {
 
         $query = substr($insertAnswerRow, 0, -1).";";
         $createdAnswers = mysqli_query($db, $query);
-
         $res["success"] = $res["success"] && $createdAnswers;
     }
 
