@@ -8,6 +8,7 @@
   <script>
     // const baseApi = "http://fratteli/app"
     const baseApi = "http://localhost/app"
+    const user = <?= json_encode($_SESSION['user']) ?>
 
   </script>
   <script src="../js/popup.js"></script>
