@@ -31,7 +31,7 @@ $page_title = "Создание теста"
       </div>
       <div class="head__nav">
         <div class="btn" data-add>
-          Добавить тест
+          Отправить тест
         </div>
       </div>
     </div>
