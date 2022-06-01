@@ -4,23 +4,18 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 session_start();
 require_once '../app/db.php';
-
-$select = "SELECT count(*) as count FROM `student` s INNER JOIN `lesson` as l ON l.group_id = s.group_id WHERE l.lesson_id = {$_REQUEST['id']}";
-$groupsData = $db->query($select)->fetch_assoc();
-$count = $groupsData['count'] ?? 0;
 ?>
 
 <?php include "../layout/meta.php"; ?>
 
 <body>
   <?php include "../layout/side-menu.php" ?>
-  <main class="container container__aside">
+  <main class="container container__aside full-width">
     <div class="head">
       <div class="head__info">
         <div class="head__title">
-          <span id="headTitle">Группа 1</span>
+          <span id="headTitle"></span>
         </div>
-        <div class="head__subtitle head__subtitle-600"><?= $count ?>/10</div>
       </div>
       <div class="head__nav">
         <div class="head__nav-default">
@@ -32,7 +27,7 @@ $count = $groupsData['count'] ?? 0;
             </svg>
           </a>
             <?php if ($_SESSION['user']['role'] === 'teacher'): ?>
-          <div class="btn btn-square">
+          <div class="btn btn-square" data-popup="popup-1">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M20.4852 12H3.51465" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
               <path d="M12 3.51469V20.4853" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -83,12 +78,12 @@ $count = $groupsData['count'] ?? 0;
         Добавить нового ученика?
       </div>
       <div class="popup__subtitle">
-        Найдите никнейм в поисковой строке:
+        Введите email пользователя:
       </div>
       <form class="form" action="" id="addStudent">
         <div class="form__fields">
           <div class="form__item">
-            <input class="form__input" name="student_email" type="text" placeholder="Введите нинкнейм ученика" required>
+            <input class="form__input" name="student_email" type="text" placeholder="Введите email ученика" required>
           </div>
         </div>
         <button class="form__btn">
@@ -104,7 +99,7 @@ $count = $groupsData['count'] ?? 0;
         Добавить нового ученика?
       </div>
       <div class="popup__subtitle">
-        Найдите никнейм в поисковой строке:
+        Введите email пользователя:
       </div>
       <form class="form" action="" id="">
         <div class="form__fields">
