@@ -434,7 +434,7 @@ body {
 }
 
 .table> :nth-child(odd) {
-    background-color: #f2f4fc;
+    background-color: #eaeaea;
 }
 
 .table__row {
@@ -458,9 +458,8 @@ body {
 .table__edit .btn-gray {
     position: absolute;
     top: 50%;
-    right: 0;
     transform: translateY(-50%);
-    padding: 14px;
+    padding: 13px;
 }
 
 .table__edit .btn-gray.active {
