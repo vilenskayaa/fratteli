@@ -306,6 +306,10 @@ body {
     visibility: hidden;
 }
 
+.form__input.name {
+    margin-bottom: 20px;
+}
+
 .form__item.error .form_input_error_text {
     visibility: visible;
 }
@@ -406,6 +410,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 24px;
+    padding-bottom: 30px;
 }
 
 .classgroup__item {
@@ -607,6 +612,10 @@ body {
 
 .reviews__textarea.error {
     border-color: #f26363;
+}
+
+.reviews__list {
+    padding-bottom: 30px;
 }
 
 .reviews__item {

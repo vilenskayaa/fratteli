@@ -28,7 +28,7 @@ if (!$_SESSION['user']) {
           <form class="form rename" action="" id="rename">
         <div class="form__fields">
           <div class="form__item">
-            <input class="form__input" name="name" type="text" placeholder="Новое имя пользователя" required>
+            <input class="form__input name" name="name" type="text" placeholder="Новое имя пользователя" required>
           </div>
         </div>
         <button type="button" class="form__btn" id="renameButton">
