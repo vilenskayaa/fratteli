@@ -54,7 +54,7 @@ $page_title = "Библиотека"
         <div class="main__content__block">
           <h2>Статьи недели</h2>
           <div id="wrapper-posts"></div>
-        <a href="#" class="head__subtitle">Назад</a>
+        <a href="#" class="head__subtitle">Подняться вверх</a>
       </section>
     </main>
     <aside class="music">
