@@ -12,27 +12,6 @@ a {
 ul {
     list-style: none;
 }
-.empty {
-    height: 524px;
-    width: 320px;
-    padding: 32px;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    font-family: "Proxima Nova";
-}
-.empty h3 {
-    font-size: 36px;
-    line-height: 36px;
-    margin-bottom: 12px;
-}
-
-.empty p {
-    font-size: 16px;
-    line-height: 24px;
-}
 
 @font-face {
     font-family: "Proxima Nova";
@@ -71,13 +50,16 @@ h1 {
 }
 
 h2 {
-    padding-bottom: 16px;
     font-family: 'Proxima Nova';
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
     line-height: 36px;
     color: #2E3134;
+}
+
+.amat {
+    padding-bottom: 5%;
 }
 
 .main__title__text {
@@ -91,6 +73,20 @@ h2 {
 
 .container__aside {
     flex: 1;
+}
+
+.add__img {
+    border-radius: 16px;
+    width: 100%;
+    text-transform: uppercase;
+    padding: 20px 32px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #2e3134;
+    background-color: #FCFCFC;
+    box-sizing: border-box;
+    border: 1px dashed rgba(46, 49, 52, 0.5);
+    border-radius: 16px;
 }
 
 .blog_item {
@@ -243,6 +239,12 @@ h2 {
 
 .music .btn__controll:active {
     transform: scale(0.8);
+}
+
+.form {
+    width: 100%;
+    padding-bottom: 5%;
+    max-width: 600px;
 }
 
 .song {

@@ -28,6 +28,14 @@ body {
     background-color: #f26363;
 }
 
+.add__img {
+    color: #2e3134;
+    background-color: #FCFCFC;
+    box-sizing: border-box;
+    border: 1px dashed rgba(46, 49, 52, 0.5);
+    border-radius: 16px;
+}
+
 .container {
     max-width: 1080px;
     width: 100%;
