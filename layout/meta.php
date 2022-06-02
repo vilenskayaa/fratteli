@@ -12,6 +12,7 @@
 
   </script>
   <script src="../js/popup.js"></script>
+  
   <script>
     window.onload = function() {
       initExitPopup();

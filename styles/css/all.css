@@ -34,6 +34,13 @@ body {
     padding-top: 50px;
 }
 
+.container.full-width {
+    max-width: 9999;
+    width: 100%;
+    padding-top: 50px;
+    padding-right: 50px;
+}
+
 .container__aside {
     min-height: 100vh;
     padding-left: 320px;
@@ -434,7 +441,11 @@ body {
 }
 
 .table> :nth-child(odd) {
-    background-color: #f2f4fc;
+    background-color: #e8ecf4;
+}
+
+.table> :nth-child(even) {
+    background-color: #ffffff;
 }
 
 .table__row {
@@ -446,21 +457,20 @@ body {
 
 .table__edit {
     display: none;
-    background-color: #fff;
     position: absolute;
     right: 0;
     top: 0;
     bottom: 0;
     padding: 5px;
     width: 60px;
+    margin-right: 10px;
 }
 
 .table__edit .btn-gray {
     position: absolute;
     top: 50%;
-    right: 0;
     transform: translateY(-50%);
-    padding: 14px;
+    padding: 13px;
 }
 
 .table__edit .btn-gray.active {
@@ -509,7 +519,7 @@ body {
 }
 
 .table__login {
-    width: 196px;
+    width: 220px;
 }
 
 .table__counter {

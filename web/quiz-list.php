@@ -54,6 +54,10 @@ $page_title = "Мои тесты"
         display: flex;
         flex-direction: column;
     }
+
+    a {
+        text-decoration: none;
+    }
 </style>
 
 <body>
