@@ -13,11 +13,8 @@ try {
     $selectPosts = "SELECT * FROM `posts` where post_id = {$req['id']}";
 
     $postsData = $db->query($selectPosts);
-    while ($post = $postsData->fetch_assoc()) {
-        $res[] = $post;
-    }
 
-    echo json_encode($res);
+    echo json_encode($postsData->fetch_assoc());
 } catch (Exception $e) {
     echo json_encode(array("error" => $e->getMessage(), "success" => false));
 }
