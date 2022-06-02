@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b5778a18-996a-4c02-8f09-7d34fedec0c8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/account/update-name.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/stickers/add-sticker.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/stickers/get-stickers.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/stickers/remove-sticker.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/stickers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/reviews.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/reviews.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/reviews.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/reviews.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/library.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/library.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/stickers.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/stickers.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +20,13 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -29,7 +39,6 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpServers">
     <servers>
       <server host="localhost" id="c59272c3-268d-4cd9-b01b-dc8f4cf8a39b" name="localhost" use_path_mappings="true">
@@ -45,19 +54,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/var/www/html/web&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/var/www/html",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/web" />
@@ -79,7 +88,8 @@
       <workItem from="1653917538127" duration="216000" />
       <workItem from="1653983749941" duration="12465000" />
       <workItem from="1654003978132" duration="1436000" />
-      <workItem from="1654098246375" duration="7645000" />
+      <workItem from="1654098246375" duration="8906000" />
+      <workItem from="1654161913066" duration="4282000" />
     </task>
     <servers />
   </component>

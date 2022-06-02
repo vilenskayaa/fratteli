@@ -30,54 +30,14 @@ $page_title = "Стикеры"
           <h2>Избранные</h2>
           <img src="/assets/icons/like--blue.svg" alt="">
         </div>
-        <div class="selected__cards">
-          <div class="selected__cards__item">
-            <img src="/assets/img/stickers/sticker1.png" alt="">
-            <p class="title__text">Sedia</p>
-            <p class="main__title__text">
-              стул
-            </p>
-            <button class="like__btn">
-              <img src="/assets/icons/like--blue.svg" alt="">
-            </button>
-          </div>
-          <div class="selected__cards__item">
-            <img src="/assets/img/stickers/sticker2.png" alt="">
-            <p class="title__text">Cane</p>
-            <p class="main__title__text">
-              собака
-            </p>
-            <button class="like__btn">
-              <img src="/assets/icons/like--blue.svg" alt="">
-            </button>
-          </div>
-          <div class="selected__cards__item">
-            <img src="/assets/img/stickers/sticker3.png" alt="">
-            <p class="title__text">Gatto</p>
-            <p class="main__title__text">
-              Кот
-            </p>
-            <button class="like__btn">
-              <img src="/assets/icons/like--blue.svg" alt="">
-            </button>
-          </div>
-          <div class="selected__cards__item">
-            <img src="/assets/img/stickers/sticker4.png" alt="">
-            <p class="title__text">Cielo</p>
-            <p class="main__title__text">
-              Небо
-            </p>
-            <button class="like__btn">
-              <img src="/assets/icons/like--blue.svg" alt="">
-            </button>
-          </div>
-          
-        </div>
+        <div id="selected__cards" class="selected__cards"></div>
       </section>
     </main>
     
   </div>
-  <script src="/js/popup.js"></script>
-</body>
 
+  <script src="/js/jquery.js"></script>
+  <script src="/js/popup.js"></script>
+  <script src="/js/stickers.js"></script>
+</body>
 </html>
