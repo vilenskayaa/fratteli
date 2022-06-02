@@ -1,7 +1,12 @@
 <?php
 
 session_start();
-$page_title = "Администрирование отзывов"
+$page_title = "Администрирование отзывов";
+
+if ($_SESSION['user']['role'] ?? '' !== 'admin') {
+    header("Location: /index.php");
+    exit;
+}
 
 ?>
 
