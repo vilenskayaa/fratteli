@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-$page_title = 'Отзывы';
+$page_title = 'Настройки';
 
 if (!$_SESSION['user']) {
   $disabled = "disabled";

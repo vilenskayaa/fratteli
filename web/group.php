@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-$page_title = "Группы";
+$page_title = "Мои группы";
 
 ?>
 

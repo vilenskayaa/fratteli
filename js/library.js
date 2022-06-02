@@ -64,7 +64,7 @@ const renderPosts = async () => {
             '<img src="'+ post.post_picture +'" alt="">' +
             '<h3>' + post.post_header + '</h3>' +
             '<p class="blog__text">' + post.post_text.slice(0, 200) + '...</p>' +
-            '<a href="#" class="blog__link">Читать далее <img src="/assets/icons/arrow--blue.svg" alt=""></a>' +
+            '<a class="blog__link" onclick="showPopup(' + post.post_id + ')">Читать далее <img src="/assets/icons/arrow--blue.svg" alt=""></a>' +
             '</div>'
     }
 

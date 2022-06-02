@@ -188,6 +188,7 @@ h2 {
     -ms-flex-align: center;
     align-items: center;
     gap: 25px;
+    cursor: pointer;
 }
 
 .main__content__block .blog__link:hover img {
