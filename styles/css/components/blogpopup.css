@@ -25,6 +25,10 @@
   border-top-right-radius: 48px;
 }
 
+.blog-popup-container .popup-image img {
+  width: 100%;
+}
+
 .blog-popup-container .main__title__text {
   max-width: 100%;
 }
