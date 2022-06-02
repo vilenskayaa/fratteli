@@ -111,7 +111,6 @@ $page_title = "Библиотека"
       </section>
     </main>
     <aside class="music">
-    <div class="fix">
       <section class="product">
         <div class="img__card">
         <img  src="/assets/img/library/asideImg.png"alt="">
@@ -141,7 +140,6 @@ $page_title = "Библиотека"
             <a href="/assets/audio/Torna_a_casa.mp3">скачайте песню и послушайте локально</a>
           </p>
         </audio>
-</div>
       </section>
     </aside>
     </div>
