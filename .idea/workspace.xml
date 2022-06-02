@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b5778a18-996a-4c02-8f09-7d34fedec0c8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/js/amaterials.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/posts/create-post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/posts/create-post.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/css/all.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/css/all.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/css/amaterials.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/css/amaterials.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/amaterials.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/amaterials.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +35,17 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/app/posts/create-post.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/reviews/remove-reviews.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/js/amaterials.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/js/areviews.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/js/reviews.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/sql/fratteli.sql" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/styles/css/all.css" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/styles/css/amaterials.css" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/web/amaterials.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -53,7 +69,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/var/www/html/app/reviews",
+    "last_opened_file_path": "/var/www/html/js",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -63,8 +79,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/reviews" />
       <recent name="$PROJECT_DIR$/js" />
+      <recent name="$PROJECT_DIR$/app/reviews" />
       <recent name="$PROJECT_DIR$/web" />
     </key>
   </component>
@@ -86,7 +102,7 @@
       <workItem from="1654003978132" duration="1436000" />
       <workItem from="1654098246375" duration="8906000" />
       <workItem from="1654161913066" duration="4412000" />
-      <workItem from="1654183001115" duration="12808000" />
+      <workItem from="1654183001115" duration="15929000" />
     </task>
     <servers />
   </component>

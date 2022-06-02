@@ -13,7 +13,6 @@ try {
         throw new Exception("Необходимо авторизация!");
     }
 
-
     $postHeader = $_POST["post_header"];
     $postText = $_POST["post_text"];
 
@@ -25,14 +24,16 @@ try {
 
     $insetPostRow = "INSERT INTO `posts`
         (`post_header`, `post_text`, `post_picture`) VALUES 
-        ($postHeader,$postText,$postPicture);
+        ('{$postHeader}','{$postText}','{$postPicture}');
     ";
 
     $groupData = $db->query($insetPostRow);
+    $id = mysqli_insert_id($db);
+    $res = array("post_id" => $id);
 
-    $res = array("post_id" => mysqli_insert_id($db));
+    $_SESSION['message'] = "Post created";
 
-    echo json_encode($res);
+    header("Location: /web/amaterials.php");
 } catch (Exception $e) {
     echo json_encode($e->getMessage(), JSON_UNESCAPED_UNICODE);
 }

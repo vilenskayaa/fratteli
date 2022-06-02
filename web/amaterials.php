@@ -11,9 +11,6 @@ $page_title = "Администрирование материалов"
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="/styles/css/amaterials.css" rel="stylesheet"/>
-  
-
-
 </head>
 
 <body>
@@ -28,25 +25,28 @@ $page_title = "Администрирование материалов"
     <div class="">
       <div class="amat">
         <h2>Блог</h2>
-        <form class="form" action="" id="title">
+          <?php if (isset($_SESSION['message'])): ?>
+          <div class="flash-message"><?= $_SESSION['message'] ?></div>
+          <?php endif; unset($_SESSION['message']); ?>
+        <form class="form" action="/app/posts/create-post.php" method="post" id="title" enctype="multipart/form-data">
           <div class="form__fields">
             <div class="form__item">
-              <input class="form__input" name="test_title" type="text" placeholder="Название статьи" required>
+              <input class="form__input" name="post_header" type="text" placeholder="Название статьи" required>
             </div>
-            
-            <form action="" method="" class="blog__form">
-            <textarea class="form__input" name="blog_text" rows="6" placeholder="Напишите текст статьи" required <?=$disabled?>></textarea>
-            <button type="add__img" class="add__img" id="blogAddImageButton">
-                    Добавить картинку
-                  </button>      
+
+            <textarea class="form__input" name="post_text" rows="6" placeholder="Напишите текст статьи" required <?=$disabled?>></textarea>
+            <input type="file" name="post_picture" style="" id="file-post">
+
+            <button type="button" class="add__img" id="blogAddImageButton">
+                Добавить картинку
+            </button>
             <button type="submit" class="form__btn" id="blogAddButton">
                     Опубликовать
                   </button>
-                </form>
           </div>
+        </form>
 
-
-          <h2>Карточка слов</h2>
+        <h2>Карточка слов</h2>
         <form class="form" action="" id="title">
           <div class="form__fields">
             <div class="form__item">
@@ -57,19 +57,19 @@ $page_title = "Администрирование материалов"
               <input class="form__input" name="test_title" type="text" placeholder="Слово на русском" required>
             </div>
             
-            <button type="add__img" class="add__img" id="blogAddImageButton">
+            <button type="button" class="add__img" id="blogAddImageButton2">
                     Добавить картинку
                   </button>      
-            <button type="submit" class="form__btn" id="blogAddButton">
+            <button type="submit" class="form__btn" id="blogAddButton2">
                     Опубликовать
                   </button>
                 </form>
           </div>
-
-
         </div>
     </div>
   </main>
+<script src="/js/jquery.js"></script>
+<script src="/js/amaterials.js"></script>
 </body>
 
 </html>

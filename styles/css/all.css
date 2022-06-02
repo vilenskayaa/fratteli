@@ -1,5 +1,7 @@
+* {
+    font-family: 'Proxima Nova';
+}
 +body {
-    font-family: 'Proxima Nova Rg';
     background-color: #fafafa;
 }
 
@@ -13,7 +15,13 @@
     font-size: 20px;
     cursor: pointer;
 }
-
+.flash-message {
+    background: rgb(0 219 19 / 50%);
+    color: rgb(0 125 10);
+    padding: 20px;
+    border-radius: 10px;
+    width: 600px;
+}
 .btn-square {
     padding: 20px;
 }

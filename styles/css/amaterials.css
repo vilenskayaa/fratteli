@@ -5,6 +5,13 @@
     padding: 0;
 }
 
+input#file-post {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    z-index: -1;
+}
+
 a {
     text-decoration: none;
 }
