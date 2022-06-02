@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+$page_title = "Участники группы";
 require_once '../app/db.php';
 
 ?>

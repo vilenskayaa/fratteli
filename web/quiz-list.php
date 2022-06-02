@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-$page_title = "Мои тесты"
+$page_title = "Тесты"
 
 ?>
 
