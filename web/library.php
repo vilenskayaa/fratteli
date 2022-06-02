@@ -11,7 +11,7 @@ $page_title = "Библиотека"
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="../styles/css/library.css" rel="stylesheet"/>
-
+  <link href="../styles/css/components/blogpopup.css" rel="stylesheet"/>
 
 </head>
 <body>
@@ -77,10 +77,11 @@ $page_title = "Библиотека"
       </section>
     </aside>
     </div>
+    <div class="blog-popup-container"></div>
   <script src="/js/jquery.js"></script>
   <script src="/js/bookdownload.js"></script>
   <script src="/js/popup.js"></script>
-<!--  <script src="/js/blogpopup.js"></script>-->
+  <script src="/js/blogpopup.js"></script>
   <script src="/js/library.js"></script>
 </body>
 
