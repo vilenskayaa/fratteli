@@ -45,8 +45,9 @@ a:not([class]) {
 /* Make images easier to work with */
 img,
 picture {
-  max-width: 100%;
+  max-width: 120px;
   display: block;
+  border-radius: 50%;
 }
 
 /* Inherit fonts for inputs and buttons */
