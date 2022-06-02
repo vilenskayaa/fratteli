@@ -54,8 +54,21 @@ const nextWordRender = () => {
     wrapper.innerHTML = innerHTML
 }
 
-const renderPosts = () => {
-    
+const renderPosts = async () => {
+    const res = await fetch(`${baseApi}/posts/get-posts.php`)
+    const posts = await res.json()
+
+    let innerHTML = '';
+    for (const post of posts) {
+        innerHTML += '<div class="blog_item">' +
+            '<img src="'+ post.post_picture +'" alt="">' +
+            '<h3>' + post.post_header + '</h3>' +
+            '<p class="blog__text">' + post.post_text.slice(0, 200) + '...</p>' +
+            '<a href="#" class="blog__link">Читать далее <img src="/assets/icons/arrow--blue.svg" alt=""></a>' +
+            '</div>'
+    }
+
+    document.getElementById('wrapper-posts').innerHTML = innerHTML
 }
 
 $(document).ready(async () => {

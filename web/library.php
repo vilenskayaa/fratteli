@@ -53,61 +53,8 @@ $page_title = "Библиотека"
 
         <div class="main__content__block">
           <h2>Статьи недели</h2>
-          <div class="blog_item">
-          <img src="/assets/img/library/blog/1.png" alt="">
-          <h3>Какие заимствования пришли к нам из Италии?</h3>
-          <p class="blog__text">
-            Много итальянских слов пришло в русский из сферы искусства. Многие архитектурные памятники в
-            Санкт-Петербурге были
-            созданы итальянскими гениями, самый известный из которых –Растрелли...
-          </p>
-          <a href="#" class="blog__link">Читать далее <img src="/assets/icons/arrow--blue.svg" alt=""></a>
-          </div>
-
-          <div class="blog_item">
-          <img src="/assets/img/library/blog/2.png" alt="">
-          <h3>Семейные традиции в Италии</h3>
-          <p class="blog__text">
-          Главная ценность для любого итальянца – его семья, а главным сокровищем каждой семьи являются дети.
-          Детей здесь очень балуют, ими гордятся, восхищаются, радуются каждому
-          их поступку и почти ничего не запрещают...
-          </p>
-          <a href="#" class="blog__link">Читать далее <img src="/assets/icons/arrow--blue.svg" alt=""></a>
-          </div>
-
-          <div class="blog_item">
-          <img src="/assets/img/library/blog/3.png" alt="">
-          <h3>Жизнь в Италии</h3>
-          <p class="blog__text">
-          С точки зрения климата, цен и общего уровня комфорта, лучшие города для жизни в Италии в 2022 году – это Милан, Больцано, Аоста, Беллуно и Тренто.
-          </p>
-          <a href="#" class="blog__link">Читать далее <img src="/assets/icons/arrow--blue.svg" alt=""></a>
-          </div>
-
-          <div class="blog_item">
-          <img src="/assets/img/library/blog/4.png" alt="">
-          <h3>Каким образом изучение языков влияет на мозг человека?</h3>
-          <p class="blog__text">
-          Изучение языка – и родного, и иностранного – очень сложный процесс, в который вовлекаются различные отделы головного мозга. В процессе изучения языка новая информация не просто должна запомниться, ее необходимо воспроизводить устно и письменно...
-          </p>
-          <a href="#" class="blog__link">Читать далее <img src="/assets/icons/arrow--blue.svg" alt=""></a>
-          </div>
-
-          <div class="blog_item">
-          <img src="/assets/img/library/blog/5.png" alt="">
-          <h3>Система образования в Италии</h3>
-          <p class="blog__text">
-          Система образования в Италии, так же как и большинство систем образования в других европейских государствах состоит из 4 этапов. Это - дошкольное, начальное, среднее и высшее образование.
-          </p>
-          <a href="#" class="blog__link">Читать далее <img src="/assets/icons/arrow--blue.svg" alt=""></a>
-          </div>
-
-
-
-      <a href="#" class="head__subtitle">Назад</a>
-
-
-
+          <div id="wrapper-posts"></div>
+        <a href="#" class="head__subtitle">Назад</a>
       </section>
     </main>
     <aside class="music">
