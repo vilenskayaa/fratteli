@@ -21,7 +21,7 @@ const renderStickers = (stickers) => {
     for (const sticker of stickers) {
         console.log(sticker)
         innerHTML += '<div class="selected__cards__item is-like" data-id="' + sticker.vocabulary_id + '" >' +
-            '<img src="' + sticker.word_picture + '" alt="image">' +
+            '<img class="sticker__image" src="' + sticker.word_picture + '" alt="image">' +
             '<p class="title__text">' + sticker.word_italian + '</p>' +
             '<p class="main__title__text">' + sticker.word_rus + '</p>' +
             '<button class="like__btn">' +
