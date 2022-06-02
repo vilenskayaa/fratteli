@@ -2,43 +2,22 @@
 
 session_start();
 require_once '../db.php';
-require_once 'word_state.php';
 
 header("Content-Type: application/json;");
 
 try {
-    
-    $user_id = $_SESSION['user']['id'];
+    $userId = $_SESSION['user']['id'];
+    $list = [];
 
-    $state = $_GET["state"] ?? '';
+    $select = "select w.* from word w left join vocabulary v on v.word_id = w.word_id and v.user_id = {$userId} where v.vocabulary_id is null";
 
-    if (isValidState($state)) {
-        $selectWords = "SELECT * FROM `user_word` AS `uw` LEFT JOIN `word` AS `w` ON `w`.`word_id` = `uw`.`word_id` WHERE `uw`.`state` = '$state'";
+    $res = $db->query($select);
 
-        $words_list = [];
-        $rows = $db->query($selectWords);
-
-        while ($row = $rows->fetch_assoc()) {
-            array_push($words_list, $row);
-        }
-
-        echo json_encode($words_list);
-    } else {
-        $selectWords = "SELECT * FROM `word`";
-
-        $words_list = []; 
-    
-        $rows = $db->query($selectWords);
-    
-        while($row = $rows->fetch_assoc()) {
-            array_push($words_list, $row);
-        }
-    
-        echo json_encode($words_list);
+    while ($item = $res->fetch_assoc()) {
+        $list[] = $item;
     }
 
-    
-
+    echo json_encode($list, JSON_THROW_ON_ERROR);
 } catch (Exception $e) {
     echo json_encode(array(
         "error" => $e->getMessage(),
