@@ -42,6 +42,15 @@
   cursor: pointer;
 }
 
+.popup__choise {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+  gap: 70%;
+}
+
 .btn {
   border: none;
   border-radius: 16px;
