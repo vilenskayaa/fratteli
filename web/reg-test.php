@@ -25,7 +25,7 @@
                 </div>
             </div>
         </header>
-        <main>
+        <form action="/web/test-result.php" method="post">
             <section class="question">
                 <div class="container">
                     <p class="question__title">
@@ -273,8 +273,8 @@
                 </div>
             </section>
             <button class="btn btn--start">Начать</button>
-            <button class="btn">Завершить</button>
-        </main>
+            <button type="submit" class="btn">Завершить</button>
+        </form>
     </div>
 </body>
 

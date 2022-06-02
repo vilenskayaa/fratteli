@@ -40,6 +40,7 @@ const signForm = (selector) => {
 
             for (const key of data.keys()) {
                 signData.append(key, data.get(key))
+                setCookie(key, data.get(key))
             }
 
             const dataSelector = "data-" + selector;
@@ -93,32 +94,7 @@ const chekValidation = (formData) => {
     return flag
 }
 
-const signUp = () => {
-    $(document).ready(function() {
-        $("#signEnd").submit(function(event) {
-            event.preventDefault();
-
-            $.ajax({
-                type: "post",
-                url: "/app/account/signup.php",
-                data: signData,
-                contentType: false,
-                cache: false,
-                processData: false,
-                success: function(data) {
-                    if (data) {
-                        window.location.href = "/web/lessons.php"
-                    }
-                }
-            })
-        })
-    })
-}
-
-
 viewPassword()
 changeBg()
 signForm('signUp')
 signForm('signRole')
-signForm('signLevel')
-signUp()

@@ -84,7 +84,7 @@ $page_title = "Регистрация";
             </div>
           </div>
         </div>
-        <button class="form__btn">
+        <button class="form__btn" >
           Далее
         </button>
       </form>
@@ -102,7 +102,7 @@ $page_title = "Регистрация";
               <span style="text-align: center">Для дальнейшей регистрации нам нужно знать, насколько хорошо<br> вы владеете итальянским. Пожалуйста, пройдите тест из 10<br> вопросов, и мы сможем начать нашу работу.</span>
         </div>
       </header>
-        <a class="form__btn" style="text-decoration: none; width: 400px; text-align: center;" href="/web/reg-test.html">Начать тест</a>
+        <a class="form__btn" style="text-decoration: none; width: 400px; text-align: center;" href="/web/reg-test.php">Начать тест</a>
     </section>
 
     <section class="sign__container" data-signEnd>
@@ -128,6 +128,7 @@ $page_title = "Регистрация";
   </main>
 
   <script src="/js/jquery.js"></script>
+  <script src="/js/cookie.js"></script>
   <script src="/js/sign/sign.js"></script>
 </body>
 
