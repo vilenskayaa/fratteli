@@ -19,7 +19,7 @@ async function showPopup(post_id) {
     const gradient = document.createElement('div');
 
     popupImg.setAttribute('src', post.post_picture);
-    popupClose.setAttribute('src', '../assets/icons/modal-close.svg');
+    popupClose.setAttribute('src', '../assets/icons/close_circle.svg');
 
     popupImg.classList.add('popup-image');
     popupTitle.classList.add('title__text');
