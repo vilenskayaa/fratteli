@@ -59,6 +59,11 @@ $(document).ready(async function () {
     const newName = document.getElementById('rename').querySelector('[name="name"]').value;
     console.log(newName)
     const res = await updateName({name: newName});
+    if (res.success) {
+      document.getElementById('current-name').innerHTML = newName
+    } else {
+      alert(res.error ?? 'internal error')
+    }
   })
 });
 

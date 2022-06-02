@@ -91,7 +91,7 @@ $(document).ready(async function () {
       const res = await createLesson(data);
 
       if (!res.success) {
-         alert(res.error);
+          alert(res.error ?? 'internal error')
          return;
       }
 

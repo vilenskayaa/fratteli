@@ -25,6 +25,7 @@ if (!$_SESSION['user']) {
       <section class="main__content">
         <div class="main__content__block">
           <h2>Сменить имя пользователя</h2>
+            <span>Ваше текущие имя пользователя <span id="current-name"><?= $_SESSION['user']['name'] ?></span></span>
           <form class="form rename" action="" id="rename">
         <div class="form__fields">
           <div class="form__item">

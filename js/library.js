@@ -25,7 +25,7 @@ const onClick = (id, type) => {
             index++
             nextWordRender()
         } else {
-            alert(res.error)
+            alert(res.error ?? 'internal error')
         }
     }
 }

@@ -15,7 +15,9 @@ try {
     $newName = $req['name'];
     $update = "UPDATE user SET user_name='{$newName}' WHERE user_id={$_SESSION['user']['id']}";
     $res = $db->query($update);
-
+    if ($res) {
+        $_SESSION['user']['name'] = $newName;
+    }
     echo json_encode(["success" => $res]);
 } catch (\Throwable $e) {
     echo json_encode(["error" => $e->getMessage(), "success" => false], JSON_UNESCAPED_UNICODE);
