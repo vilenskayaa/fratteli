@@ -111,20 +111,7 @@ $page_title = "Библиотека"
       </section>
     </main>
     <aside class="music">
-      <section class="product">
-        <div class="img__card">
-        <img  src="/assets/img/library/asideImg.png"alt="">
-</div>
-        <div class="music__content">
-          <h1>Sedia</h1>
-          <p class="main__title__text">стул</p>
-          <div class="music__controlls">
-            <button class="btn__controll"><img src="/assets/img/library/controll__complete.svg" alt=""></button>
-              <!-- <button class="btn__controll"><img src="/assets/img/library/controll__close.svg" alt=""></button> -->
-              <button class="btn__controll"><img src="/assets/img/library/controll__favorite.svg" alt=""></button>
-          </div>
-        </div>
-      </section>
+        <section id="product" class="product"></section>
       <section class="song">
         <div class="song__info">
           <div class="song__info__title">
@@ -143,9 +130,11 @@ $page_title = "Библиотека"
       </section>
     </aside>
     </div>
+  <script src="/js/jquery.js"></script>
   <script src="/js/bookdownload.js"></script>
   <script src="/js/popup.js"></script>
-  <script src="/js/blogpopup.js"></script>
+<!--  <script src="/js/blogpopup.js"></script>-->
+  <script src="/js/library.js"></script>
 </body>
 
 </html>
