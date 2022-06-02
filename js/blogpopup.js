@@ -17,11 +17,12 @@ async function showPopup(post_id) {
     const confirmBtn = document.createElement('button');
     const textContainer = document.createElement('div');
     const gradient = document.createElement('div');
+    const imageContainer = document.createElement('div');
 
     popupImg.setAttribute('src', post.post_picture);
     popupClose.setAttribute('src', '../assets/icons/close_circle.svg');
 
-    popupImg.classList.add('popup-image');
+    imageContainer.classList.add('popup-image');
     popupTitle.classList.add('title__text');
     popup.classList.add('popup');
     popupText.classList.add('main__title__text');
@@ -32,9 +33,10 @@ async function showPopup(post_id) {
     confirmBtn.innerHTML = 'OK';
 
     textContainer.append(popupTitle, popupText);
-    body.append(popupContainer);
-    popup.append(popupImg, popupImg, textContainer, confirmBtn, gradient, popupClose);
+    imageContainer.append(popupImg);
+    popup.append(imageContainer, textContainer, confirmBtn, gradient, popupClose);
     popupContainer.append(popup);
+    body.append(popupContainer);
 
     popupTitle.innerText = post.post_header;
     popupText.innerText = post.post_text;
