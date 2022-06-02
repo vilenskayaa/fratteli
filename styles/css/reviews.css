@@ -13,11 +13,6 @@ ul {
     list-style: none;
 }
 
-.btn-square {
-    padding: 15px;
-    align-self: self-start;
-}
-
 @font-face {
     font-family: "Proxima Nova";
     font-weight: 600;
@@ -61,6 +56,7 @@ h2 {
     font-size: 24px;
     line-height: 36px;
     color: #2E3134;
+    padding-bottom: 8px;
 }
 
 .amat {
@@ -249,7 +245,7 @@ h2 {
 .form {
     width: 100%;
     padding-bottom: 5%;
-    max-width: 600px;
+    max-width: 800px;
 }
 
 .song {

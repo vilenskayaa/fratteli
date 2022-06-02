@@ -1,4 +1,4 @@
-body {
++body {
     font-family: 'Proxima Nova Rg';
     background-color: #fafafa;
 }
@@ -94,6 +94,7 @@ body {
     line-height: 20px;
     color: #2e3134;
     border-left: 9px solid #ffffff;
+    font-family: 'Proxima Nova';
 }
 
 .nav__item:hover {
@@ -370,6 +371,7 @@ body {
     flex-direction: row;
     align-items: center;
     gap: 24px;
+    font-family: 'Proxima Nova';
 }
 
 .head__title .head__level {
@@ -383,6 +385,7 @@ body {
 
 .head__subtitle {
     font-size: 16px;
+    font-family: 'Proxima Nova';
 }
 
 .head__subtitle-600 {
@@ -628,17 +631,28 @@ body {
 }
 
 .reviews__item {
-    padding-top: 30px;
+    padding: 16px 32px;
     width: 100%;
+    display: flex;
+    background: #E8ECF4;
+}
+.reviews__item:nth-child(2n) {
+    background: #FFF;
 }
 
 .reviews__head {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding-bottom: 10px;
+    width: 20%;
+    font-family: 'Proxima Nova';
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.reviews__text {
+    width: 80%;
+    font-family: 'Proxima Nova';
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
 }
 
 .reviews__name {
@@ -651,6 +665,24 @@ body {
 
 .tests-container {
     padding-bottom: 30px;
+}
+
+@font-face {
+    font-family: "Proxima Nova";
+    font-weight: 600;
+    src: url("/assets/fonts/ProximaNova-Semibold.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Proxima Nova";
+    font-weight: 300;
+    src: url("/assets/fonts/ProximaNova-Light.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Proxima Nova";
+    font-weight: 400;
+    src: url("/assets/fonts/ProximaNova-Regular.woff") format("woff");
 }
 
 @media (max-width: 740px) {
