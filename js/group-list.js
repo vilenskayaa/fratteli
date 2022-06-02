@@ -165,7 +165,7 @@ const addStudent = async () => {
       return response.json();
     })
     .catch((error) => {
-      console.error(error);
+      window.alert(error);
     });
 
   console.log(res);
@@ -186,7 +186,7 @@ const removeStudent = async (student_id) => {
       return response.json();
     })
     .catch((error) => {
-      console.error(error);
+      window.alert(error);
     });
 
   console.log(res);
@@ -204,6 +204,8 @@ const removeGroup = async () => {
   const data = await response.json();
   if (data.success) {
     window.location.href = '/web/group.php'
+  } else {
+    window.alert(data.error);
   }
 };
 
