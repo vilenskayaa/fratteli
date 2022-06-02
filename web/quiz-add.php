@@ -36,7 +36,7 @@ $page_title = "Создание теста"
       </div>
     </div>
     <div class="">
-      <div class="test">
+      <div class="test tests-container">
         <h2>Информация о тесте</h2>
         <form class="form" action="" id="title">
           <div class="form__fields">

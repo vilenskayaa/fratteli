@@ -641,6 +641,10 @@ body {
     color: rgba(1, 12, 59, 0.2);
 }
 
+.tests-container {
+    padding-bottom: 30px;
+}
+
 @media (max-width: 740px) {
 
     .sign__container {

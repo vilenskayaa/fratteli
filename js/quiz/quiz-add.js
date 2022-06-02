@@ -42,9 +42,6 @@ const addQuestion = () => {
             <input type="radio" name="is_correct" value="4">
             <input class="form__input" name="answer_title" type="text" placeholder="Текст ответа">
           </div>
-           <div class="form__item answer">
-            <input type="text" name="is_correct">
-          </div>
         </div>
       </form>
     </div>
