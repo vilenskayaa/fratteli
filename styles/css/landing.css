@@ -1,510 +1,547 @@
   * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
   }
   
   a {
-    text-decoration: none;
+      text-decoration: none;
   }
   
   body {
-    background-color: #2E3134;
+      background-color: #2E3134;
   }
   
   main {
-    scroll-behavior: smooth;
+      scroll-behavior: smooth;
   }
   
   img {
-    max-width: 100%;
+      max-width: 100%;
   }
   
   h2 {
-    font-family: "Proxima Nova Rg";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 64px;
-    line-height: 72px;
-    color: #2E3134;
-    padding: 0 0 104px;
-    text-align: center;
+      font-family: "Proxima Nova Rg";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 64px;
+      line-height: 72px;
+      color: #2E3134;
+      padding: 0 0 104px;
+      text-align: center;
   }
   
   h3 {
-    font-family: "Proxima Nova Rg";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 44px;
-    line-height: 52px;
-    color: #ffffff;
-    max-width: 550px;
+      font-family: "Proxima Nova Rg";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 44px;
+      line-height: 52px;
+      color: #ffffff;
+      max-width: 550px;
   }
   
   h4 {
-    font-family: "Proxima Nova Rg";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 28px;
-    line-height: 34px;
-    color: #2E3134;
+      font-family: "Proxima Nova Rg";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 28px;
+      line-height: 34px;
+      color: #2E3134;
   }
   
   .main__text {
-    font-family: "Proxima Nova Rg";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 22px;
-    padding: 18px 0;
+      font-family: "Proxima Nova Rg";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 22px;
+      padding: 18px 0;
   }
   
   .btn {
-    background: #97CD92;
-    border-radius: 16px;
-    font-family: "Proxima Nova Rg";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 20px;
-    text-align: center;
-    text-transform: uppercase;
-    color: #2E3134;
-    padding: 20px 122px;
-    border: 0;
-    max-width: 320px;
-    transition: all 0.3s ease;
+      background: #97CD92;
+      border-radius: 16px;
+      font-family: "Proxima Nova Rg";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 20px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #2E3134;
+      padding: 20px 122px;
+      border: 0;
+      max-width: 320px;
+      transition: all 0.3s ease;
   }
+  
   .btn:hover {
-    background-color: #74b36e;
+      background-color: #74b36e;
   }
   
   .header__container {
-    max-width: 100%;
-    margin: 0 auto;
+      max-width: 100%;
+      margin: 0 auto;
   }
   
   .container {
-    max-width: 1470px;
-    margin: 0 auto;
-    padding: 0 15px;
-    display: flex;
-    justify-content: space-between;
+      max-width: 1470px;
+      margin: 0 auto;
+      padding: 0 15px;
+      display: flex;
+      justify-content: space-between;
   }
   
   .header {
-    z-index: 10;
-    position: fixed;
-    width: 100%;
-    background-color: #FF7A00;
-    color: #fff;
-    font-family: "Proxima Nova Rg";
-    font-weight: 300;
-    font-size: 24px;
+      z-index: 10;
+      position: fixed;
+      width: 100%;
+      background-color: #FF7A00;
+      color: #fff;
+      font-family: "Proxima Nova Rg";
+      font-weight: 300;
+      font-size: 24px;
   }
+  
   .header__container {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    padding: 16px 50px 12px;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      padding: 16px 50px 12px;
   }
+  
   .header__text {
-    padding-left: 140px;
+      padding-left: 140px;
   }
   
   .hero {
-    overflow: hidden;
-    position: relative;
+      overflow: hidden;
+      position: relative;
   }
+  
   .hero h1 {
-    font-family: "Proxima Nova Rg";
-    font-weight: 600;
-    font-size: 64px;
-    line-height: 72px;
-    color: #FCFCFC;
-    padding: 100px 0 50px;
+      font-family: "Proxima Nova Rg";
+      font-weight: 600;
+      font-size: 64px;
+      line-height: 72px;
+      color: #FCFCFC;
+      padding: 100px 0 50px;
   }
+  
   .hero__background {
-    position: absolute;
-    right: -150px;
-    top: -150px;
-    z-index: -1;
+      position: absolute;
+      right: -150px;
+      top: -150px;
+      z-index: -1;
   }
+  
   .hero .container {
-    padding: 170px 15px 0;
+      padding: 170px 15px 0;
   }
+  
   .hero__offer__text {
-    font-family: "Proxima Nova Rg";
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 26px;
-    color: #FCFCFC;
-    max-width: 630px;
+      font-family: "Proxima Nova Rg";
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 26px;
+      color: #FCFCFC;
+      max-width: 630px;
   }
+  
   .hero__offer__button {
-    margin-top: 120px;
+      margin-top: 120px;
   }
+  
   .hero__offer__button a {
-    color: #2E3134;
+      color: #2E3134;
   }
   
   .about {
-    padding-top: 100px;
+      padding-top: 100px;
   }
+  
   .about .container {
-    flex-direction: column;
+      flex-direction: column;
   }
+  
   .about__block {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding-bottom: 220px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding-bottom: 220px;
   }
+  
   .about__block__text {
-    max-width: 700px;
-    min-width: 50%;
-    align-self: center;
+      max-width: 700px;
+      min-width: 50%;
+      align-self: center;
   }
+  
   .about__block__text .list {
-    padding: 15px;
+      padding: 15px;
   }
+  
   .about__block__text .list__item {
-    font-family: "Proxima Nova Rg";
-    font-style: normal;
-    font-weight: 300;
-    font-size: 18px;
-    line-height: 26px;
-    color: #FCFCFC;
-    padding: 12px 0;
+      font-family: "Proxima Nova Rg";
+      font-style: normal;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 26px;
+      color: #FCFCFC;
+      padding: 12px 0;
   }
+  
   .about__block__img {
-    max-width: 700px;
+      max-width: 700px;
   }
   
   .block__text__link {
-    font-family: "Proxima Nova Rg";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 22px;
-    color: #97CD92;
-    transition: all 0.3s ease;
+      font-family: "Proxima Nova Rg";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 22px;
+      color: #97CD92;
+      transition: all 0.3s ease;
   }
+  
   a.block__text__link:after {
-    content: url('../../assets/icons/arrow--green.svg');
-    display: inline-block;
-    position: relative;
-    left: 16px;
-    top: 6px;
+      content: url('../../assets/icons/arrow--green.svg');
+      display: inline-block;
+      position: relative;
+      left: 16px;
+      top: 6px;
   }
+  
   a.block__text__link:hover:after {
-    transition: transform 0.2s ease-in-out;
-    transform: translate(50%, 0%);
+      transition: transform 0.2s ease-in-out;
+      transform: translate(50%, 0%);
   }
+  
   .block__text__link:hover {
-    color: #74b36e;
+      color: #74b36e;
   }
   
   .course {
-    background-color: #fff;
-    display: flex;
-    flex-wrap: revert;
+      background-color: #fff;
+      display: flex;
+      flex-wrap: revert;
   }
+  
   .course__text {
-    padding-top: 60px;
+      padding-top: 60px;
+      margin-left: 15%;
   }
+  
   .course__text__offer {
-    padding-bottom: 40px;
-    max-width: 550px;
+      padding-bottom: 40px;
+      max-width: 550px;
   }
+  
   .course__text__offer .block__text__link {
-    color: #97CD92;
+      color: #97CD92;
   }
+  
   .course__img {
-    max-width: 50%;
-    position: relative;
-    background-color: #97CD92;
-    border-radius: 96px 0 0 0;
-    padding: 110px 240px 120px 70px;
+      max-width: 50%;
+      position: relative;
+      background-color: #97CD92;
+      border-radius: 96px 0 0 0;
+      padding: 110px 240px 120px 70px;
   }
+  
   .course__img__block {
-    position: relative;
+      position: relative;
   }
+  
   .course__img__block img {
-    max-width: 100%;
-    position: relative;
-    left: -200px;
+      max-width: 100%;
+      position: relative;
+      left: -200px;
   }
+  
   .course__img h3 {
-    padding-bottom: 75px;
+      padding-bottom: 75px;
   }
   
   .clients {
-    background-color: #FAF8EE;
-    padding: 100px 0;
+      background-color: #FAF8EE;
+      padding: 100px 0;
   }
+  
   .clients .container {
-    flex-direction: column;
+      flex-direction: column;
   }
+  
   .clients__cards {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
   }
+  
   .clients__cards .slick-list {
-    padding-top: 70px !important;
+      padding-top: 70px !important;
   }
   
   .cards__item {
-    max-width: 340px;
-    background-color: #fff;
-    position: relative;
-    padding: 100px 22px;
-    text-align: center;
-    margin: 0 12px;
+      max-width: 340px;
+      background-color: #fff;
+      position: relative;
+      padding: 100px 22px;
+      text-align: center;
+      margin: 0 12px;
   }
+  
   .cards__item img {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -50%);
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
   }
   
   .start-edu {
-    background-color: #fff;
-    padding: 144px 0;
+      background-color: #fff;
+      padding: 144px 0;
   }
+  
   .start-edu .container {
-    flex-direction: column;
-    align-items: center;
+      flex-direction: column;
+      align-items: center;
   }
+  
   .start-edu h2 {
-    padding-bottom: 24px;
+      padding-bottom: 24px;
   }
+  
   .start-edu__text {
-    font-family: "Proxima Nova Rg";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 26px;
-    max-width: 777px;
-    text-align: center;
+      font-family: "Proxima Nova Rg";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 26px;
+      max-width: 777px;
+      text-align: center;
   }
+  
   .start-edu__button {
-    max-width: 320px;
-    margin-top: 80px;
+      max-width: 320px;
+      margin-top: 80px;
   }
+  
   .start-edu .start-edu__link {
-    color: #fff;
+      color: #fff;
   }
   
   .footer {
-    padding-bottom: 70px;
+      padding-bottom: 70px;
   }
+  
   .footer .container {
-    flex-direction: column;
+      flex-direction: column;
   }
+  
   .footer__block {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding: 80px 0;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 80px 0;
   }
+  
   .footer__block__socials {
-    display: flex;
-    justify-content: space-between;
-    max-width: 182px;
-    gap: 44px;
+      display: flex;
+      justify-content: space-between;
+      max-width: 182px;
+      gap: 44px;
   }
+  
   .footer__block__socials img {
-    max-width: 32px;
-    height: auto;
+      max-width: 32px;
+      height: auto;
   }
+  
   .footer__text {
-    font-family: "Proxima Nova Rg";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 160%;
-    color: #fff;
-    opacity: 0.4;
+      font-family: "Proxima Nova Rg";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 160%;
+      color: #fff;
+      opacity: 0.4;
   }
+  
   .footer .seperator {
-    height: 8px;
-    background-color: #97CD92;
-    box-shadow: 0px 0px 64px rgba(255, 255, 255, 0.16);
-    transform: rotate(-180deg);
-    max-width: 75px;
+      height: 8px;
+      background-color: #97CD92;
+      box-shadow: 0px 0px 64px rgba(255, 255, 255, 0.16);
+      transform: rotate(-180deg);
+      max-width: 75px;
   }
+  
   .footer .block__text {
-    font-family: "Circular Std";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 160%;
+      font-family: "Circular Std";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 160%;
   }
+  
   .footer .block__text__link {
-    color: #fff;
+      color: #fff;
   }
+  
   .footer .socials__link__img:hover .socials--hover path {
-    transition: all 0.3s ease-in-out;
-    fill: #97CD92;
+      transition: all 0.3s ease-in-out;
+      fill: #97CD92;
   }
+  
   .footer__block__sign {
-    margin-right: 20px;
+      margin-right: 20px;
   }
+  
   .footer__block__sign .block__text__link:after {
-    content: url('../../assets/icons/arrow--white.svg');
+      content: url('../../assets/icons/arrow--white.svg');
   }
   
   @media (max-width: 550px) {
-    .container {
-      padding: 0 24px;
-    }
-  
-    h2 {
-      font-size: 28px;
-      line-height: 32px;
-    }
-  
-    h3 {
-      font-size: 28px;
-      line-height: 32px;
-    }
-  
-    .header__text {
-      font-size: 16px;
-      line-height: 18px;
-      padding-left: 0;
-    }
-  
-    .hero .container {
-      padding-top: 50px;
-      flex-direction: column;
-    }
-    .hero__background {
-      position: absolute;
-      top: 350px;
-      right: -50px;
-      transform: scale(1);
-    }
-    .hero h1 {
-      font-size: 28px;
-      padding: 32px 0 24px;
-      line-height: 32px;
-    }
-    .hero__offer__text {
-      font-weight: 300;
-      font-size: 16px;
-      line-height: 22px;
-    }
-    .hero__offer__button {
-      max-width: 200px;
-      padding: 20px 62px;
-      margin-top: 62px;
-      margin-bottom: 52px;
-    }
-  
-    .about {
-      padding-top: 25px;
-    }
-    .about__block {
-      gap: 40px;
-      padding-bottom: 50px;
-    }
-    .about__block:first-child {
-      flex-direction: column-reverse;
-    }
-    .about__block .list__item {
-      font-weight: 300;
-      font-size: 16px;
-      line-height: 22px;
-    }
-  
-    .course {
-      flex-direction: column-reverse;
-    }
-    .course .container {
-      flex-direction: column;
-    }
-    .course__img {
-      max-width: 100%;
-      padding: 60px 24px 24px;
-    }
-    .course__img h3 {
-      text-align: right;
-    }
-    .course__img__block img {
-      left: 0;
-      border-radius: 80px 80px 0 90px;
-    }
-    .course__text {
-      padding-top: 0;
-      padding-bottom: 50px;
-    }
-  
-    .clients {
-      padding-top: 50px;
-    }
-    .clients h2 {
-      padding-bottom: 0;
-    }
-    .clients__cards {
-      padding-top: 24px;
-    }
-  
-    .start-edu {
-      padding: 52px 0;
-    }
-    .start-edu__text {
-      font-size: 16px;
-      line-height: 22px;
-    }
-    .start-edu__btn {
-      margin-top: 40px;
-    }
-  
-    .footer {
-      padding-bottom: 60px;
-    }
-    .footer__block {
-      flex-direction: column;
-      align-items: center;
-      padding: 50px 0;
-      gap: 20px;
-    }
-    .footer .seperator {
-      display: none;
-    }
-    .footer .block__text__link img {
-      display: none;
-    }
+      .container {
+          padding: 0 24px;
+      }
+      h2 {
+          font-size: 28px;
+          line-height: 32px;
+      }
+      h3 {
+          font-size: 28px;
+          line-height: 32px;
+      }
+      .header__text {
+          font-size: 16px;
+          line-height: 18px;
+          padding-left: 0;
+      }
+      .hero .container {
+          padding-top: 50px;
+          flex-direction: column;
+      }
+      .hero__background {
+          position: absolute;
+          top: 350px;
+          right: -50px;
+          transform: scale(1);
+      }
+      .hero h1 {
+          font-size: 28px;
+          padding: 32px 0 24px;
+          line-height: 32px;
+      }
+      .hero__offer__text {
+          font-weight: 300;
+          font-size: 16px;
+          line-height: 22px;
+      }
+      .hero__offer__button {
+          max-width: 200px;
+          padding: 20px 62px;
+          margin-top: 62px;
+          margin-bottom: 52px;
+      }
+      .about {
+          padding-top: 25px;
+      }
+      .about__block {
+          gap: 40px;
+          padding-bottom: 50px;
+      }
+      .about__block:first-child {
+          flex-direction: column-reverse;
+      }
+      .about__block .list__item {
+          font-weight: 300;
+          font-size: 16px;
+          line-height: 22px;
+      }
+      .course {
+          flex-direction: column-reverse;
+      }
+      .course .container {
+          flex-direction: column;
+      }
+      .course__img {
+          max-width: 100%;
+          padding: 60px 24px 24px;
+      }
+      .course__img h3 {
+          text-align: right;
+      }
+      .course__img__block img {
+          left: 0;
+          border-radius: 80px 80px 0 90px;
+      }
+      .course__text {
+          padding-top: 0;
+          padding-bottom: 50px;
+      }
+      .clients {
+          padding-top: 50px;
+      }
+      .clients h2 {
+          padding-bottom: 0;
+      }
+      .clients__cards {
+          padding-top: 24px;
+      }
+      .start-edu {
+          padding: 52px 0;
+      }
+      .start-edu__text {
+          font-size: 16px;
+          line-height: 22px;
+      }
+      .start-edu__btn {
+          margin-top: 40px;
+      }
+      .footer {
+          padding-bottom: 60px;
+      }
+      .footer__block {
+          flex-direction: column;
+          align-items: center;
+          padding: 50px 0;
+          gap: 20px;
+      }
+      .footer .seperator {
+          display: none;
+      }
+      .footer .block__text__link img {
+          display: none;
+      }
   }
-  @media (max-width: 1160px) {
-    .header__text {
-      padding-left: 0px;
-      font-size: 18px;
-    }
   
-    .course {
-      flex-direction: column-reverse;
-    }
-    .course .container {
-      flex-direction: column;
-    }
-    .course__img {
-      max-width: 100%;
-      padding: 60px 24px 24px;
-    }
-    .course__img h3 {
-      text-align: right;
-    }
-    .course__img__block img {
-      left: 0;
-      border-radius: 80px 80px 0 90px;
-    }
-    .course__text {
-      padding-bottom: 30px;
-    }
+  @media (max-width: 1160px) {
+      .header__text {
+          padding-left: 0px;
+          font-size: 18px;
+      }
+      .course {
+          flex-direction: column-reverse;
+      }
+      .course .container {
+          flex-direction: column;
+      }
+      .course__img {
+          max-width: 100%;
+          padding: 60px 24px 24px;
+      }
+      .course__img h3 {
+          text-align: right;
+      }
+      .course__img__block img {
+          left: 0;
+          border-radius: 80px 80px 0 90px;
+      }
+      .course__text {
+          padding-bottom: 30px;
+      }
   }
