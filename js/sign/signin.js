@@ -19,7 +19,7 @@ $(document).ready(function() {
                 inputnPassword.classList.remove("error")
 
                 if (validation.key === 'true') {
-                    window.location.href = "/web/lessons.php"
+                    window.location.href = validation.url
                 } else {
                     if (validation.key === 'email') {
                         inputEmail.classList.add("error")

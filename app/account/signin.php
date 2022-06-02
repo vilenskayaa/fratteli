@@ -9,7 +9,9 @@ $password = $_POST['password'];
 
 $key = signin($email, md5($password), $db);
 
-echo json_encode(['key' => $key]);
+$url = $_SESSION['user']['role'] === 'admin' ? '/web/amaterials.php' : '/web/lessons.php';
+
+echo json_encode(['key' => $key, 'url' => $url]);
 
 
 // --------------------------------------------------------
