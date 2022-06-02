@@ -18,11 +18,6 @@
                     <h1>Определение уровня итальянского</h1>
                     <p class="header__title__text">8 вопросов</p>
                 </div>
-                <div class="header__manage">
-                    <img src="/assets/img/reg-test/Timer.svg" alt="">
-                    <span class="timer__text">30:00</span>
-                    <button class="header__btn"><img src="/assets/img/reg-test/closeBtn.png" alt=""></button>
-                </div>
             </div>
         </header>
         <form action="/web/test-result.php" method="post">

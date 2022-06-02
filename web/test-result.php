@@ -28,7 +28,7 @@
     if ($count > 6) $level = 'C1';
     if ($count === 8) $level = 'C2';
 
-    if ($_COOKIE['role'] === 'teacher' && $level < 7) {
+    if ($_COOKIE['role'] === 'teacher' && $count < 7) {
         $errorMessage = 'Извините, вы не можете стать преподавателем - 
 для этого уровень владения языком должен быть не ниже C1.';
     }
