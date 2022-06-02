@@ -1,7 +1,7 @@
 // view password
 const viewPassword = () => {
     const viewField = document.querySelector('#viewField')
-    const inputPass = document.querySelectorAll('input[type="check"]')
+    const inputPass = document.querySelectorAll('input[type="password"]')
 
     if (viewField === null || inputPass.length == 0) {
         return

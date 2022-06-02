@@ -32,6 +32,13 @@ const onClick = (id, type) => {
 
 const nextWordRender = () => {
     const word = words[index]
+    const wrapper = document.getElementById('product')
+
+    if (!word) {
+        wrapper.innerHTML = '<div class="empty"><h3>Вы изучили все карточки!</h3><p>Подождите, пока администратор добавит новые!</p></div'
+        return
+    }
+
     const innerHTML = '<div class="img__card" data-id="' + word.word_id + '" >' +
         '<img  src="' + word.word_picture + '" alt="">' +
         '</div>' +
@@ -44,13 +51,15 @@ const nextWordRender = () => {
         '</div>' +
         '</div>'
 
-    const wrapper = document.getElementById('product');
     wrapper.innerHTML = innerHTML
-    wrapper.get
+}
 
+const renderPosts = () => {
+    
 }
 
 $(document).ready(async () => {
     words = await getWords()
     nextWordRender()
+    renderPosts()
 })

@@ -152,6 +152,7 @@ body {
     flex-direction: column;
     align-items: center;
     transition: all 0.3s ease-in;
+    padding: 0 10px;
 }
 
 .sign__header {
@@ -314,6 +315,10 @@ body {
     visibility: hidden;
 }
 
+.form__input.name {
+    margin-bottom: 20px;
+}
+
 .form__item.error .form_input_error_text {
     visibility: visible;
 }
@@ -414,6 +419,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 24px;
+    padding-bottom: 30px;
 }
 
 .classgroup__item {
@@ -617,6 +623,10 @@ body {
     border-color: #f26363;
 }
 
+.reviews__list {
+    padding-bottom: 30px;
+}
+
 .reviews__item {
     padding-top: 30px;
     width: 100%;
@@ -638,3 +648,18 @@ body {
 .reviews__date {
     color: rgba(1, 12, 59, 0.2);
 }
+
+.tests-container {
+    padding-bottom: 30px;
+}
+
+@media (max-width: 740px) {
+
+    .sign__container {
+      width: 100%;
+    }
+
+    .sign__header {
+      width: 100%;
+    }
+  }

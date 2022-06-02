@@ -12,6 +12,27 @@ a {
 ul {
     list-style: none;
 }
+.empty {
+    height: 524px;
+    width: 320px;
+    padding: 32px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: "Proxima Nova";
+}
+.empty h3 {
+    font-size: 36px;
+    line-height: 36px;
+    margin-bottom: 12px;
+}
+
+.empty p {
+    font-size: 16px;
+    line-height: 24px;
+}
 
 @font-face {
     font-family: "Proxima Nova";

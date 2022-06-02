@@ -5,10 +5,6 @@ $page_title = "Авторизация";
 
 ?>
 
-<head>
-  <link rel="stylesheet" href="/styles/css/sign.css">
-</head>
-
 <?php include "../layout/meta.php"; ?>
 
 <body>
