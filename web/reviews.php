@@ -9,6 +9,7 @@ if (!$_SESSION['user']) {
 ?>
 
 <?php include "../layout/meta.php"; ?>
+<link href="/styles/css/reviews.css" rel="stylesheet"/>
 
 
 <body>
