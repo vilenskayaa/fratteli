@@ -30,15 +30,21 @@ $page_title = "Мои тесты"
     }
 
     .black_arrow {
-        padding: 10px;
+        padding: 15px;
         width: 50px;
         height: 50px;
         border-radius: 50%;
         background-color: #2E3134;
-        color: #fff;
         display: inline-block;
         border: none;
         outline: none;
+        transition-duration: 0.2s;
+    }
+
+    .black_arrow:hover {
+        background: #4D62ED;
+        width: 48px;
+        height: 48px;
     }
 
     .black_arrow:hover {
