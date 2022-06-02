@@ -42,14 +42,14 @@
       <img class="logo" src="/assets/img/logo.svg" alt="">
       <h1>Ваш уровень итальянского: <?= $level ?></h1>
         <?php if (isset($errorMessage)) :?>
-        <p class="color-red">
+        <p class="content__text color-red">
             <?= $errorMessage ?>
         </p>
         <?php endif; ?>
       <p class="content__text">Если вы не согласны с текущим уровнем,
         вы может пройти <a href="/web/reg-test.php">Тест</a> снова.</p>
       <?php if (isset($errorMessage)): ?>
-          <a class="btn" style="text-decoration: none; width: 400px; text-align: center;" href="/web/reg-test.php">Пройти тест заново</a>
+          <a class="btn" href="/web/reg-test.php">Пройти тест заново</a>
         <?php else: ?>
         <button class="btn" id="signEnd">Далее</button>
         <?php endif; ?>
