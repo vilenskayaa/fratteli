@@ -62,7 +62,6 @@ ul {
 
 .container {
     max-width: 100%;
-    padding-right: 160px;
 }
 
 .main__title__text {
@@ -132,6 +131,7 @@ h2 {
 }
 
 .selected__cards__item {
+    width: 240px;
     background: #fff;
     border-radius: 16px;
     padding: 24px 47px;
