@@ -96,30 +96,13 @@ $page_title = "Регистрация";
           <img class="sign__logo-img" src="/assets/img/logo.png" alt="Fratelli">
         </header>
         <div class="sign__header-title">
-          Ваш уровень итальянского?
+            Тест на определение<br> уровня итальянского
         </div>
         <div class="sign__subtitle">
-              <span>Если вы не знаете свой уровень - пройдите тест на знание</span>
-          <span>итальянского в разделе <a class="sign__link" href="/web/quiz-c1.php">Тесты</a></span>
+              <span style="text-align: center">Для дальнейшей регистрации нам нужно знать, насколько хорошо<br> вы владеете итальянским. Пожалуйста, пройдите тест из 10<br> вопросов, и мы сможем начать нашу работу.</span>
         </div>
       </header>
-      <form class="form form-sign" action="" id="signLevel">
-        <div class="form__fields">
-          <div class="form__item">
-            <select class="form__input" name="level" placeholder="Выберите ваш уровень" required>
-              <option value="A1">A1</option>
-              <option value="A2">A2</option>
-              <option value="B1">B1</option>
-              <option value="B2">B2</option>
-              <option value="C1">C1</option>
-              <option value="C2">C2</option>
-            </select>
-          </div>
-        </div>
-        <button class="form__btn">
-          Далее
-        </button>
-      </form>
+        <a class="form__btn" style="text-decoration: none; width: 400px; text-align: center;" href="/web/reg-test.html">Начать тест</a>
     </section>
 
     <section class="sign__container" data-signEnd>
