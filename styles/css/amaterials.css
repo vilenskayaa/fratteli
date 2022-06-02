@@ -13,6 +13,11 @@ ul {
     list-style: none;
 }
 
+.btn-square {
+    padding: 15px;
+    align-self: self-start;
+}
+
 @font-face {
     font-family: "Proxima Nova";
     font-weight: 600;
