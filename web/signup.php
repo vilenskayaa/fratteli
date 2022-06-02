@@ -8,7 +8,6 @@ $page_title = "Регистрация";
 
 <?php include "../layout/meta.php"; ?>
 
-
 <body>
   <main class="sign sign-up">
     <section class="sign__container" data-signUp>
