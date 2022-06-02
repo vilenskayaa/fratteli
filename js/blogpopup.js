@@ -38,12 +38,15 @@ async function showPopup(post_id) {
 
     popupTitle.innerText = post.post_header;
     popupText.innerText = post.post_text;
+    body.style.overflow = 'hidden';
 
     confirmBtn.addEventListener('click', () => {
         popupContainer.style.visibility = 'hidden';
+        body.style.overflow = 'auto';
     });
 
     popupClose.addEventListener('click', () => {
         popupContainer.style.visibility = 'hidden';
+        body.style.overflow = 'auto';
     });
 }
