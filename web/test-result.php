@@ -28,6 +28,11 @@
     if ($count > 6) $level = 'C1';
     if ($count === 8) $level = 'C2';
 
+    if ($_COOKIE['role'] === 'teacher' && $level < 7) {
+        $errorMessage = 'Извините, вы не можете стать преподавателем - 
+для этого уровень владения языком должен быть не ниже C1.';
+    }
+
     setcookie('level', $level, ['path' => '/']);
 ?>
 
@@ -36,9 +41,18 @@
     <div class="content content--left">
       <img class="logo" src="/assets/img/logo.svg" alt="">
       <h1>Ваш уровень итальянского: <?= $level ?></h1>
+        <?php if (isset($errorMessage)) :?>
+        <p class="color-red">
+            <?= $errorMessage ?>
+        </p>
+        <?php endif; ?>
       <p class="content__text">Если вы не согласны с текущим уровнем,
         вы может пройти <a href="/web/reg-test.php">Тест</a> снова.</p>
-      <button class="btn" id="signEnd">Далее</button>
+      <?php if (isset($errorMessage)): ?>
+          <a class="btn" style="text-decoration: none; width: 400px; text-align: center;" href="/web/reg-test.php">Пройти тест заново</a>
+        <?php else: ?>
+        <button class="btn" id="signEnd">Далее</button>
+        <?php endif; ?>
     </div>
     <div class="content content--right">
       <img class="content__background" src="/assets/img/test-result/result-back.svg" alt="">

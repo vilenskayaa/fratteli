@@ -15,6 +15,9 @@ body {
     font-size: 20px;
     cursor: pointer;
 }
+.color-red {
+    color: #F54040;
+}
 .flash-message {
     background: rgb(0 219 19 / 50%);
     color: rgb(0 125 10);
