@@ -94,6 +94,7 @@
     line-height: 20px;
     color: #2e3134;
     border-left: 9px solid #ffffff;
+    font-family: 'Proxima Nova';
 }
 
 .nav__item:hover {
