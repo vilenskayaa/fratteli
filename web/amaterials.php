@@ -23,11 +23,11 @@ $page_title = "Администрирование материалов"
       </div>
     </div>
     <div class="">
+    <?php if (isset($_SESSION['message'])): ?>
+        <div class="flash-message"><?= $_SESSION['message'] ?></div>
+    <?php endif; unset($_SESSION['message']); ?>
       <div class="amat">
         <h2>Блог</h2>
-          <?php if (isset($_SESSION['message'])): ?>
-          <div class="flash-message"><?= $_SESSION['message'] ?></div>
-          <?php endif; unset($_SESSION['message']); ?>
         <form class="form" action="/app/posts/create-post.php" method="post" id="title" enctype="multipart/form-data">
           <div class="form__fields">
             <div class="form__item">
@@ -47,16 +47,16 @@ $page_title = "Администрирование материалов"
         </form>
 
         <h2>Карточка слов</h2>
-        <form class="form" action="" id="title">
+        <form class="form" action="/app/word/create-word.php" method="post" id="title" enctype="multipart/form-data">
           <div class="form__fields">
             <div class="form__item">
-              <input class="form__input" name="test_title" type="text" placeholder="Слово на итальянском" required>
+              <input class="form__input" name="word_italian" type="text" placeholder="Слово на итальянском" required>
             </div>
 
             <div class="form__item">
-              <input class="form__input" name="test_title" type="text" placeholder="Слово на русском" required>
+              <input class="form__input" name="word_rus" type="text" placeholder="Слово на русском" required>
             </div>
-            
+              <input type="file" name="word_picture" style="" id="file-post2">
             <button type="button" class="add__img" id="blogAddImageButton2">
                     Добавить картинку
                   </button>      

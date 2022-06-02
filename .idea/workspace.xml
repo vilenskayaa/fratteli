@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b5778a18-996a-4c02-8f09-7d34fedec0c8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/js/amaterials.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/posts/create-post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/posts/create-post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/css/all.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/css/all.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/word/create-word.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/word/create-word.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/amaterials.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/amaterials.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/css/amaterials.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/css/amaterials.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/amaterials.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/amaterials.php" afterDir="false" />
     </list>
@@ -102,7 +101,7 @@
       <workItem from="1654003978132" duration="1436000" />
       <workItem from="1654098246375" duration="8906000" />
       <workItem from="1654161913066" duration="4412000" />
-      <workItem from="1654183001115" duration="15929000" />
+      <workItem from="1654183001115" duration="16911000" />
     </task>
     <servers />
   </component>

@@ -12,7 +12,6 @@ try {
     if (!$user_id) {
         throw new Exception("Необходимо авторизация!");
     }
-    
 
     $word_italian = $_POST["word_italian"];
     $word_rus = $_POST["word_rus"];
@@ -24,15 +23,16 @@ try {
     $word_picture = '/app/' . $path;
 
     $insetWordRow = "INSERT INTO `word`
-        (`word_id`, `word_italian`, `word_rus`, `word_picture`, `created_by`) VALUES
-        (NULL, '$word_italian', '$word_rus', '$word_picture', '$user_id');
+        (`word_italian`, `word_rus`, `word_picture`, `created_by`) VALUES
+        ('$word_italian', '$word_rus', '$word_picture', '$user_id');
     ";
 
     $groupData = $db->query($insetWordRow);
 
     $res = array("word_id" => mysqli_insert_id($db));
+    $_SESSION['message'] = "Word created";
 
-    echo json_encode($res);
+    header("Location: /web/amaterials.php");
 } catch (Exception $e) {
     echo json_encode($e->getMessage(), JSON_UNESCAPED_UNICODE);
 }

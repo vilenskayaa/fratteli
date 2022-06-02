@@ -52,4 +52,12 @@ $(document).ready(async function () {
     const fileName = e.target.files[0].name
     $('#blogAddImageButton').text(fileName)
   })
+
+  $('#blogAddImageButton2').click((e) => {
+    $('#file-post2').trigger('click')
+  })
+  $('#file-post2').change((e) => {
+    const fileName = e.target.files[0].name
+    $('#blogAddImageButton2').text(fileName)
+  })
 });
