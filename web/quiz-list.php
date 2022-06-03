@@ -10,6 +10,7 @@ $page_title = "Тесты"
 <style>
     .test_list {
         display: flex;
+        flex-wrap: wrap;
     }
 
     .card {
