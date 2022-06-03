@@ -86,7 +86,7 @@ try {
         $insertAnswerRow = "INSERT INTO `answer`
         (`answer_id`, `question_id`, `answer_title`, `is_correct`) VALUES ";
         foreach ($question['answers'] as $answer) {
-            $is_correct = $answer['is_correct'] ? 1 : 0;
+            $is_correct = $answer['is_correct'] === 'true' ? 1 : 0;
             $answer_title = $answer['answer_title'];
 
             $insertAnswerRow .= "(NULL, '$question_id','$answer_title', $is_correct),";
