@@ -41,7 +41,7 @@ $page_title = "Создание теста"
         <form class="form" action="" id="title">
           <div class="form__fields">
             <div class="form__item">
-              <input class="form__input" name="test_title" type="text" placeholder="Название группы" required>
+              <input class="form__input" name="test_title" type="text" placeholder="Название теста" required>
             </div>
             <div class="form__item">
               <select class="form__input" name="test_level" placeholder="Выберите ваш уровень" required>

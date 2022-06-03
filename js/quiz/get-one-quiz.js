@@ -1,13 +1,13 @@
-const isTeacher = user?.role === 'teacher';
+const isTeacher = user ?.role === 'teacher';
 
-const fetchTestById = async (test_id) => {
+const fetchTestById = async(test_id) => {
     const res = await fetch(`${baseApi}/test/get-test.php?test_id=${test_id}`);
     return res.json();
 }
 
 
 const body = document.getElementsByTagName("body")[0];
-const renderTest = async () => {
+const renderTest = async() => {
     const testContainer = document.getElementById("testContainer");
 
     const params = new URLSearchParams(window.location.search);
@@ -43,14 +43,14 @@ const renderTest = async () => {
                 option.setAttribute("id", `answer`);
                 option.setAttribute("value", a.answer_id);
                 option.setAttribute("name", `question${a.question_id}`);
-    
+
                 const optionLabel = document.createElement("label");
                 optionLabel.setAttribute("for", `answer-${a.answer_id}`);
                 optionLabel.innerText = a.answer_title;
 
                 const optionsContainer = document.createElement("div");
                 optionsContainer.setAttribute("class", "answer-item");
-    
+
 
                 if (!isTeacher) optionsContainer.appendChild(option);
                 optionsContainer.appendChild(optionLabel);
@@ -72,14 +72,15 @@ const renderTest = async () => {
 
 
     const sendTestBtn = document.createElement("button");
-    sendTestBtn.innerText = "Заверщить";
+    sendTestBtn.setAttribute("class", 'btn');
+    sendTestBtn.innerText = "Завершить";
 
     testContainer.appendChild(questionsContainer);
     if (!isTeacher) testContainer.appendChild(sendTestBtn);
 
     let answer_ids = [];
-    
-    sendTestBtn.addEventListener("click", async () => {
+
+    sendTestBtn.addEventListener("click", async() => {
         const optionsChecked = document.querySelectorAll("input[type=radio]:checked");
         const answersText = document.querySelectorAll("#answer-text");
         options_ids = [].map.call(optionsChecked, r => r.value);
@@ -91,7 +92,7 @@ const renderTest = async () => {
                 answer_ids: [...options_ids, ...textAnswersValues],
                 test_id: testData.test_id,
             })
-        }); 
+        });
 
         const result = await res.json();
         console.log(result)
@@ -102,8 +103,6 @@ const renderTest = async () => {
         <h3>${result.count_correct}/${result.count_questions}</h3>
         <h2>Оценка:</h2>
         <h3>${result.rating}</h3>
-        <h2>Статус:</h2>
-        <h3>${result.success}</h3>
         `
     });
 
