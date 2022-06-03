@@ -100,6 +100,26 @@ main {
     padding: 64px 0 0;
 }
 
+.h3 {
+    font-family: 'Proxima Nova';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #2E3134;
+    padding-bottom: 10px;
+}
+
+.questions-desc {
+    font-family: 'Proxima Nova';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    color: #2E3134;
+    padding-bottom: 10px;
+}
+
 .header h1 {
     font-family: 'Proxima Nova';
     font-style: normal;
@@ -213,6 +233,29 @@ main {
     border-radius: 16px;
     margin-top: 30px;
     margin-bottom: 30px;
+}
+
+.answers-container {
+    border-radius: 16px;
+    width: 100%;
+    padding: 20px 32px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #2e3134;
+    background-color: #FCFCFC;
+    border-radius: 16px;
+}
+
+.setdata {
+    border-radius: 16px;
+    width: 100%;
+    padding: 20px 32px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #2e3134;
+    background-color: #FCFCFC;
+    border-radius: 16px;
+    max-width: 800px;
 }
 
 .btn--start {

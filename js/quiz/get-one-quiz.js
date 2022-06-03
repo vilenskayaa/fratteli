@@ -29,7 +29,7 @@ const renderTest = async() => {
     testData.questions.forEach(q => {
         const questionTitle = document.createElement("h3");
         questionTitle.innerText = q.question_title;
-
+        questionTitle.setAttribute("class", 'h3');
         const answersContainer = document.createElement("div");
         answersContainer.setAttribute("class", "answers-container");
         const questionDesc = document.createElement("p");
@@ -68,6 +68,7 @@ const renderTest = async() => {
         questionsContainer.appendChild(questionTitle);
         questionsContainer.appendChild(questionDesc);
         questionsContainer.appendChild(answersContainer);
+        questionsContainer.setAttribute("class", 'setdata');
     });
 
 
