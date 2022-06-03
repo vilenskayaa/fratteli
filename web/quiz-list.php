@@ -73,7 +73,7 @@ $page_title = "Тесты"
         <div class="head">
             <div class="head__info">
                 <div class="head__title">Тесты</div>
-                <div class="head__subtitle"></div>
+                <div class="head__subtitle">Страница, где ты можешь проверить свои знания</div>
             </div>
             <div class="head__nav">
                 <a href="quiz-add.php" class="btn" data-add>
