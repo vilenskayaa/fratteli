@@ -72,6 +72,7 @@ const renderTest = async() => {
 
 
     const sendTestBtn = document.createElement("button");
+    sendTestBtn.setAttribute("class", 'btn');
     sendTestBtn.innerText = "Завершить";
 
     testContainer.appendChild(questionsContainer);
@@ -102,8 +103,6 @@ const renderTest = async() => {
         <h3>${result.count_correct}/${result.count_questions}</h3>
         <h2>Оценка:</h2>
         <h3>${result.rating}</h3>
-        <h2>Статус:</h2>
-        <h3>${result.success}</h3>
         `
     });
 
