@@ -11,7 +11,7 @@ const renderTest = async () => {
     const testContainer = document.getElementById("testContainer");
 
     const params = new URLSearchParams(window.location.search);
-    const testData = await fetchTestById(params.get("test_id") ?? 47);
+    const testData = await fetchTestById(params.get("test_id"));
 
     const testTitle = document.createElement("h2");
     testTitle.innerText = testData.test_title;
@@ -36,7 +36,7 @@ const renderTest = async () => {
         questionDesc.setAttribute("class", "questions-desc");
         questionDesc.innerText = q.question_desc;
 
-        if (q.type === "0") {
+        if (q.type_id === "0") {
             q.answers.forEach(a => {
                 const option = document.createElement("input");
                 option.setAttribute("type", "radio");
@@ -57,7 +57,7 @@ const renderTest = async () => {
 
                 answersContainer.appendChild(optionsContainer);
             });
-        } else if (q.type === "1") {
+        } else if (q.type_id === "1") {
             const inputAnswer = document.createElement("input");
             inputAnswer.setAttribute("type", "text");
             inputAnswer.setAttribute("id", `answer-text`);

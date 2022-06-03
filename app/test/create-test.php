@@ -76,7 +76,7 @@ try {
 
         $insertQuestionRow = "INSERT INTO `question`
             (`question_id`, `test_id`, `question_title`, `question_desc`, `type_id`) VALUES
-            (NULL, '$test_id', '$question_title', '$question_desc', 1);";
+            (NULL, '$test_id', '$question_title', '$question_desc', 0);";
 
         $createdQuestion = mysqli_query($db, $insertQuestionRow);
         $res["success"] = $res["success"] && $createdQuestion;
