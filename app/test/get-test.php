@@ -6,8 +6,15 @@ require_once '../db.php';
 
 header("Content-Type: application/json;");
 
-
+$user_id = $_SESSION['user']['id'];
 $test_id = $_GET["test_id"] ?? 0;
+
+$selectStudent = "SELECT * FROM `student` WHERE `user_id` = '$user_id'";
+$student = $db->query($selectStudent)->fetch_assoc();
+if (!$student) {
+    echo json_encode([], JSON_UNESCAPED_UNICODE);
+    return;
+}
 
 if ($test_id) {
     $selectTest = "SELECT * FROM `test` WHERE `test_id` = '$test_id'";
@@ -44,7 +51,7 @@ if ($test_id) {
     $selectTest = "SELECT 
     t.`test_id`, t.`test_title`, t.`test_level`, t.`test_time`, t.`test_complexity`, t.`created_by`,
     (SELECT COUNT(*) FROM `question` AS q WHERE q.`test_id` = t.`test_id`) as `questions_count`
-    FROM `test` AS t WHERE test_id != 47";
+    FROM `test` AS t";
     $testsList = $db->query($selectTest);
 
     $res = [];
