@@ -20,11 +20,11 @@ try {
     $user_row = $userData->fetch_assoc();
     $user_id = $user_row["user_id"];
 
-    $selectStudent = "SELECT COUNT(*) as `student_count` FROM `student` WHERE `user_id` = '$user_id' AND `group_id` = '$group_id';";
+    $selectStudent = "SELECT COUNT(*) as `student_count` FROM `student` WHERE `user_id` = '$user_id';";
     $user_already_exist = (int)$db->query($selectStudent)->fetch_assoc()["student_count"];
 
     if ($user_already_exist != 0) {
-        throw new Exception("Такой пользователь уже добавлен в группу!");
+        throw new Exception("Такой пользователь уже добавлен в эту или другую группу!");
     }
 
     $insertUserToGroup = "INSERT INTO `student`

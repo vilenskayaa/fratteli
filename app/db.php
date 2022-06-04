@@ -5,8 +5,8 @@ ini_set('display_startup_errors', 1);
 
 $db = mysqli_connect(
   'localhost',
-  'root',
-  'root',
+  'fratteli',
+  '123QWEfghnm,',
   'fratteli'
 );
 
