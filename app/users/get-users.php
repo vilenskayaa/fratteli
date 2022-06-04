@@ -9,7 +9,7 @@ try {
     $json = file_get_contents('php://input');
     $req = json_decode($json, true);
 
-    $select = "select * from users where user_role != 'admin'";
+    $select = "select * from user where user_role != 'admin'";
     $res = queryAll($db, $select);
 
     echo json_encode($res);
