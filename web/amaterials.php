@@ -24,7 +24,7 @@ if (($_SESSION['user']['role'] ?? '' )!== 'admin') {
     <div class="head">
       <div class="head__info">
         <div class="head__title">Материалы</div>
-        <div class="head__subtitle">Здесь можно загрузить блоги и карточки слов</div>
+        <div class="head__subtitle">Здесь можно загрузить книги, блоги и карточки слов</div>
       </div>
     </div>
     <div class="">
@@ -32,6 +32,25 @@ if (($_SESSION['user']['role'] ?? '' )!== 'admin') {
         <div class="flash-message"><?= $_SESSION['message'] ?></div>
     <?php endif; unset($_SESSION['message']); ?>
       <div class="amat">
+      <h2>Книги</h2>
+        <form class="form" action="/app/book/create-book.php" method="post" id="title" enctype="multipart/form-data">
+          <div class="form__fields">
+            <div class="form__item">
+              <input class="form__input" name="book_name" type="text" placeholder="Название книги" required>
+            </div>
+            <div class="form__item">
+              <input class="form__input" name="book_link" type="text" placeholder="Ссылка на книгу" required>
+            </div>
+            <input type="file" name="book_image" style="" id="file-post">
+            <button type="button" class="add__img" id="blogAddImageButton">
+                Добавить обложку
+            </button>
+            <button type="submit" class="form__btn" id="blogAddButton">
+                    Добавить книгу
+                  </button>
+          </div>
+        </form>
+
         <h2>Блог</h2>
         <form class="form" action="/app/posts/create-post.php" method="post" id="title" enctype="multipart/form-data">
           <div class="form__fields">
@@ -43,10 +62,10 @@ if (($_SESSION['user']['role'] ?? '' )!== 'admin') {
             <input type="file" name="post_picture" style="" id="file-post">
 
             <button type="button" class="add__img" id="blogAddImageButton">
-                Добавить картинку
+                Добавить обложки статьи
             </button>
             <button type="submit" class="form__btn" id="blogAddButton">
-                    Опубликовать
+                    Опубликовать статью
                   </button>
           </div>
         </form>
@@ -63,10 +82,10 @@ if (($_SESSION['user']['role'] ?? '' )!== 'admin') {
             </div>
               <input type="file" name="word_picture" style="" id="file-post2">
             <button type="button" class="add__img" id="blogAddImageButton2">
-                    Добавить картинку
+                    Добавить обложку карточки
                   </button>      
             <button type="submit" class="form__btn" id="blogAddButton2">
-                    Опубликовать
+                    Опубликовать карточку
                   </button>
                 </form>
           </div>

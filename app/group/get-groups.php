@@ -14,7 +14,7 @@ try {
 
     $res = array();
 
-    if ($_SESSION['user']['role'] === 'teacher') {
+    if ($_SESSION['user']['role'] !== 'student') {
         $selectGroups = "SELECT * FROM `group` WHERE `teacher_id` = {$userId}";
     } else {
         $selectGroups = "SELECT g.* FROM `student` s INNER JOIN `group` g ON g.group_id = s.group_id WHERE s.user_id = {$userId}";

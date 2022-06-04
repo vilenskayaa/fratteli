@@ -47,7 +47,6 @@ require_once '../db.php';
 header("Content-Type: application/json;");
 
 try {
-    
     $json = file_get_contents('php://input');
     $req = json_decode($json, true);
     $res = ["test_id" => "", "success" => false];
@@ -56,8 +55,10 @@ try {
     $test_complexity = $req['test_complexity'];
     $test_level = $req['test_level'];
     $test_time = $req['test_time'];
+    $groupIds = $req['groups'];
+
     $created_by = $_SESSION['user']['id'];
-        
+
     $insertTestRow = "INSERT INTO `test` 
         (`test_id`, `test_title`, `test_level`, `test_time`, `test_complexity`, `created_by`) VALUES
         (NULL,'$test_title','$test_level','$test_time','$test_complexity', $created_by);
@@ -95,6 +96,12 @@ try {
         $query = substr($insertAnswerRow, 0, -1).";";
         $createdAnswers = mysqli_query($db, $query);
         $res["success"] = $res["success"] && $createdAnswers;
+    }
+
+    foreach ($groupIds as $groupId) {
+        $insert = "insert into test_group(`test_id`, `group_id`) values ({$test_id}, {$groupId})";
+        $bool = $db->query($insert);
+        $res['success'] = $res['success'] && $bool;
     }
 
     echo json_encode($res, JSON_UNESCAPED_UNICODE);

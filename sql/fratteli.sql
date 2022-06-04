@@ -417,7 +417,18 @@ ALTER TABLE `vocabulary`
 ALTER TABLE `word`
   ADD PRIMARY KEY (`word_id`);
 
---
+CREATE TABLE `test_group` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `test_id` int(11) NOT NULL,
+  `group_id` int(11) NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (test_id) REFERENCES test(test_id),
+  FOREIGN KEY (group_id) REFERENCES `group`(group_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+ALTER TABLE `users`
+add column `approved` tinyint(1) not null default 0;
+
 -- AUTO_INCREMENT для сохранённых таблиц
 --
 

@@ -23,8 +23,8 @@ if (($_SESSION['user']['role'] ?? '' )!== 'admin') {
 <main class="container container__aside">
     <div class="head">
         <div class="head__info">
-            <div class="head__title">Юзеры</div>
-            <div class="head__subtitle">Здесь можно редаткировать юзеров</div>
+            <div class="head__title">Пользователи</div>
+            <div class="head__subtitle">Здесь можно администрировать пользователей</div>
         </div>
     </div>
     <div id="users"></div>
