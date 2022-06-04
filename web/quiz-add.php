@@ -1,8 +1,12 @@
 <?php
 
 session_start();
-$page_title = "Создание теста"
+require_once '../app/db.php';
+$page_title = "Создание теста";
 
+$userId = $_SESSION['user']['id'];
+$selectGroups = "SELECT * FROM `group` WHERE `teacher_id` = {$userId}";
+$groups = queryAll($db, $selectGroups);
 ?>
 
 <?php include "../layout/meta.php"; ?>
@@ -59,6 +63,13 @@ $page_title = "Создание теста"
             <div class="form__item">
               <input class="form__input" name="test_complexity" type="text" placeholder="Порог в формате < 3/5 >">
             </div>
+          <div class="form__item">
+              <select class="form__input" name="groups" multiple="multiple" required>
+                  <?php foreach ($groups as $group): ?>
+                    <option value="<?= $group['group_id']?>"><?= $group['group_title'] ?></option>
+                  <?php endforeach; ?>
+              </select>
+          </div>
           </div>
         </form>
         <h2>Вопросы</h2>
@@ -105,6 +116,7 @@ $page_title = "Создание теста"
   </main>
 
 
+  <script src="../js/jquery.js"></script>
   <script src="../js/quiz/quiz-add.js"></script>
 </body>
 

@@ -58,11 +58,14 @@ const packQuestion = async () => {
   const test_title = (document.querySelector('[name=test_title]')).value
   const test_level = (document.querySelector('[name=test_level]')).value
   const test_time = (document.querySelector('[name=test_time]')).value
+  // const groups = (document.querySelector('[name=groups]')).value
+  const groups = $('[name=groups]').val();
   const test_complexity = (document.querySelector('[name=test_complexity]')).value
 
   json.test_title = test_title;
   json.test_level = test_level;
   json.test_time = test_time;
+  json.groups = groups;
   json.test_complexity = test_complexity;
 
   let questionsList = []

@@ -10,7 +10,8 @@ $password = md5($_COOKIE['password']);
 $role = $_COOKIE['role'];
 $level = $_COOKIE['level'];
 
-$query = "INSERT INTO user VALUE (NULL, '$email', '$name', '$password', '$role', '$level')";
+$approved = $role === 'student' ? 1 : 0;
+$query = "INSERT INTO user VALUE (NULL, '$email', '$name', '$password', '$role', '$level', {$approved})";
 mysqli_query($db, $query);
 
 $_SESSION['user'] = [
@@ -18,7 +19,8 @@ $_SESSION['user'] = [
     "email" => $email,
     "name" => $name,
     "role" => $role,
-    "level" => $level
+    "level" => $level,
+    "approved" => $approved
 ];
 
 $response = ["key" => true];
