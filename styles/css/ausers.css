@@ -193,16 +193,39 @@ h2 {
     max-width: 600px;
 }
 
+.reviews__item.user{
+    justify-content: space-between;
+}
+
 .user__name {
-    width: 300px;
+    width: 200px;
 }
 
 .user__email {
-    width: 300px;
+    width: 200px;
 }
 
 .user__level {
     width: 50px;
+}
+
+.user__approved {
+    width: 130px;
+}
+
+.user__approved.red {
+    color: rgb(229, 78, 78);
+}
+
+.user__approved.green {
+   color: rgb(38, 141, 38); 
+}
+
+.btn-edit {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: contents;
 }
 
 @media (max-width: 900px) {
