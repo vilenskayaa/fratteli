@@ -19,7 +19,7 @@ $page_title = "Авторизация";
         </div>
         <div class="sign__subtitle">
           <span>Начните свое итальянское путешествие!</span>
-          <span>Войдите в систему или <a class="sign__link" href="/web/signup.php">зарегестрируйтесь прямо
+          <span>Войдите в систему или <a class="sign__link" href="/web/signup.php">зарегистрируйтесь прямо
               сейчас!</a></span>
         </div>
       </header>

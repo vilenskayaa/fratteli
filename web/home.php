@@ -188,7 +188,7 @@ $page_title = "Fratteli";
       <div class="footer__block">
         <a href="#hero"><img src="../assets/img/logo.svg" alt="Logo"></a>
         <div class="footer__block__sign">
-          <a href="../web/signin.php" class="block__text__link">Войти или зарегестрироваться</a>
+          <a href="../web/signin.php" class="block__text__link">Войти или зарегистрироваться</a>
         </div>
       </div>
       <p class="footer__text">[TERMS] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit at mattis
