@@ -15,7 +15,7 @@ $page_title = "Мои группы";
         <div class="head__title">Мои группы</div>
         <div class="head__subtitle">Здесь можно найти список всех ваших групп, отредактировать их и настроить для дальнейшего взаимодействия</div>
       </div>
-        <?php if ($_SESSION['user']['role'] === 'teacher'): ?>
+        <?php if ($_SESSION['user']['role'] !== 'student'): ?>
       <div class="head__nav">
         <div class="btn" data-popup>
           Создать группу
