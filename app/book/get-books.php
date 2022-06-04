@@ -8,14 +8,9 @@ header("Content-Type: application/json;");
 try {
     $json = file_get_contents('php://input');
     $req = json_decode($json, true);
-    $res = array();
 
-    $selectBooks = "SELECT * FROM `books`;
-
-    $booksData = $db->query($selectBooks);
-
-    while ($books = $booksData->fetch_assoc()) {
-        array_push($res, $books);
+    $selectBooks = "SELECT * FROM `books`";
+    $res = queryAll($db, $selectBooks);
 
     echo json_encode($res);
 } catch (Exception $e) {

@@ -16,7 +16,7 @@ try {
     $bookHeader = $_POST["book_name"];
     $bookLink = $_POST["book_link"];
 
-    $path = 'uploads/' . time() . $_FILES['book_image']['book_image'];
+    $path = 'uploads/' . time() . $_FILES['book_image']['name'];
     if (!move_uploaded_file($_FILES['book_image']['tmp_name'], '../' . $path)) {
 
     }

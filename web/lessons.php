@@ -25,7 +25,7 @@ $page_title = "Мое расписание";
             <div class="head__title">Расписание</div>
             <div class="head__subtitle">Актуальные события на день грядущий</div>
         </div>
-        <?php if ($_SESSION['user']['role'] === 'teacher'): ?>
+        <?php if ($_SESSION['user']['role'] !== 'student'): ?>
             <div class="head__nav">
                 <div class="btn" data-popup>
                 Создать урок

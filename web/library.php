@@ -27,29 +27,10 @@ $page_title = "Библиотека"
       </div>
     </div>
       <section class="main__content">
-<!-- 
-          <div class="block__cards">
-            <div class="block__cards__item">
-              <img src="/assets/img/library/book1.png" alt="">
-              <button class="download__btn" onclick="download('assets/books/cera_and_volte_adesso.pdf')"><img src="../assets/icons/Download.svg" alt=""></button>
-            </div>
-            <div class="block__cards__item">
-              <img src="/assets/img/library/book2.png" alt="">
-              <button class="download__btn" onclick="download('assets/books/i capolavori.pdf')"><img src="../assets/icons/Download.svg" alt=""></button>
-            </div>
-            <div class="block__cards__item">
-              <img src="/assets/img/library/book3.png" alt="">
-              <button class="download__btn" onclick="download('assets/books/il libro della giungla.pdf')"><img src="../assets/icons/Download.svg" alt=""></button>
-            </div>
-            <div class="block__cards__item">
-              <img src="/assets/img/library/book4.png" alt="">
-              <button class="download__btn" onclick="download('assets/books/le mani nei cappelli.pdf')"><img src="../assets/icons/Download.svg" alt=""></button>
-            </div>
-          </div>
-        </div> -->
 
         <div class="main__content__block">
           <h2>Лучшие книги недели</h2>
+            <div id="block__cards" class="block__cards"></div>
           <div id="wrapper-books"></div>
           </div>
 
