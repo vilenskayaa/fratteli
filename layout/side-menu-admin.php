@@ -5,6 +5,7 @@
       <img src="../assets/img/logo.png" alt="">
     </div>
     <nav class="nav__list">
+      <a href="../web/ausers.php" class="nav__item">Управление пользователями</a>
       <a href="../web/amaterials.php" class="nav__item">Материалы</a>
       <a href="../web/areviews.php" class="nav__item">Отзывы</a>
     </nav>
