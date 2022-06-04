@@ -310,6 +310,7 @@ body {
     border-radius: 16px !important;
     outline: none !important;
     transition: all 0.3s !important;
+    background: #fff;
 }
 
 .form__item.error .form__input {
