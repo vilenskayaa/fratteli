@@ -62,7 +62,7 @@ if (($_SESSION['user']['role'] ?? '' )!== 'admin') {
             <input type="file" name="post_picture" style="" id="file-post">
 
             <button type="button" class="add__img" id="blogAddImageButton">
-                Добавить обложки статьи
+                Добавить обложку статьи
             </button>
             <button type="submit" class="form__btn" id="blogAddButton">
                     Опубликовать статью
