@@ -10,6 +10,7 @@ if (($_SESSION['user']['role'] ?? '' ) !== 'admin') {
 
 ?>
 
+
 <?php include "../layout/meta.php"; ?>
 <head>
   <meta charset="UTF-8">
@@ -30,6 +31,7 @@ if (($_SESSION['user']['role'] ?? '' ) !== 'admin') {
         <div class="head__subtitle">Здесь можно просмотреть все отзывы, а также удалить негативные или рекламные комментарии</div>
       </div>
     </div>
+
     <div id="reviews"></div>
   </main>
     <script src="/js/jquery.js"></script>
