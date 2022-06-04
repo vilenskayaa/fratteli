@@ -112,7 +112,7 @@ $page_title = "Регистрация";
         </header>
         <div class="sign__header-title">
           Ваш аккаунт успешно<br>
-          зарегестрирован!
+          зарегистрирован!
         </div>
         <div class="sign__subtitle">
           <span>Продолжим путешествие?</span>
