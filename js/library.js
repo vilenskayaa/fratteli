@@ -71,6 +71,23 @@ const renderPosts = async () => {
     document.getElementById('wrapper-posts').innerHTML = innerHTML
 }
 
+
+const renderBooks = async() => {
+    const res = await fetch(`${baseApi}/book/get-books.php`)
+    const books = await res.json()
+
+    let innerHTML = '';
+    for (const book of books) {
+        innerHTML += '<div class="block__cards__item">' +
+            '<img src="' + books.bookImage + '" alt="">' +
+            '<p class="blog__text">' + books.bookHeader + '...</p>' +
+            '<a class="blog__link" onclick="(' + books.bookLink + ')">ТЕСТ <img src="/assets/icons/arrow--blue.svg" alt=""></a>' +
+            '</div>'
+    }
+
+    document.getElementById('wrapper-books').innerHTML = innerHTML
+}
+
 $(document).ready(async () => {
     words = await getWords()
     nextWordRender()

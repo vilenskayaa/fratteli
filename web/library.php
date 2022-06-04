@@ -27,9 +27,7 @@ $page_title = "Библиотека"
       </div>
     </div>
       <section class="main__content">
-        <div class="main__content__block">
-          <h2> Лучшие книги недели  </h2>
-
+<!-- 
           <div class="block__cards">
             <div class="block__cards__item">
               <img src="/assets/img/library/book1.png" alt="">
@@ -48,8 +46,12 @@ $page_title = "Библиотека"
               <button class="download__btn" onclick="download('assets/books/le mani nei cappelli.pdf')"><img src="../assets/icons/Download.svg" alt=""></button>
             </div>
           </div>
-        </div>
+        </div> -->
 
+        <div class="main__content__block">
+          <h2>Лучшие книги недели</h2>
+          <div id="wrapper-books"></div>
+          </div>
 
         <div class="main__content__block">
           <h2>Статьи недели</h2>
