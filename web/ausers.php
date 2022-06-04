@@ -27,6 +27,12 @@ if (($_SESSION['user']['role'] ?? '' )!== 'admin') {
             <div class="head__subtitle">Здесь можно администрировать пользователей</div>
         </div>
     </div>
+    <div class="reviews__item">
+            <div class="user__name">
+                <h3>Имя пользователей</h3></div>
+            <div class="user__email"><h3>Email</h3></div>
+            <div class="user__level"><h3>Уровень</h3></div>
+        </div>
     <div id="users"></div>
 </main>
 <script src="/js/jquery.js"></script>
