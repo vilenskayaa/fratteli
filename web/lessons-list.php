@@ -122,7 +122,7 @@ require_once '../app/db.php';
         Вы уверены, что хотите удалить урок?
       </div>
       <div class="popup__choise">
-      <button type="yes" class="yes">Да
+      <button type="yes" class="yesless">Да
       </button>
         <div class="btn">Нет</div>
       </div>

@@ -17,7 +17,7 @@ $(document).ready(function () {
     $('#popup-3').fadeOut(300);
   });
 
-  $('#popup-3 .yes').click((e) => {
+  $('#popup-3 .yesless').click((e) => {
     cancelLesson();
   })
 });
