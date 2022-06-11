@@ -12,6 +12,7 @@ $page_title = "Тесты"
         display: flex;
         flex-wrap: wrap;
     }
+   
 
     .card {
         background-color: #fff;

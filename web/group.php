@@ -43,7 +43,7 @@ $page_title = "Мои группы";
             <input class="form__input" name="group_title" type="text" placeholder="Название группы" required>
           </div>
           <div class="form__item">
-            <select class="form__input" name="group_level" placeholder="Выберите ваш уровень" required>
+            <select class="form__input" style="width:30px;-webkit-appearance: none;" name="group_level" placeholder="Выберите ваш уровень" required>
               <option value="A1">A1</option>
               <option value="A2">A2</option>
               <option value="B1">B1</option>
