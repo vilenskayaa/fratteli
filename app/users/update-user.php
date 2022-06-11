@@ -11,15 +11,10 @@ try {
     $userId = $req['user_id'];
     $email = $req['email'];
     $name = $req['name'];
-    $level = $req['$level'];
-    $role = $req['role'];
+    $level = $req['level'];
+    $approved = $req['approved'];
 
-    $update = "update users set 
-                 user_email = '{$email}',
-                 user_name = '{$name}',
-                 user_level = '{$level}',
-                 user_role = '{$role}'
-             where user_id = {$userId}";
+    $update = "update user set user_email = '{$email}', user_name = '{$name}', user_level = '{$level}', approved = '{$approved}' where user_id = {$userId}";
     $res = $db->query($update);
 
     echo json_encode(["success" => $res], JSON_THROW_ON_ERROR);

@@ -27,11 +27,20 @@ if (($_SESSION['user']['role'] ?? '' )!== 'admin') {
             <div class="head__subtitle">Здесь можно администрировать пользователей</div>
         </div>
     </div>
-    <div class="reviews__item">
+    <div class="reviews__item user">
             <div class="user__name">
-                <h3>Имя пользователей</h3></div>
-            <div class="user__email"><h3>Email</h3></div>
-            <div class="user__level"><h3>Уровень</h3></div>
+                <h3>Имя пользователей</h3>
+            </div>
+            <div class="user__email">
+                <h3>Email</h3>
+            </div>
+            <div class="user__level">
+                <h3>Уровень</h3>
+            </div>
+            <div class="user__approved">
+                <h3>Статус</h3>
+            </div>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"></svg>
         </div>
     <div id="users"></div>
 </main>

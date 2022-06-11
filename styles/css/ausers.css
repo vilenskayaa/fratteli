@@ -199,19 +199,25 @@ h2 {
 }
 
 .user__name {
-    width: 200px;
+    width: 200px !important;
 }
 
 .user__email {
-    width: 200px;
+    width: 200px !important;
 }
 
 .user__level {
-    width: 50px;
+    width: 100px !important;
 }
 
 .user__approved {
-    width: 130px;
+    width: 150px !important;
+    display: flex;
+    align-items: center;
+}
+
+.user__approved input[type="checkbox"] {
+    margin-right: 5px;
 }
 
 .user__approved.red {
@@ -220,6 +226,10 @@ h2 {
 
 .user__approved.green {
    color: rgb(38, 141, 38); 
+}
+
+.user input[type="text"] {
+    width: inherit;
 }
 
 .btn-edit {
