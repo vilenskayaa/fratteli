@@ -75,11 +75,17 @@ $page_title = "Тесты"
                 <div class="head__title">Тесты</div>
                 <div class="head__subtitle">Страница, где ты можешь проверить свои знания</div>
             </div>
-            <div class="head__nav">
-                <a href="quiz-add.php" class="btn" data-add>
+
+            <?php if ($_SESSION['user']['role'] !== 'student'): ?>
+      <div class="head__nav">
+      <a href="quiz-add.php" class="btn" data-add>
                     Создать тест
                 </a>
-            </div>
+      </div>
+        <?php endif; ?>
+
+
+        
         </div>
 
 
