@@ -116,13 +116,14 @@ require_once '../app/db.php';
   <div class="popup__overlay" id="popup-3">
     <div class="popup">
       <div class="popup__title">
-        Удалить группу?
+        Удалить урок?
       </div>
       <div class="popup__subtitle">
-        Вы уверены, что хотите удалить группу?
+        Вы уверены, что хотите удалить урок?
       </div>
       <div class="popup__choise">
-        <div class="btn btn-gray">Да</div>
+      <button type="yes" class="yes">Да
+      </button>
         <div class="btn">Нет</div>
       </div>
     </div>

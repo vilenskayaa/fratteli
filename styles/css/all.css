@@ -40,6 +40,25 @@ body {
     font-size: 20px;
 }
 
+.yes {
+    color: #ff7a00;
+    background-color: rgba(46, 49, 52, 0.05);
+    border-radius: 16px;
+    width: fit-content;
+    text-transform: uppercase;
+    padding: 20px 32px;
+    font-size: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    align-items: center;
+    line-height: 20px;
+    font-family: 'Proxima Nova';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    border: none;
+}
+
 .btn-gray {
     color: #ff7a00;
     background-color: rgba(46, 49, 52, 0.05);
