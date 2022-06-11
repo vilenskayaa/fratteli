@@ -82,9 +82,9 @@ const renderBooks = async () => {
     for (const book of books) {
         innerHTML += '<div class="block__cards__item">' +
             '<img src="'+ book.book_image +'" alt="">' +
-            '<p class="blog__text">' + book.book_name + '</p>' +
+            '<p class="book__text">' + book.book_name + '</p>' +
             '<a class="download__btn" target="_blank" href="'+ book.book_link +'">' +
-            '<img src="../assets/icons/Download.svg" alt="">' +
+            '<img class="book_img" src="../assets/icons/Link.svg" alt="">' +
             '</a>' +
             '</div>'
     }
