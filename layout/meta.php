@@ -49,11 +49,7 @@
     cursor: pointer;
     
 }
-a {
-  text-decoration: none;
-  align-items: center;
-  line-height: 20px;
-}
+
     .answers-container {
       padding: 10px;
       display: flex;
