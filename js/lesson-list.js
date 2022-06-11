@@ -168,7 +168,7 @@ const addStudent = async () => {
       return response.json();
     })
     .catch((error) => {
-      window.alert(error);
+      window.alert("При добавлении студента произошла ошибка: " + error);
     });
 
   console.log(res);
@@ -190,7 +190,7 @@ const removeStudent = async (student_id) => {
       return response.json();
     })
     .catch((error) => {
-      window.alert(error);
+      window.alert("При удалении студента произошла ошибка: " + error);
     });
 
   console.log(res);
@@ -219,7 +219,7 @@ const cancelLesson = async () => {
   if (data.success) {
     window.location.href = '/web/lessons.php'
   } else {
-    window.alert(data.error);
+    window.alert("Произошла ошибка: " + data.error);
   }
 }
 

@@ -13,7 +13,7 @@ const removeReviews = async (data) => {
   if (json.success) {
     $('[data-id="' + data.id + '"]').remove()
   } else {
-    alert(json.error ?? 'internal error')
+    alert(json.error ?? 'Произошла ошибка, пожалуйста, обратитесь к администратору!')
   }
 };
 

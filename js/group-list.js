@@ -165,7 +165,7 @@ const addStudent = async () => {
       return response.json();
     })
     .catch((error) => {
-      window.alert(error);
+      window.alert("Такой пользователь не найден! Будьте внимательнее!");
     });
 
   console.log(res);
@@ -186,7 +186,7 @@ const removeStudent = async (student_id) => {
       return response.json();
     })
     .catch((error) => {
-      window.alert(error);
+      window.alert("Текущего студента нельзя удалить! Пожалуйста, обратитесь к администратору!");
     });
 
   console.log(res);
@@ -205,7 +205,7 @@ const removeGroup = async () => {
   if (data.success) {
     window.location.href = '/web/group.php'
   } else {
-    window.alert(data.error);
+    window.alert("Группу невозможно удалить, пожалуйста, обратитесь к администратору!");
   }
 };
 

@@ -13,7 +13,7 @@ const fetchUsers = async () => {
     if (json.success) {
       // TODO
     } else {
-      alert(json.error ?? 'internal error')
+      alert(json.error ?? 'Произошла ошибка, пожалуйста, обратитесь к администратору!')
     }
   };
   
