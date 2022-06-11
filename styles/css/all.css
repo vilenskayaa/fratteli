@@ -1,6 +1,7 @@
 * {
     font-family: 'Proxima Nova';
 }
+
 body {
     background-color: #fafafa;
 }
@@ -15,9 +16,11 @@ body {
     font-size: 20px;
     cursor: pointer;
 }
+
 .color-red {
     color: #F54040;
 }
+
 .flash-message {
     background: rgb(0 219 19 / 50%);
     color: rgb(0 125 10);
@@ -25,8 +28,16 @@ body {
     border-radius: 10px;
     width: 600px;
 }
+
 .btn-square {
     padding: 20px;
+    text-decoration: none;
+    align-items: center;
+    line-height: 20px;
+    font-family: 'Proxima Nova';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
 }
 
 .btn-gray {
@@ -648,6 +659,7 @@ body {
     display: flex;
     background: #E8ECF4;
 }
+
 .reviews__item:nth-child(2n) {
     background: #FFF;
 }
@@ -698,12 +710,10 @@ body {
 }
 
 @media (max-width: 740px) {
-
     .sign__container {
-      width: 100%;
+        width: 100%;
     }
-
     .sign__header {
-      width: 100%;
+        width: 100%;
     }
-  }
+}

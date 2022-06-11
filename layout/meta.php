@@ -40,7 +40,20 @@
       color: #fff;
       margin: 20px 0;
     }
-
+.gm {
+  font-family: 'Proxima Nova';
+  border-radius: 16px;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 20px;
+    cursor: pointer;
+    
+}
+a {
+  text-decoration: none;
+  align-items: center;
+  line-height: 20px;
+}
     .answers-container {
       padding: 10px;
       display: flex;
