@@ -43,6 +43,7 @@ if (($_SESSION['user']['role'] ?? '' )!== 'admin') {
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"></svg>
         </div>
     <div id="users"></div>
+    <div id="pages"></div>
 </main>
 <script src="/js/jquery.js"></script>
 <script src="/js/ausers.js"></script>
