@@ -239,6 +239,24 @@ h2 {
     display: contents;
 }
 
+#pages {
+    display: flex;
+    justify-content: center;
+    padding: 10px 10px 20px 10px;
+}
+
+#pages .page {
+    min-width: 30px;
+    text-align: center;
+    border-radius: 6px;
+    padding: 4px 10px;
+    margin: 0 4px;
+    background: #fff;
+    color: #000;
+}
+#pages .page.active {
+    background: #c8cbd2;
+}
 @media (max-width: 900px) {
     .wrapper {
         -webkit-box-orient: vertical;

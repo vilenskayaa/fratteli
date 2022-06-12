@@ -1,5 +1,5 @@
-const fetchUsers = async () => {
-    const res = await fetch(`${baseApi}/users/get-users.php`);
+const fetchUsers = async (page) => {
+    const res = await fetch(`${baseApi}/users/get-users.php?page=${page}`);
     return res.json();
   };
 
@@ -38,18 +38,19 @@ const fetchUsers = async () => {
     const json = await res.json()
   
     if (json.success) {
-      renderUsers();
+      renderUsers(getPage());
     } else {
       alert(json.error ?? 'Невозможно обновить данные пользователя с внесенными параметрами')
     }
   };
   
-  const renderUsers = async (data) => {
+  const renderUsers = async (page) => {
     const usersContainer = document.getElementById('users');
+    const pagesContainer = document.getElementById('pages');
     usersContainer.innerHTML = '';
-    const usersList = await fetchUsers();
+    const usersJson = await fetchUsers(page);
   
-    usersList.forEach((user) => {
+    usersJson["users"].forEach((user) => {
         console.log(user);
         const status = user.approved === '1' ? "Подтвержден" : "Не подтвержден";
         const statusClass = user.approved === '1' ? "green" : "red";
@@ -68,9 +69,22 @@ const fetchUsers = async () => {
         </div>
       `;
     });
+    const pages =  usersJson["pages"];
+    if (pages > 1) {
+      for (i = 0; i < pages; i++) {
+        const activeClass = page == (i+1) ? "active" : "";
+        pagesContainer.innerHTML += `<a href="../web/ausers.php?page=${i+1}" class="page ${activeClass}">${i+1}</a>`;
+      }
+    }
   };
 
   $(document).ready(async function () {
-    renderUsers()
+    renderUsers(getPage());
   });
+
+  function getPage() {
+    var s = window.location.search;
+    s = s.match(new RegExp('page=([^&=]+)'));
+    return s ? s[1] : 1;
+  }
   
