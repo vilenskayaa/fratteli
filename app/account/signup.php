@@ -11,7 +11,7 @@ $role = $_COOKIE['role'];
 $level = $_COOKIE['level'];
 
 $approved = $role === 'student' ? 1 : 0;
-$query = "INSERT INTO user VALUE (NULL, '$email', '$name', '$password', '$role', '$level', {$approved})";
+$query = "INSERT INTO user VALUE (NULL, '$email', '$name', '$password', '$role', '$level', '$approved')";
 mysqli_query($db, $query);
 
 $_SESSION['user'] = [
@@ -23,5 +23,4 @@ $_SESSION['user'] = [
     "approved" => $approved
 ];
 
-$response = ["key" => true];
-echo json_encode($response);
+echo json_encode($role === 'student' ? true : false);

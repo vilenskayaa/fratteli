@@ -65,7 +65,6 @@
     const signUp = () => {
         $(document).ready(function() {
             $("#signEnd").click(function(event) {
-                console.log('dsf');
                 event.preventDefault();
 
                 $.ajax({
@@ -74,12 +73,11 @@
                     contentType: false,
                     cache: false,
                     processData: false,
-                    success: function(data) {
-                        if (data) {
-                            window.location.href = "/web/aproove_admin.php"
-                        }
-                        else {
+                    success: function(result) {
+                        if (result === 'true') {
                           window.location.href = "/web/lessons.php"
+                        } else {
+                          window.location.href = "/web/aproove_admin.php"
                         }
                     }
                 })
