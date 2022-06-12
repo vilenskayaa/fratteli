@@ -76,7 +76,10 @@
                     processData: false,
                     success: function(data) {
                         if (data) {
-                            window.location.href = "/web/lessons.php"
+                            window.location.href = "/web/aproove_admin.php"
+                        }
+                        else {
+                          window.location.href = "/web/lessons.php"
                         }
                     }
                 })
