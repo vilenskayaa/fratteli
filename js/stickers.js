@@ -45,7 +45,7 @@ const renderStickers = (stickers) => {
             $(this).find('img').attr('src', newSrc)
             block.toggleClass('is-like')
         } else {
-            alert(res.error ?? 'internal error')
+            alert(res.error ?? 'Произошла ошибка, пожалуйста, обратитесь к администратору!')
         }
     })
 }

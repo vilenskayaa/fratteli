@@ -30,7 +30,7 @@ const onClick = (id, type) => {
             index++
             nextWordRender()
         } else {
-            alert(res.error ?? 'internal error')
+            alert(res.error ?? 'Произошла ошибка, пожалуйста, обратитесь к администратору!')
         }
     }
 }

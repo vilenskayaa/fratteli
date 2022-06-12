@@ -47,8 +47,16 @@ if (!$_SESSION['user']) {
                   </button>
                 </form>
         </div>
+
+        <div class="main__content__block">
+          <h2> Отзывы пользователей</h2>
+       
         <div class="reviews__list" id="reviews">
       
+        </div>
+          <button onclick="window.location.href = '//localhost/web/allreviews.php';" class="form__btn" id="">
+                   Просмотреть все
+</button>
       </div>
       </section>
 

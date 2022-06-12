@@ -62,7 +62,7 @@ $(document).ready(async function () {
     if (res.success) {
       document.getElementById('current-name').innerHTML = newName
     } else {
-      alert(res.error ?? 'internal error')
+      alert(res.error ?? 'Произошла ошибка, пожалуйста, обратитесь к администратору!')
     }
   })
 });
