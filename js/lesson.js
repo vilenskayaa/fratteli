@@ -77,7 +77,7 @@ $(document).ready(async function () {
         $('.xdsoft_time_variant .xdsoft_time').each(
           function(index){
             if(hoursToTakeAway.indexOf(parseInt($(this).text())) !== -1) {
-                $(this).addClass('xdsoft_disabled');
+                $(this).remove();
             }
           });
         }
