@@ -30,7 +30,7 @@ $page_title = "Регистрация";
             <div class="form_input_error_text">Пользователь с таким email уже зарегистрирован</div>
           </div>
           <div class="form__item">
-            <input class="form__input" name="name" type="text" placeholder="Имя пользователя" required>
+            <input class="form__input" name="name" type="text" placeholder="Имя и Фамилия" required>
           </div>
           <div class="form__item input_field_password">
             <input class="form__input" name="password" type="password" placeholder="Пароль" required>

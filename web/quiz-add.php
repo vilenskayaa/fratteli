@@ -48,7 +48,7 @@ $groups = queryAll($db, $selectGroups);
               <input class="form__input" name="test_title" type="text" placeholder="Название теста" required>
             </div>
             <div class="form__item">
-              <select class="form__input" name="test_level" placeholder="Выберите ваш уровень" required>
+              <select class="form__input" style="width:30px;-webkit-appearance: none;"  name="test_level" placeholder="Выберите ваш уровень" required>
                 <option value="A1">A1</option>
                 <option value="A2">A2</option>
                 <option value="B1">B1</option>
@@ -57,9 +57,9 @@ $groups = queryAll($db, $selectGroups);
                 <option value="C2">C2</option>
               </select>
             </div>
-            <div class="form__item">
+            <!-- <div class="form__item">
               <input class="form__input" name="test_time" type="text" placeholder="Примерное время прохождения" required>
-            </div>
+            </div> -->
             <div class="form__item">
               <input class="form__input" name="test_complexity" type="text" placeholder="Порог в формате < 3/5 >">
             </div>

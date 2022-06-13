@@ -19,7 +19,6 @@ if ($test_id) {
     $res = [
         "test_id" => $testData["test_id"],
         "test_title" => $testData["test_title"],
-        "test_time" => $testData["test_time"],
         "test_complexity" => $testData["test_complexity"],
         "test_level" => $testData["test_level"],
         "questions" => [],
@@ -43,13 +42,13 @@ if ($test_id) {
 } else {
     if ($role === 'student') {
         $selectTest = "SELECT 
-    t.`test_id`, t.`test_title`, t.`test_level`, t.`test_time`, t.`test_complexity`, t.`created_by`,
+    t.`test_id`, t.`test_title`, t.`test_level`, t.`test_complexity`, t.`created_by`,
     (SELECT COUNT(*) FROM `question` AS q WHERE q.`test_id` = t.`test_id`) as `questions_count`
     FROM `test` AS t inner join test_group  tg on tg.test_id = t.test_id inner join student s on s.group_id = tg.group_id 
     where user_id = {$user_id}";
     } else {
         $selectTest = "SELECT 
-    t.`test_id`, t.`test_title`, t.`test_level`, t.`test_time`, t.`test_complexity`, t.`created_by`,
+    t.`test_id`, t.`test_title`, t.`test_level`, t.`test_complexity`, t.`created_by`,
     (SELECT COUNT(*) FROM `question` AS q WHERE q.`test_id` = t.`test_id`) as `questions_count`
     FROM `test` AS t where t.created_by = {$user_id}";
     }

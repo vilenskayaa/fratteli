@@ -7,7 +7,6 @@
         {
         "test_title": "Тест Аллы Виленской",
         "test_level": "A2",
-        "test_time": 30,
         "test_complexity": "3/5",
         "questions": [
             {
@@ -54,14 +53,13 @@ try {
     $test_title = $req['test_title'];
     $test_complexity = $req['test_complexity'];
     $test_level = $req['test_level'];
-    $test_time = $req['test_time'];
     $groupIds = $req['groups'];
 
     $created_by = $_SESSION['user']['id'];
 
     $insertTestRow = "INSERT INTO `test` 
-        (`test_id`, `test_title`, `test_level`, `test_time`, `test_complexity`, `created_by`) VALUES
-        (NULL,'$test_title','$test_level','$test_time','$test_complexity', $created_by);
+        (`test_id`, `test_title`, `test_level`, `test_complexity`, `created_by`) VALUES
+        (NULL,'$test_title','$test_level','$test_complexity', $created_by);
     ";
 
     $testCreated = mysqli_query($db, $insertTestRow);

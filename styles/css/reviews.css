@@ -76,6 +76,10 @@ h2 {
     flex: 1;
 }
 
+#current-name {
+    font-weight: 600;
+}
+
 .add__img {
     border-radius: 16px;
     width: 100%;

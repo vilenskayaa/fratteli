@@ -52,11 +52,12 @@
 
     .answers-container {
       padding: 10px;
+      padding-bottom:32px;
       display: flex;
       flex-direction: column;
     }
     .answer-item {
-      width: 300px;
+      width: 700px;
     }
     .answer-item input[type="text"] {
       width: 100px;
@@ -67,7 +68,8 @@
       padding: 5px;
     }
     #testContainer{
-      width: 500px;
+      padding-top: 4%;
+      width: 1200px;
     }
 
     body {
