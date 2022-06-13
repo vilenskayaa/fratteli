@@ -10,6 +10,7 @@ $password = $_POST['password'];
 $key = signin($email, md5($password), $db);
 
 $url = ($_SESSION['user']['role']??"") === 'admin' ? '/web/amaterials.php' : '/web/lessons.php';
+$url = ($_SESSION['user']['approved']??"") === '1' ? $url : '/web/aproove_admin.php';
 
 echo json_encode(['key' => $key, 'url' => $url]);
 
@@ -31,7 +32,8 @@ function signin($email, $password, $db)
       "email" => $user['user_email'],
       "name" => $user['user_name'],
       "role" => $user['user_role'],
-      "level" => $user['user_level']
+      "level" => $user['user_level'],
+      "approved" => $user['approved']
     ];
 
     return 'true';
