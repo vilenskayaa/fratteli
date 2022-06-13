@@ -12,22 +12,41 @@ const addReviews = async (data) => {
 
 const renderReviews = async (data) => {
   const reviewsContainer = document.getElementById('reviews');
-  reviewsContainer.innerHTML = '';
+  const reviewsAllContainer = document.getElementById('reviews-all');
   const reviewsList = await fetchReviews();
   console.log(reviewsList);
-  reviewsList.forEach((review) => {
-    reviewsContainer.innerHTML += `
-      <div class="reviews__item">
-        <div class="reviews__head">
-          <div class="reviews__name">${review.user_name}</div>
-          <div class="reviews__date">${review.review_date}</div>
+  if (reviewsContainer !== null) {
+    reviewsContainer.innerHTML = '';
+    reviewsList.slice(-3).forEach((review) => {
+      reviewsContainer.innerHTML += `
+        <div class="reviews__item">
+          <div class="reviews__head">
+            <div class="reviews__name">${review.user_name}</div>
+            <div class="reviews__date">${review.review_date}</div>
+          </div>
+          <div class="reviews__text">
+            ${review.review_text}
+          </div>
         </div>
-        <div class="reviews__text">
-          ${review.review_text}
+      `;
+    });
+  }
+  if (reviewsAllContainer !== null) {
+    reviewsAllContainer.innerHTML = '';
+    reviewsList.forEach((review) => {
+      reviewsAllContainer.innerHTML += `
+        <div class="reviews__item">
+          <div class="reviews__head">
+            <div class="reviews__name">${review.user_name}</div>
+            <div class="reviews__date">${review.review_date}</div>
+          </div>
+          <div class="reviews__text">
+            ${review.review_text}
+          </div>
         </div>
-      </div>
-    `;
-  });
+      `;
+    });
+  }
 };
 
 const updateName = async (data) => {

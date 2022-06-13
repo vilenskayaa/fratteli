@@ -70,7 +70,7 @@ try {
         $db->query($insertTestResult);    
     } else {
         if ((int)$res['count_attempts'] > 2) {
-            throw new Exception('макс количество попыток - 3. Вы истратили все.');
+            throw new Exception('Максимальное количество попыток - 3. Вы истратили все.');
         }
 
         $updateTestResult = "UPDATE `exam` SET count_attempts = count_attempts + 1, `exam_rating` = $rating";

@@ -26,7 +26,7 @@ if (!$_SESSION['user']) {
       <section class="main__content">
        
        
-        <div class="reviews__list" id="reviews">
+        <div class="reviews__list" id="reviews-all">
       </div>
       </section>
 
