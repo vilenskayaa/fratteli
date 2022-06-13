@@ -58,10 +58,7 @@ $page_title = "Мое расписание";
             <input class="form__input" id="lesson_title" type="text" placeholder="Название урока" required>
           </div>
           <div class="form__item">
-            <input class="form__input" id="lesson_date" type="date" placeholder="Дата" required>
-          </div>
-          <div class="form__item">
-            <input class="form__input" id="lesson_time" type="time" placeholder="Время занятия" required>
+            <input class="form__input" id="lesson_date" type="text" placeholder="Дата и время" required>
           </div>
           <div class="form__item">
             <select class="form__input" placeholder="Группа" required id="selectGroups"></select>
@@ -77,8 +74,9 @@ $page_title = "Мое расписание";
     </div>
   </div>
 
-
+  <link rel="stylesheet" href="/js/jquery.datetimepicker.min.css">
   <script src="/js/jquery.js"></script>
+  <script src="/js/jquery.datetimepicker.full.js"></script>
   <script src="/js/lesson.js"></script>
 </body>
 

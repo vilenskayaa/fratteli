@@ -5,13 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b5778a18-996a-4c02-8f09-7d34fedec0c8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/js/jquery.datetimepicker.full.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/jquery.datetimepicker.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_06_22,_20_24_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_06_22__20_24__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2_06_22,_19_39_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2_06_22__19_39__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_31_05_22,_11_54_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_31_05_22__11_54__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/book/create-book.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/book/create-book.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/book/get-books.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/book/get-books.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/library.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/library.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/lessons-list.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/lessons-list.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/db.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lesson/create-lesson.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lesson/create-lesson.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/test/save-result.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/test/save-result.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/lesson.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/lesson.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/lessons.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/lessons.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/library.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/library.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +77,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/var/www/html",
+    "last_opened_file_path": "/var/www/html/js",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -104,7 +111,8 @@
       <workItem from="1654098246375" duration="8906000" />
       <workItem from="1654161913066" duration="4412000" />
       <workItem from="1654183001115" duration="23075000" />
-      <workItem from="1654366629139" duration="9682000" />
+      <workItem from="1654366629139" duration="10954000" />
+      <workItem from="1655126320394" duration="5198000" />
     </task>
     <servers />
   </component>
@@ -154,7 +162,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/app/test/save-result.php</url>
-          <line>68</line>
+          <line>57</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

@@ -68,6 +68,11 @@ const renderLessons = (lessonsByDay) => {
 };
 
 $(document).ready(async function () {
+    $('#lesson_date').datetimepicker({
+        format:'Y-m-d H:m',
+    });
+
+
   const groupsList = await fetchGroups();
   groupsList.forEach((g) => {
     const option = document.createElement('option');
@@ -84,7 +89,6 @@ $(document).ready(async function () {
       const data = {
         lesson_title: document.getElementById('lesson_title').value,
         lesson_date: document.getElementById('lesson_date').value,
-        lesson_time: document.getElementById('lesson_time').value,
         lesson_link: document.getElementById('lesson_link').value,
         group_id: document.getElementById('selectGroups').value
       };

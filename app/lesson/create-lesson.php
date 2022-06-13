@@ -13,8 +13,9 @@ try {
 
     $group_id = $req["group_id"];
     $lesson_title = $req["lesson_title"];
-    $lesson_date = $req["lesson_date"];
-    $lesson_time = $req["lesson_time"];
+
+    $lesson_date = explode(' ', $req["lesson_date"])[0];
+    $lesson_time = explode(' ', $req["lesson_date"])[1];
     $lesson_link = $req["lesson_link"];
 
     $selectLessonOnDay = "SELECT COUNT(*) as `count` FROM `lesson` WHERE `lesson_date` = '$lesson_date' AND `group_id` = $group_id;";

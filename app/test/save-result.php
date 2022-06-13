@@ -53,24 +53,14 @@ try {
         }
     }
 
-
-//    $countOfCorrectAnswers = array_reduce($answersList, function ($carry, $item) {
-//
-//        if()
-//        if ($item["is_correct"]) {
-//            return $carry + 1;
-//        }
-//
-//        return $carry;
-//    }, 0);
-
     $rating = round($countOfCorrectAnswers * 100 / $countQuestions, 2);
 
     $selectStudentId = "SELECT `student_id` FROM `student` WHERE `user_id` = '$user_id'";
     $student_id = (int)$db->query($selectStudentId)->fetch_assoc()["student_id"];
 
-    $selectResultsByTestIdAndStudentId = "SELECT `exam_id` FROM `exam` WHERE `student_id` = $student_id AND `test_id` = $test_id";
-    $exam_id = (int)$db->query($selectResultsByTestIdAndStudentId)->fetch_assoc()["exam_id"];
+    $selectResultsByTestIdAndStudentId = "SELECT * FROM `exam` WHERE `student_id` = $student_id AND `test_id` = $test_id";
+    $res = $db->query($selectResultsByTestIdAndStudentId)->fetch_assoc()["exam_id"];
+    $exam_id = (int)$res["exam_id"] ?? false;
 
     if (!$exam_id) {
         $insertTestResult = "INSERT INTO `exam`
@@ -79,8 +69,11 @@ try {
 
         $db->query($insertTestResult);    
     } else {
-        $updateTestResult = "UPDATE `exam` SET `exam_rating` = $rating";
+        if ((int)$res['count_attempts'] > 2) {
+            throw new Exception('макс количество попыток - 3. Вы истратили все.');
+        }
 
+        $updateTestResult = "UPDATE `exam` SET count_attempts = count_attempts + 1, `exam_rating` = $rating";
         $db->query($updateTestResult); 
     }
 
