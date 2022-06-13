@@ -70,7 +70,7 @@ const renderLessons = (lessonsByDay) => {
 $(document).ready(async function () {
   var hoursToTakeAway = [00, 01, 02, 03, 04, 05, 06, 07, 08, 09, 19, 20, 21, 22, 23];
   $('#lesson_date').datetimepicker({
-      format:'Y-m-d H:m',
+      format:'Y-m-d H:i',
       timepicker: true,
       theme:'light',
       onGenerate: function(ct,$i) {
