@@ -86,7 +86,6 @@ const addGroup = () => {
     body: json,
   })
     .then((response) => {
-      renderGroup();
       $('.overlay').fadeOut(300);
       $('.popup__overlay').fadeOut(300);
     })
@@ -94,7 +93,7 @@ const addGroup = () => {
       renderGroup();
     })
     .catch((error) => {
-      console.error(error);
+      windiw.alert(error);
     });
 };
 
