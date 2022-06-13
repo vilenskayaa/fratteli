@@ -68,10 +68,20 @@ const renderLessons = (lessonsByDay) => {
 };
 
 $(document).ready(async function () {
-    $('#lesson_date').datetimepicker({
-        format:'Y-m-d H:m',
-    });
-
+  var hoursToTakeAway = [00, 01, 02, 03, 04, 05, 06, 07, 08, 09, 19, 20, 21, 22, 23];
+  $('#lesson_date').datetimepicker({
+      format:'Y-m-d H:m',
+      timepicker: true,
+      theme:'light',
+      onGenerate: function(ct,$i) {
+        $('.xdsoft_time_variant .xdsoft_time').each(
+          function(index){
+            if(hoursToTakeAway.indexOf(parseInt($(this).text())) !== -1) {
+                $(this).addClass('xdsoft_disabled');
+            }
+          });
+        }
+  });
 
   const groupsList = await fetchGroups();
   groupsList.forEach((g) => {
