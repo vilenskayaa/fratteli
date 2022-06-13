@@ -25,6 +25,14 @@ const fetchLessonsByDay = async (lesson_date) => {
   return res.json();
 };
 
+const fetchAllLessons = async () => {
+  const res = await fetch(
+    `${baseApi}/lesson/get-all-lessons.php`,
+  );
+
+  return res.json();
+};
+
 const formatDate = (date) => {
   const year = date.getFullYear();
   let month = date.getMonth() + 1;
@@ -68,16 +76,34 @@ const renderLessons = (lessonsByDay) => {
 };
 
 $(document).ready(async function () {
-  var hoursToTakeAway = [00, 01, 02, 03, 04, 05, 06, 07, 08, 09, 19, 20, 21, 22, 23];
+  const lessons = await fetchAllLessons();
+  var dates = new Map();
+  lessons.forEach((l) => {
+    if (dates.has(l.lesson_date)) {
+      var hours = dates.get(l.lesson_date);
+      hours.push(parseInt(l.lesson_time.substring(0, 2)));
+    } else {
+      var hours = new Array();
+      hours.push(parseInt(l.lesson_time.substring(0, 2)));
+      dates.set(l.lesson_date, hours);
+    }
+  });
   $('#lesson_date').datetimepicker({
       format:'Y-m-d H:i',
       timepicker: true,
       theme:'light',
+      allowTimes:['10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00'],
       onGenerate: function(ct,$i) {
         $('.xdsoft_time_variant .xdsoft_time').each(
           function(index){
-            if(hoursToTakeAway.indexOf(parseInt($(this).text())) !== -1) {
-                $(this).remove();
+            var date = formatDate(ct);
+            var hours = dates.get(date);
+            if (dates.has(date) && hours.length > 0) {
+              $('.xdsoft_time_variant .xdsoft_time').each(function(index){
+                  if(hours.indexOf(parseInt($(this).text())) !== -1){
+                      $(this).addClass('xdsoft_disabled');
+                  }
+              });
             }
           });
         }
