@@ -103,9 +103,7 @@ try {
     }
 
     echo json_encode($res, JSON_UNESCAPED_UNICODE);
-
 } catch (\Exception $e) {
-
-    echo $e->getMessage();
+    echo json_encode(["test_id" => "", "success" => false, 'error' => $e->getMessage()], JSON_UNESCAPED_UNICODE);
 }
 
