@@ -69,7 +69,7 @@ const packQuestion = async () => {
   questions.forEach(element => {
     let json = {}
     const question_title = (element.querySelector('[name=question_title]')).value
-    const question_desc = (document.querySelector('[name=question_desc]')).value
+    const question_desc = (element.querySelector('[name=question_desc]')).value
     json.question_title = question_title;
     json.question_desc = question_desc;
     json.type = 0;
@@ -96,7 +96,11 @@ const packQuestion = async () => {
   json.questions = questionsList
 
   const res = await addTestDb(json)
-  console.log(res);
+  if (res.success) {
+    window.location.href = '/web/quiz-list.php'
+  } else {
+    alert(res.error ?? 'internal server error')
+  }
 }
 
 const addTestDb = async (json) => {

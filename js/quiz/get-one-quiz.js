@@ -25,7 +25,7 @@ const renderTest = async() => {
     testContainer.appendChild(testLevel);
 
     const questionsContainer = document.createElement("div");
-
+    console.log(testData.questions);
     testData.questions.forEach(q => {
         const questionTitle = document.createElement("h3");
         questionTitle.innerText = q.question_title;
