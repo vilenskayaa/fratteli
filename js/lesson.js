@@ -90,7 +90,6 @@ $(document).ready(async function () {
   });
   $('#lesson_date').datetimepicker({
       format:'Y-m-d H:i',
-      timepicker: true,
       theme:'light',
       allowTimes:['10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00'],
       onGenerate: function(ct,$i) {
@@ -106,7 +105,7 @@ $(document).ready(async function () {
               });
             }
           });
-        }
+      }
   });
 
   const groupsList = await fetchGroups();

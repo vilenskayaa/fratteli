@@ -18,11 +18,20 @@ try {
     $lesson_time = explode(' ', $req["lesson_date"])[1];
     $lesson_link = $req["lesson_link"];
 
-    $selectLessonOnDay = "SELECT COUNT(*) as `count` FROM `lesson` WHERE `lesson_date` = '$lesson_date' AND `group_id` = $group_id;";
-    $countLessonsOnDay = (int)$db->query($selectLessonOnDay)->fetch_assoc()["count"];
+    $selectLessonOnDay = "SELECT l.* FROM `lesson` l inner join `group` g on g.group_id = l.group_id
+                           WHERE l.lesson_date = '$lesson_date' AND g.teacher_id = $teacher_id";
+    $res = queryAll($db, $selectLessonOnDay);
 
-    if ($countLessonsOnDay != 0) {
-        throw new Exception("Группа в этот день занята!");
+    $lessonTimeInt = explode(':', $lesson_time);
+    $lessonTimeInt = (int)($lessonTimeInt[0] ?? 0 . $lessonTimeInt[1] ?? 0);
+    foreach ($res as $item) {
+        $tmpTime = $item['lesson_time'];
+        $tmpTimeInt = $tmpTime ? explode(':', $tmpTime) : [];
+        $tmpTimeInt = (int)($tmpTimeInt[0] ?? 0 . $tmpTimeInt[1] ?? 0);
+
+        if ($lessonTimeInt < $tmpTimeInt + 100 && $lessonTimeInt > $tmpTimeInt - 100) {
+            throw new Exception("У вас уже есть занятие на это время");
+        }
     }
 
     $insertLesson = "INSERT INTO `lesson`
